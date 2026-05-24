@@ -1,0 +1,176 @@
+---
+import { SITE } from "../data/site";
+
+const tiers = [
+  {
+    name: "Solo",
+    monthly: 99,
+    yearly: 990,
+    description: "Get started with outbound and book your first qualified meetings.",
+    cta: "Get started",
+    featured: false,
+    features: [
+      "Up to 2 outreach accounts",
+      "Social Listening Agent",
+      "Basic Lead Finder",
+      "Personalised Outreach",
+      "Reply Agent up to 100 replies per month",
+      "Email and chat support",
+    ],
+  },
+  {
+    name: "Growth",
+    monthly: 249,
+    yearly: 2490,
+    badge: "Most popular",
+    description: "Scale your outbound into a predictable pipeline with advanced matching, automated outreach.",
+    cta: "Start free trial",
+    featured: true,
+    features: [
+      "Up to 5 outreach accounts",
+      "Social Listening Agent",
+      "AI Lead Finder Agent",
+      "Hyper-Personalised Outreach",
+      "Reply Agent up to 250 replies per month",
+      "Admin controls and audit logs",
+      "Priority support",
+    ],
+  },
+  {
+    name: "Done For You",
+    monthly: 990,
+    yearly: 9900,
+    description: "15 qualified meetings per month, guaranteed. Full-service GTM.",
+    cta: "Talk to founders",
+    featured: false,
+    features: [
+      "Everything in Growth",
+      "Dedicated account manager",
+      "Customised AI agents",
+      "24x7 support",
+      "GTM Insights AI powered",
+      "AI Reply Agent custom volume",
+      "Dedicated onboarding and training",
+    ],
+  },
+] as const;
+---
+
+<section aria-label="Pricing" class="mx-auto w-full max-w-[1280px] border-x border-[color:var(--color-border)]">
+  <div class="px-4 py-20 md:px-10 md:py-28">
+
+    <!-- Billing toggle -->
+    <div class="flex justify-center">
+      <div class="flex w-fit items-center gap-1 rounded-full border border-white/10 bg-[#161515] p-1 text-[14px]" role="tablist" aria-label="Billing period">
+        <button data-billing="monthly" class="billing-tab is-active rounded-full px-4 py-1.5 font-medium transition-colors" role="tab" aria-selected="true">
+          Monthly
+        </button>
+        <button data-billing="yearly" class="billing-tab rounded-full px-4 py-1.5 font-medium transition-colors" role="tab" aria-selected="false">
+          Yearly
+          <span class="ml-1 rounded-full bg-[color:var(--color-brand-50)]/10 px-1.5 py-0.5 text-[11px] font-semibold text-[color:var(--color-brand-soft)]">Save 20%</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-3">
+      {tiers.map((t) => (
+        <article
+          class:list={[
+            "relative flex flex-col rounded-2xl border p-7 cursor-default",
+            t.featured
+              ? "border-[color:var(--color-brand)] bg-[color:var(--color-ink)] text-white shadow-[0_8px_40px_-12px_rgba(124,90,197,0.45)]"
+              : "border-[color:var(--color-brand-100)] bg-[color:var(--color-brand-50)] text-[color:var(--color-ink)] shadow-[0_4px_20px_rgba(0,0,0,0.02)]"
+          ]}
+        >
+          {t.badge && (
+            <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[color:var(--color-brand)] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white">
+              {t.badge}
+            </span>
+          )}
+
+          <div>
+            <h3 class:list={["font-display text-xl font-medium", t.featured ? "text-white" : "text-[color:var(--color-ink)]"]}>{t.name}</h3>
+            <p class:list={["mt-1.5 text-[13px] leading-relaxed", t.featured ? "text-white/60" : "text-[color:var(--color-ink-secondary)]"]}>
+              {t.description}
+            </p>
+          </div>
+
+          <div class="mt-6 flex items-baseline gap-1.5">
+            <span class:list={["font-display text-5xl font-medium leading-none", t.featured ? "text-white" : "text-[color:var(--color-ink)]"]} data-price-monthly={t.monthly} data-price-yearly={t.yearly}>
+              ${t.monthly}
+            </span>
+            <span class:list={["text-[13px]", t.featured ? "text-white/50" : "text-[color:var(--color-ink-muted)]"]} data-period>
+              / month
+            </span>
+          </div>
+
+          <a
+            href={SITE.appUrl}
+            class:list={[
+              "mt-6 flex h-11 w-full items-center justify-center rounded-xl text-[14px] font-medium transition-colors border shadow-xs duration-150",
+              t.featured
+                ? "bg-[color:var(--color-brand)] border-transparent text-white hover:bg-[color:var(--color-brand-strong)]"
+                : "border-[color:var(--color-brand-200)] bg-white text-[color:var(--color-brand-on-light)] hover:bg-[color:var(--color-brand-50)]"
+            ]}
+          >
+            {t.cta}
+          </a>
+
+          <ul class:list={["mt-7 space-y-3 text-[13px]", t.featured ? "text-white/80" : "text-[color:var(--color-ink-strong)]"]}>
+            {t.features.map((f) => (
+              <li class="flex items-start gap-2.5">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  class="mt-[2px] shrink-0 text-[color:var(--color-brand)]"
+                  aria-hidden="true"
+                >
+                  <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span>{f}</span>
+              </li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
+
+    <p class="mt-8 text-center text-[13px] text-[color:var(--color-ink-muted)]">
+      14-day free trial on every plan. No credit card required. Cancel anytime.
+    </p>
+  </div>
+</section>
+
+<script>
+  const tabs = document.querySelectorAll<HTMLButtonElement>(".billing-tab");
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const period = tab.dataset.billing as "monthly" | "yearly";
+      tabs.forEach((t) => {
+        const on = t === tab;
+        t.classList.toggle("is-active", on);
+        t.setAttribute("aria-selected", String(on));
+      });
+      document.querySelectorAll<HTMLElement>("[data-price-monthly]").forEach((el) => {
+        el.textContent = `$${period === "monthly" ? el.dataset.priceMonthly : el.dataset.priceYearly}`;
+      });
+      document.querySelectorAll<HTMLElement>("[data-period]").forEach((el) => {
+        el.textContent = period === "monthly" ? "/ month" : "/ year";
+      });
+    });
+  });
+</script>
+
+<style>
+  .billing-tab {
+    color: var(--color-ink-secondary);
+    background: transparent;
+    cursor: pointer;
+  }
+  .billing-tab.is-active {
+    background: var(--color-ink);
+    color: #fff;
+  }
+</style>

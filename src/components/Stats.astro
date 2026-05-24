@@ -1,0 +1,54 @@
+---
+---
+
+<section class="mx-auto w-full max-w-[1280px] border-x border-[color:var(--color-border)]">
+  <div class="flex flex-col gap-20 border-b border-[color:var(--color-border)] px-4 py-20 md:px-10 md:py-28">
+
+    <div class="space-y-4" data-reveal>
+      <h2 class="font-display text-2xl font-medium sm:text-3xl lg:text-[40px] tracking-tight">
+        Win the Go-To-Market Race
+      </h2>
+      <p class="max-w-xl text-base font-light text-[color:var(--color-ink-secondary)]">
+        Numbers that matter to pipeline. No vanity metrics, just the signal-to-meeting journey.
+      </p>
+    </div>
+
+    <div class="space-y-6">
+      <!-- 4 colored stat cards -->
+      <div class="grid grid-cols-2 gap-6 lg:grid-cols-4">
+        {[
+          { stat: "20+",  label: "Signal types monitored",        textColor: "text-indigo-700", bg: "#e7efff", line: "#6082D2" },
+          { stat: "8s",   label: "Average AI reply time",         textColor: "text-purple-700", bg: "#f2eefe", line: "#786EC8" },
+          { stat: "94%",  label: "Reply rate on warm signals",    textColor: "text-yellow-800", bg: "#fefce8", line: "#BEA032" },
+          { stat: "3-5x", label: "Meeting lift vs cold outbound", textColor: "text-orange-700", bg: "#fff7ed", line: "#C8823C" },
+        ].map((s) => (
+          <div
+            class="grid-bg rounded-xl p-8"
+            style={`--grid-color:${s.bg};--grid-line-color:${s.line};--grid-bg-opacity:100%;--grid-line-opacity:3%;--grid-size:14px`}
+            data-reveal
+          >
+            <h3 class:list={["font-display text-xl font-medium sm:text-2xl lg:text-3xl tracking-tight", s.textColor]}>
+              {s.stat}
+            </h3>
+            <p class:list={["mt-2 text-[18px] font-normal", s.textColor]}>{s.label}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- 1 wide card -->
+      <div
+        class="grid-bg rounded-xl p-8"
+        style="--grid-color:#e9f7f0;--grid-line-color:#58A786;--grid-bg-opacity:100%;--grid-line-opacity:3%;--grid-size:14px"
+        data-reveal
+      >
+        <h3 class="font-display text-xl font-medium text-green-700 sm:text-2xl lg:text-3xl tracking-tight">
+          100% automated outbound
+        </h3>
+        <p class="mt-2 text-[18px] font-normal text-green-700">
+          From signal detection to booked meeting, no manual prospecting, no copy-pasting, no follow-up chasing
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>

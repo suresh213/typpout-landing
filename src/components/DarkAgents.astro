@@ -1,0 +1,121 @@
+---
+import { SITE } from "../data/site";
+---
+
+<section class="mx-auto w-full max-w-[1280px] border-x border-[color:var(--color-border)]">
+
+  <!-- Dark hero strip - left text + right stats (mirrors Sentra dark section) -->
+  <div class="relative w-full overflow-hidden bg-[color:var(--color-surface-dark)] py-20 pl-4 md:py-28 md:pl-12">
+    <div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:gap-0">
+
+      <!-- Left: headline -->
+      <div class="flex-1" data-reveal>
+        <p class="font-display text-2xl font-bold text-[color:var(--color-brand)]">AI Agents</p>
+        <h2 class="font-display mt-4 text-2xl font-light text-white sm:text-3xl lg:text-[40px] leading-tight tracking-tight">
+          Four agents.<br class="hidden md:block" /> One unstoppable pipeline.
+        </h2>
+        <p class="mt-4 max-w-xl text-base font-light leading-relaxed text-white/60">
+          Typpout's four AI agents work around the clock - listening, matching, reaching out, and replying - so your team shows up to qualified meetings, not cold comment threads.
+        </p>
+        <a
+          href={SITE.appUrl}
+          class="mt-8 inline-flex items-center gap-2 rounded-md bg-[color:var(--color-brand)] px-5 py-2 text-[13px] font-medium text-[color:var(--color-brand-fg)] transition-colors hover:bg-[color:var(--color-brand-strong)]"
+        >
+          Get started free
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Right: 4 stat chips -->
+      <div class="w-full pr-4 lg:w-[42%] lg:translate-x-[50px] lg:pr-12" data-reveal>
+        <div class="grid grid-cols-2 gap-3">
+          {[
+            { stat: "1.2k",  label: "Signals processed / day",    color: "text-[color:var(--color-brand)]" },
+            { stat: "8s",    label: "Avg AI reply time",           color: "text-blue-400"  },
+            { stat: "94%",   label: "Reply rate on warm signals",  color: "text-pink-400"  },
+            { stat: "3-5x",  label: "Meeting lift vs cold email",  color: "text-orange-400" },
+          ].map((s) => (
+            <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+              <div class:list={["font-display text-3xl font-medium", s.color]}>{s.stat}</div>
+              <div class="mt-1 text-[11px] text-white/60">{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dark agents card grid (mirrors developer resources 5-card grid) -->
+  <div class="bg-[color:var(--color-surface-dark)] px-4 pb-20 md:px-12 md:pb-28">
+    <div class="mx-auto max-w-xl space-y-4 pb-16 text-center" data-reveal>
+      <h2 class="font-display text-2xl font-light text-white sm:text-3xl lg:text-[40px] tracking-tight">
+        Meet the Four Agents
+      </h2>
+      <p class="text-base font-light text-white/50">
+        Each agent is purpose-built. Together they replace your entire outbound motion.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 overflow-hidden rounded-xl border border-dashed border-white/10 md:grid-cols-2 lg:grid-cols-4" data-reveal>
+      {[
+        {
+          icon: "radar",
+          iconColor: "text-green-400",
+          iconBg: "border-green-900 bg-green-600/10",
+          name: "Social Listener",
+          desc: "Monitors LinkedIn, X, and Instagram 24/7 for buying intent, competitor mentions, and hiring signals matching your ICP definition.",
+          link: "/#features",
+          linkLabel: "Learn more about Social Listener",
+        },
+        {
+          icon: "users",
+          iconColor: "text-blue-400",
+          iconBg: "border-blue-900 bg-blue-600/10",
+          name: "ICP Finder",
+          desc: "Scores every signal against your ICP criteria, enriches contact data, and surfaces the highest-fit prospects first - automatically.",
+          link: "/#features",
+          linkLabel: "Learn more about ICP Finder",
+        },
+        {
+          icon: "message",
+          iconColor: "text-purple-400",
+          iconBg: "border-purple-900 bg-purple-600/10",
+          name: "Outreach Agent",
+          desc: "Writes and sends personalised first messages grounded in the exact signal that triggered the match - not generic templates.",
+          link: "/#features",
+          linkLabel: "Learn more about Outreach Agent",
+        },
+        {
+          icon: "bolt",
+          iconColor: "text-orange-400",
+          iconBg: "border-orange-900 bg-orange-600/10",
+          name: "AI Reply Agent",
+          desc: "Replies in under 8 seconds, handles objections, nurtures conversations, and books meetings directly on your calendar.",
+          link: "/#features",
+          linkLabel: "Learn more about AI Reply Agent",
+        },
+      ].map((a) => (
+        <div class="flex flex-col justify-between px-8 pt-8 pb-10">
+          <div class:list={["flex h-10 w-10 items-center justify-center rounded-xl border", a.iconBg]}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class={a.iconColor} aria-hidden="true">
+              {a.icon === "radar"   && <><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="2"/><path d="M12 5v-2M12 21v-2" stroke="currentColor" stroke-width="2"/></>}
+              {a.icon === "users"   && <><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="2"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M16 11a3 3 0 100-6M21 20c0-2.5-2-4-4.5-4.5" stroke="currentColor" stroke-width="2"/></>}
+              {a.icon === "message" && <path d="M4 6a2 2 0 012-2h12a2 2 0 012 2v9a2 2 0 01-2 2H9l-5 4V6z" stroke="currentColor" stroke-width="2"/>}
+              {a.icon === "bolt"    && <path d="M13 2L4 14h7l-2 8 10-12h-7l1-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>}
+            </svg>
+          </div>
+          <div class="mt-8 flex flex-col gap-3">
+            <h3 class="font-display text-lg font-light text-white">{a.name}</h3>
+            <p class="text-sm font-light leading-relaxed text-white/60">{a.desc}</p>
+            <a href={a.link} aria-label={a.linkLabel} class="mt-1 font-display text-sm text-white underline transition-colors hover:text-[color:var(--color-brand)]">
+              Learn more →
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+</section>

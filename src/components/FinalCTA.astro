@@ -1,0 +1,73 @@
+---
+import { SITE } from "../data/site";
+---
+
+<!-- Bullet list section -->
+<section class="mx-auto w-full max-w-[1280px] border-x border-[color:var(--color-border)]">
+  <div class="flex flex-col gap-16 border-b border-[color:var(--color-border)] px-4 py-20 md:px-10 md:py-28">
+    <div class="flex flex-col gap-12 lg:flex-row lg:items-start lg:gap-20" data-reveal>
+      <div class="flex flex-col gap-5 lg:w-[45%]">
+        <h2 class="font-display text-2xl font-medium sm:text-3xl lg:text-[40px] leading-tight tracking-tight">
+          Stop piecing outbound tools together.<br class="hidden md:block" />
+          Start closing with one platform.
+        </h2>
+        <p class="text-base font-light leading-relaxed text-[color:var(--color-ink-secondary)]">
+          Typpout replaces your social monitoring stack, prospecting tools, outreach sequences, and follow-up cadences in one automated pipeline.
+        </p>
+      </div>
+      <ul class="flex flex-col gap-4 lg:flex-1">
+        {[
+          "Monitor LinkedIn, X and Instagram for buying signals 24/7",
+          "Auto-match signals to your ICP with enriched contact data",
+          "Send personalised first messages grounded in the exact signal",
+          "AI replies in under 8 seconds and handles objections automatically",
+          "Book meetings directly on your calendar without SDR intervention",
+          "Full pipeline visibility from first signal to closed deal",
+        ].map((item) => (
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[color:var(--color-brand)]">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="text-base font-light leading-relaxed text-[color:var(--color-ink-secondary)]">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Dark CTA section -->
+<section class="mx-auto w-full max-w-[1280px] border-x border-[color:var(--color-border)]">
+  <div class="bg-[color:var(--color-surface-dark)] px-4 py-20 md:px-10 md:py-28">
+    <div class="flex flex-col items-center gap-8 text-center" data-reveal>
+      <div class="space-y-4">
+        <h2 class="font-display text-2xl font-medium text-white sm:text-3xl lg:text-[40px] leading-tight tracking-tight">
+          Book 20 Qualified Meetings<br class="hidden md:block" />
+          This Month on Autopilot
+        </h2>
+        <p class="mx-auto max-w-lg text-base font-light leading-relaxed text-white/60">
+          Your competitors are still sending cold emails. Start intercepting warm signals today. Takes less than 5 minutes to set up your first agent.
+        </p>
+      </div>
+      <div class="flex flex-col gap-3 sm:flex-row">
+        <a
+          href={SITE.appUrl}
+          class="inline-flex items-center gap-2 rounded-xl bg-[color:var(--color-brand)] px-6 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-[color:var(--color-brand-strong)]"
+        >
+          Get Started Free
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a
+          href={SITE.demoUrl}
+          class="inline-flex items-center gap-2 rounded-xl border border-white/20 px-6 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10"
+        >
+          Book a Demo
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

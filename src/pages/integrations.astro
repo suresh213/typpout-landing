@@ -1,0 +1,447 @@
+---
+import Layout from "../layouts/Layout.astro";
+import FinalCTA from "../components/FinalCTA.astro";
+import { SITE } from "../data/site";
+
+const categories = [
+  { id: "all", label: "All Integrations" },
+  { id: "crm-sync", label: "CRM Sync" },
+  { id: "data-enrichment", label: "Data & Enrichment" },
+  { id: "outreach-automation", label: "Outreach & Automation" },
+  { id: "alerts-conversations", label: "Alerts & Conversations" },
+  { id: "intent-intelligence", label: "Intent & Intelligence" },
+];
+
+const items = [
+  {
+    name: "Clay",
+    category: "Data & Enrichment",
+    catId: "data-enrichment",
+    desc: "Enrich leads and run highly segmented outbound campaigns with custom variables.",
+    badge: "Popular",
+    logoKey: "clay"
+  },
+  {
+    name: "HubSpot",
+    category: "CRM Sync",
+    catId: "crm-sync",
+    desc: "Auto-sync social leads, deals, and engagement activity directly to your CRM.",
+    badge: "Popular",
+    logoKey: "hubspot"
+  },
+  {
+    name: "n8n",
+    category: "Outreach & Automation",
+    catId: "outreach-automation",
+    desc: "Build complex node-based automation workflows triggered by GTM signals.",
+    badge: "",
+    logoKey: "n8n"
+  },
+  {
+    name: "Salesforce",
+    category: "CRM Sync",
+    catId: "crm-sync",
+    desc: "Keep your enterprise sales pipeline and contact records perfectly updated.",
+    badge: "",
+    logoKey: "salesforce"
+  },
+  {
+    name: "Slack",
+    category: "Alerts & Conversations",
+    catId: "alerts-conversations",
+    desc: "Get real-time Slack alerts for high-intent social activities and replies.",
+    badge: "Popular",
+    logoKey: "slack"
+  },
+  {
+    name: "Notion",
+    category: "Outreach & Automation",
+    catId: "outreach-automation",
+    desc: "Sync prospect research and company lists directly to your collaborative workspace.",
+    badge: "",
+    logoKey: "notion"
+  },
+  {
+    name: "Airtable",
+    category: "Outreach & Automation",
+    catId: "outreach-automation",
+    desc: "Organize lead pipelines and outbound content calendars in a flexible database.",
+    badge: "",
+    logoKey: "airtable"
+  },
+  {
+    name: "Zapier",
+    category: "Outreach & Automation",
+    catId: "outreach-automation",
+    desc: "Connect your social selling intent signals to 5,000+ business applications.",
+    badge: "",
+    logoKey: "zapier"
+  },
+  {
+    name: "Apollo",
+    category: "Data & Enrichment",
+    catId: "data-enrichment",
+    desc: "Search over 275M contacts and enrich intent signals with B2B emails.",
+    badge: "Popular",
+    logoKey: "apollo"
+  },
+  {
+    name: "Intercom",
+    category: "Alerts & Conversations",
+    catId: "alerts-conversations",
+    desc: "Engage visitors and route social leads instantly to human support agents.",
+    badge: "",
+    logoKey: "intercom"
+  },
+  {
+    name: "Stripe",
+    category: "Outreach & Automation",
+    catId: "outreach-automation",
+    desc: "Track checkout signals and trigger post-purchase onboarding campaigns.",
+    badge: "",
+    logoKey: "stripe"
+  },
+  {
+    name: "Mailchimp",
+    category: "Outreach & Automation",
+    catId: "outreach-automation",
+    desc: "Sync social leads into target marketing lists and newsletter audiences.",
+    badge: "",
+    logoKey: "mailchimp"
+  },
+  {
+    name: "ZoomInfo",
+    category: "Data & Enrichment",
+    catId: "data-enrichment",
+    desc: "Enrich cold accounts with verified phone numbers and corporate emails.",
+    badge: "",
+    logoKey: "zoominfo"
+  },
+  {
+    name: "Outreach",
+    category: "Outreach & Automation",
+    catId: "outreach-automation",
+    desc: "Scale outbound email and dialer tasks dynamically based on social intent.",
+    badge: "",
+    logoKey: "outreach"
+  },
+  {
+    name: "Salesloft",
+    category: "Outreach & Automation",
+    catId: "outreach-automation",
+    desc: "Automate sales engagements, sequences, and dialers for your SDRs.",
+    badge: "",
+    logoKey: "salesloft"
+  },
+  {
+    name: "Gong",
+    category: "Alerts & Conversations",
+    catId: "alerts-conversations",
+    desc: "Analyze customer interactions and social signals to optimize sales behaviors.",
+    badge: "",
+    logoKey: "gong"
+  },
+  {
+    name: "6sense",
+    category: "Intent & Intelligence",
+    catId: "intent-intelligence",
+    desc: "Capture anonymous account-level intent signals and map B2B buying groups.",
+    badge: "",
+    logoKey: "sixsense"
+  },
+  {
+    name: "Seamless AI",
+    category: "Data & Enrichment",
+    catId: "data-enrichment",
+    desc: "Find cell phone numbers and direct email addresses for B2B prospects.",
+    badge: "",
+    logoKey: "seamless"
+  },
+  {
+    name: "Lusha",
+    category: "Data & Enrichment",
+    catId: "data-enrichment",
+    desc: "Instant contact enrichment for sales teams searching for verified direct dials.",
+    badge: "",
+    logoKey: "lusha"
+  },
+  {
+    name: "LeadIQ",
+    category: "Data & Enrichment",
+    catId: "data-enrichment",
+    desc: "Find contact data and build account lists while browsing LinkedIn.",
+    badge: "",
+    logoKey: "leadiq"
+  },
+  {
+    name: "Kaspr",
+    category: "Data & Enrichment",
+    catId: "data-enrichment",
+    desc: "Extract prospect emails and phone numbers directly from social profiles.",
+    badge: "",
+    logoKey: "kaspr"
+  },
+  {
+    name: "Cognism",
+    category: "Data & Enrichment",
+    catId: "data-enrichment",
+    desc: "Access compliant B2B data and mobile numbers across Europe and globally.",
+    badge: "",
+    logoKey: "cognism"
+  }
+];
+
+const integrationsLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": SITE.url
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Integrations",
+          "item": `${SITE.url}/integrations`
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "name": "Typpout Integrations",
+      "description": "Explore Typpout's native integrations across CRMs, Social Selling channels, Lead enrichment systems, and Email outreach workflows.",
+      "url": `${SITE.url}/integrations`,
+    }
+  ]
+};
+---
+
+<Layout
+  title="Integrations - Connected to your entire GTM stack"
+  description="Connect Typpout seamlessly with HubSpot, Salesforce, Slack, Clay, Apollo, LinkedIn, ZoomInfo, and email providers to automate your GTM pipeline."
+  keywords={["Typpout integrations", "CRM integrations for SDR", "HubSpot sales integrations", "Slack sales alert integration", "Clay enrichment workflow sync"]}
+  jsonLd={integrationsLd}
+>
+  <div class="mx-auto w-full max-w-[1280px] border-x border-[color:var(--color-border)] min-h-screen bg-white">
+    <!-- Hero Section -->
+    <section class="border-b border-[color:var(--color-border)] bg-[color:var(--color-surface-muted)]">
+      <div class="px-5 py-20 text-center sm:px-8 lg:py-24">
+        <span class="eyebrow">Integrations</span>
+        <h1 class="h-section mt-4 text-balance">
+          Connected to your
+          <span class="font-display-italic text-[color:var(--color-foreground-secondary)]"> entire GTM stack.</span>
+        </h1>
+        <p class="mx-auto mt-5 max-w-2xl text-[17px] leading-relaxed text-[color:var(--color-ink-secondary)]">
+          Sync data seamlessly, capture intent signals, and automate outreach across all your favorite sales, CRM, and marketing tools.
+        </p>
+      </div>
+    </section>
+
+    <!-- Search & Filters Container -->
+    <section class="py-12 px-5 sm:px-8 border-b border-[color:var(--color-border)]">
+      <!-- Search Input -->
+      <div class="mb-10 max-w-md mx-auto relative">
+        <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+          <svg class="h-5 w-5 text-[color:var(--color-ink-muted)]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search integrations by name or description..."
+          class="block w-full rounded-xl border border-[color:var(--color-border)] bg-white py-3 pl-10 pr-4 text-sm placeholder-[color:var(--color-ink-muted)] text-[color:var(--color-ink-strong)] outline-none transition-all focus:border-[color:var(--color-brand)] focus:ring-1 focus:ring-[color:var(--color-brand)] focus:shadow-[0_0_12px_rgba(124,90,197,0.1)]"
+        />
+      </div>
+
+      <!-- Main Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-8 items-start">
+        <!-- Sidebar Navigation Filters (Desktop & Mobile) -->
+        <div class="lg:sticky lg:top-24">
+          <!-- Desktop Category Filters -->
+          <ul class="hidden lg:flex flex-col gap-1">
+            {categories.map((cat) => (
+              <li>
+                <button
+                  data-filter={cat.id}
+                  class="filter-btn w-full text-left rounded-lg px-4 py-2.5 text-sm font-medium transition-all border border-transparent text-[color:var(--color-ink-secondary)] hover:text-[color:var(--color-ink-strong)] hover:bg-[color:var(--color-surface-soft)] cursor-pointer"
+                >
+                  {cat.label}
+                </button>
+              </li>
+            ))}
+          </ul>
+
+          <!-- Mobile Category Filters (Horizontal Scroll) -->
+          <div class="flex lg:hidden overflow-x-auto pb-3 gap-2 scrollbar-none snap-x">
+            {categories.map((cat) => (
+              <button
+                data-filter={cat.id}
+                class="filter-btn shrink-0 snap-start rounded-full border border-[color:var(--color-border)] px-4 py-1.5 text-xs font-medium transition-all text-[color:var(--color-ink-secondary)] bg-white hover:text-[color:var(--color-ink-strong)] cursor-pointer"
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <!-- Integrations View -->
+        <div>
+          <!-- Empty State -->
+          <div id="empty-state" class="hidden text-center py-16">
+            <svg class="mx-auto h-12 w-12 text-[color:var(--color-ink-muted)] opacity-60" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
+            </svg>
+            <h3 class="mt-4 text-sm font-semibold text-[color:var(--color-ink-strong)]">No integrations found</h3>
+            <p class="mt-2 text-xs text-[color:var(--color-ink-secondary)]">Try adjusting your search terms or category filter.</p>
+          </div>
+
+          <!-- Cards Grid -->
+          <div id="integrations-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+            {items.map((i) => (
+              <div
+                data-card
+                data-name={i.name.toLowerCase()}
+                data-desc={i.desc.toLowerCase()}
+                data-category={i.catId}
+                class="flex flex-col justify-between rounded-2xl border border-[color:var(--color-border)] bg-white p-5 transition-all hover:border-[color:var(--color-brand)]/40 hover:shadow-[0_8px_30px_rgba(0,0,0,0.02)]"
+              >
+                <div>
+                  <div class="flex items-start justify-between">
+                    <div class="grid h-12 w-12 place-items-center rounded-xl bg-[color:var(--color-surface-soft)] overflow-hidden p-2">
+                      <img
+                        src={`/logos/${i.logoKey}.png`}
+                        alt={`${i.name} Logo`}
+                        class="h-full w-full object-contain rounded-md"
+                        loading="lazy"
+                      />
+                    </div>
+                    {i.badge && (
+                      <span class="inline-flex items-center rounded-full bg-[color:var(--color-brand-50)] px-2.5 py-0.5 text-[10px] font-semibold text-[color:var(--color-brand-on-light)] border border-[color:var(--color-brand-100)]">
+                        {i.badge}
+                      </span>
+                    )}
+                  </div>
+                  <h3 class="mt-4 font-display text-base font-semibold text-[color:var(--color-ink-strong)] leading-tight">{i.name}</h3>
+                  <span class="text-[10px] uppercase tracking-wider font-semibold text-[color:var(--color-ink-muted)]">{i.category}</span>
+                  <p class="mt-2 text-[13px] font-light leading-relaxed text-[color:var(--color-ink-secondary)]">{i.desc}</p>
+                </div>
+                <div class="mt-5 pt-4 border-t border-[color:var(--color-divider)] flex items-center justify-between text-xs text-[color:var(--color-ink-secondary)]">
+                  <span class="flex items-center gap-1.5 font-medium">
+                    <span class="h-1.5 w-1.5 rounded-full bg-[color:var(--color-brand)]"></span>
+                    Native Sync
+                  </span>
+                  <span class="hover:text-[color:var(--color-brand)] font-medium inline-flex items-center gap-1 transition-colors cursor-pointer">
+                    Setup docs
+                    <svg class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Request Integration CTA Section -->
+    <section class="py-16 sm:py-20 text-center bg-[color:var(--color-surface-soft)]">
+      <div class="px-5 sm:px-8 max-w-xl mx-auto">
+        <span class="eyebrow">Request more</span>
+        <h2 class="h-section mt-4">
+          Need a custom
+          <span class="font-display-italic text-[color:var(--color-foreground-secondary)]"> integration?</span>
+        </h2>
+        <p class="mt-4 text-sm font-light leading-relaxed text-[color:var(--color-ink-secondary)]">
+          Can't find the tool your team uses? We build custom integrations for our Growth and Enterprise clients within 48 hours. Let us know what you need.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row justify-center gap-3">
+          <a href="mailto:founders@typpout.com?subject=Integration%20Request" class="btn btn-brand">
+            Request Integration
+          </a>
+          <a href="https://cal.com/typpout/demo" class="btn btn-ghost">
+            Talk to sales
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <FinalCTA />
+</Layout>
+
+<script>
+  const searchInput = document.getElementById("search-input") as HTMLInputElement | null;
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const cards = document.querySelectorAll("[data-card]");
+  const emptyState = document.getElementById("empty-state");
+
+  let currentCategory = "all";
+  let currentSearch = "";
+
+  const filterIntegrations = () => {
+    let visibleCount = 0;
+
+    cards.forEach((card) => {
+      const cardName = card.getAttribute("data-name") || "";
+      const cardDesc = card.getAttribute("data-desc") || "";
+      const cardCat = card.getAttribute("data-category") || "";
+
+      const matchesSearch = cardName.includes(currentSearch) || cardDesc.includes(currentSearch);
+      const matchesCategory = currentCategory === "all" || cardCat === currentCategory;
+
+      if (matchesSearch && matchesCategory) {
+        (card as HTMLElement).style.display = "flex";
+        visibleCount++;
+      } else {
+        (card as HTMLElement).style.display = "none";
+      }
+    });
+
+    if (emptyState) {
+      if (visibleCount === 0) {
+        emptyState.classList.remove("hidden");
+      } else {
+        emptyState.classList.add("hidden");
+      }
+    }
+  };
+
+  const updateActiveButton = () => {
+    filterBtns.forEach((btn) => {
+      const cat = btn.getAttribute("data-filter");
+      if (cat === currentCategory) {
+        btn.classList.add("bg-[color:var(--color-brand-50)]", "text-[color:var(--color-brand-on-light)]", "border-[color:var(--color-brand-200)]");
+        btn.classList.remove("text-[color:var(--color-ink-secondary)]", "border-transparent");
+      } else {
+        btn.classList.remove("bg-[color:var(--color-brand-50)]", "text-[color:var(--color-brand-on-light)]", "border-[color:var(--color-brand-200)]");
+        btn.classList.add("text-[color:var(--color-ink-secondary)]");
+        if (btn.tagName === "BUTTON" && !btn.classList.contains("lg:flex")) {
+          btn.classList.add("border-[color:var(--color-border)]");
+        }
+      }
+    });
+  };
+
+  searchInput?.addEventListener("input", (e) => {
+    currentSearch = (e.target as HTMLInputElement).value.toLowerCase().trim();
+    filterIntegrations();
+  });
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const filter = btn.getAttribute("data-filter");
+      if (filter) {
+        currentCategory = filter;
+        updateActiveButton();
+        filterIntegrations();
+      }
+    });
+  });
+
+  updateActiveButton();
+</script>

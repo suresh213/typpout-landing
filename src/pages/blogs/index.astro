@@ -1,0 +1,89 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import BlogCard from "../../components/BlogCard.astro";
+import FinalCTA from "../../components/FinalCTA.astro";
+import { SITE } from "../../data/site";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const accents = ["green", "blue", "pink", "yellow"] as const;
+
+const blogLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": SITE.url
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": `${SITE.url}/blogs`
+        }
+      ]
+    },
+    {
+      "@type": "Blog",
+      "name": "Typpout Blog",
+      "description": "GTM playbooks, comparisons, and social-selling insights from the Typpout team.",
+      "url": `${SITE.url}/blogs`,
+    }
+  ]
+};
+---
+
+<Layout
+  title="Blog - GTM playbooks, social selling & AI sales insights"
+  description="Playbooks and comparisons on signal-based outbound, AI SDRs, social listening for sales, and how the best GTM teams book pipeline in 2026."
+  keywords={["social selling playbooks", "AI SDR comparisons", "buying intent signal guides", "B2B outbound tactics", "social listening for sales"]}
+  jsonLd={blogLd}
+>
+  <section class="mx-auto w-full max-w-[1280px] border-x border-b border-[color:var(--color-border)] bg-[color:var(--color-surface-muted)]">
+    <div class="px-5 py-20 sm:px-8 lg:py-24">
+      <span class="eyebrow">The Typpout blog</span>
+      <h1 class="h-section mt-4 max-w-3xl text-balance">
+        Playbooks, comparisons, and the GTM motion
+        <span class="font-display-italic text-[color:var(--color-foreground-secondary)]"> that wins in 2026.</span>
+      </h1>
+      <p class="mt-5 max-w-2xl text-[17px] leading-relaxed text-[color:var(--color-foreground-secondary)]">
+        Honest takes on signal-based outbound, AI sales agents, social selling, and tools we've used (or built).
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-[1280px] border-x border-[color:var(--color-border)]">
+    <div class="px-5 py-16 sm:px-8 lg:py-20">
+      {posts.length === 0 ? (
+        <p class="text-center text-[color:var(--color-foreground-secondary)]">
+          No posts yet. Check back soon.
+        </p>
+      ) : (
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          {posts.map((p, i) => (
+            <BlogCard
+              href={`/blogs/${p.id}`}
+              title={p.data.title}
+              description={p.data.description}
+              pubDate={p.data.pubDate}
+              category={p.data.category}
+              readingTime={p.data.readingTime}
+              featured={i === 0 && p.data.featured}
+              accent={accents[i % accents.length]}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <FinalCTA />
+</Layout>

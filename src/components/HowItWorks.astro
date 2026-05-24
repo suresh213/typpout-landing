@@ -1,0 +1,56 @@
+---
+const steps = [
+  {
+    n: "01",
+    title: "Connect your social accounts",
+    body: "Plug in LinkedIn, X and Instagram in two clicks. Typpout starts listening within minutes.",
+  },
+  {
+    n: "02",
+    title: "Define your ICP",
+    body: "Tell Typpout who you sell to and what intent looks like for your category. The ICP Finder takes it from there.",
+  },
+  {
+    n: "03",
+    title: "Approve the message or let it run",
+    body: "Review AI-drafted outreach in your inbox, or set rules so agents send and reply on their own.",
+  },
+  {
+    n: "04",
+    title: "Watch meetings land on your calendar",
+    body: "AI Reply Agent qualifies, nurtures and books. You show up to meetings, not to LinkedIn comment threads.",
+  },
+];
+---
+
+<section id="how-it-works" class="bg-[color:var(--color-surface-muted)]">
+  <div class="mx-auto w-full max-w-[1280px] px-5 py-24 sm:px-8 lg:py-32">
+    <div class="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
+      <div class="lg:sticky lg:top-24 lg:self-start" data-reveal>
+        <span class="eyebrow">How Typpout works</span>
+        <h2 class="h-section mt-4">
+          Idea to pipeline
+          <span class="font-display-italic text-[color:var(--color-foreground-secondary)]"> in 4 steps.</span>
+        </h2>
+        <p class="mt-5 max-w-md text-[17px] leading-relaxed text-[color:var(--color-foreground-secondary)]">
+          Most teams ship outbound in a quarter. With Typpout, your first booked meetings land in days - without juggling 5 tools.
+        </p>
+      </div>
+
+      <ol class="relative flex flex-col gap-3">
+        {steps.map((s, i) => (
+          <li
+            class="group relative grid grid-cols-[auto_1fr] items-start gap-5 rounded-2xl border border-[color:var(--color-border)] bg-white p-6 transition hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-30px_rgba(0,0,0,0.25)]"
+            data-reveal
+          >
+            <div class="font-display text-3xl text-[color:var(--color-foreground-secondary)]">{s.n}</div>
+            <div>
+              <h3 class="h-card text-[20px]">{s.title}</h3>
+              <p class="mt-2 text-[15px] leading-relaxed text-[color:var(--color-foreground-secondary)]">{s.body}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>

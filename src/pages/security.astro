@@ -1,0 +1,133 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { SITE } from "../data/site";
+
+const securityLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": SITE.url
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Security",
+          "item": `${SITE.url}/security`
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "name": "Typpout Security",
+      "description": "Typpout's security practices: encryption, access controls, data handling, and compliance. Your data is safe with us.",
+      "url": `${SITE.url}/security`,
+    }
+  ]
+};
+---
+
+<Layout
+  title="Security - Typpout"
+  description="Typpout's security practices: encryption, access controls, data handling, and compliance. Your data is safe with us."
+  jsonLd={securityLd}
+>
+  <section class="mx-auto w-full max-w-[1280px] border-x border-b border-[color:var(--color-border)] bg-[color:var(--color-surface-muted)]">
+    <div class="px-5 py-16 sm:px-8 lg:py-20">
+      <span class="eyebrow">Security</span>
+      <h1 class="h-section mt-4">
+        Your data is
+        <span class="font-display-italic text-[color:var(--color-foreground-secondary)]"> safe with us.</span>
+      </h1>
+      <p class="mt-5 max-w-2xl text-[17px] leading-relaxed text-[color:var(--color-ink-secondary)]">
+        We take security seriously. Here's exactly how we protect your data and what we do to keep the platform secure.
+      </p>
+    </div>
+  </section>
+
+  <!-- Security practices grid -->
+  <section class="mx-auto w-full max-w-[1280px] border-x border-[color:var(--color-border)]">
+    <div class="px-5 py-16 sm:px-8 lg:py-20">
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {[
+          {
+            icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+            title: "Encryption in transit and at rest",
+            body: "All data is encrypted in transit using TLS 1.3. Data at rest is encrypted using AES-256. Your API keys and credentials are stored using industry-standard key management systems.",
+          },
+          {
+            icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
+            title: "Access controls",
+            body: "Role-based access control (RBAC) limits who can access what within the platform. Internal access to customer data is restricted to authorised personnel only, and all access is logged.",
+          },
+          {
+            icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,
+            title: "SOC 2 Type II aligned",
+            body: "Our security practices align with SOC 2 Type II standards across availability, confidentiality, and security. We are working toward formal certification.",
+          },
+          {
+            icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
+            title: "Continuous monitoring",
+            body: "We run 24/7 infrastructure monitoring, alerting, and anomaly detection. Automated systems flag unusual access patterns and potential threats in real time.",
+          },
+          {
+            icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>`,
+            title: "Vendor security",
+            body: "All third-party vendors (Stripe, Cloudflare, Resend) are vetted for their security practices and are bound by data processing agreements. We only use providers with strong security track records.",
+          },
+          {
+            icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
+            title: "Data minimisation",
+            body: "We collect only the data necessary to provide the Service. Social data processed for intent signals is not retained beyond what is needed for signal delivery and analytics.",
+          },
+          {
+            icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+            title: "Incident response",
+            body: "We have a formal incident response plan. In the event of a data breach affecting your data, we will notify affected users within 72 hours as required by GDPR.",
+          },
+          {
+            icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`,
+            title: "GDPR and CCPA compliance",
+            body: "We comply with GDPR (EU) and CCPA (California) requirements. Data subject requests - including access, deletion, and portability - are honoured within 30 days.",
+          },
+          {
+            icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>`,
+            title: "Penetration testing",
+            body: "We conduct annual penetration tests with third-party security firms. Findings are remediated on a priority basis. Critical vulnerabilities are patched within 24 hours of discovery.",
+          },
+        ].map((item) => (
+          <div class="rounded-2xl border border-[color:var(--color-border)] bg-white p-6 transition-all hover:border-[color:var(--color-brand)]/30 hover:shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
+            <div class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[color:var(--color-brand-50)] text-[color:var(--color-brand)]">
+              <Fragment set:html={item.icon} />
+            </div>
+            <h3 class="font-display text-base font-semibold text-[color:var(--color-ink-strong)]">{item.title}</h3>
+            <p class="mt-2 text-[13px] leading-relaxed text-[color:var(--color-ink-secondary)]">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Report a vulnerability CTA -->
+  <section class="mx-auto w-full max-w-[1280px] border-x border-t border-[color:var(--color-border)] bg-[color:var(--color-surface-muted)]">
+    <div class="px-5 py-16 text-center sm:px-8 lg:py-20">
+      <h2 class="h-section">Found a security issue?</h2>
+      <p class="mx-auto mt-4 max-w-xl text-[17px] leading-relaxed text-[color:var(--color-ink-secondary)]">
+        We welcome responsible disclosure. If you've found a vulnerability in Typpout, please report it to our security team and we'll respond within 48 hours.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href={`mailto:${SITE.email}?subject=Security%20Vulnerability%20Report`} class="btn btn-brand">
+          Report a vulnerability
+        </a>
+        <a href="/privacy" class="btn btn-ghost">
+          View Privacy Policy
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

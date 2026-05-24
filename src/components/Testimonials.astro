@@ -1,0 +1,120 @@
+---
+---
+
+<section class="mx-auto w-full max-w-[1280px] border-x border-[color:var(--color-border)]">
+  <div class="flex flex-col gap-16 border-b border-[color:var(--color-border)] px-4 py-20 md:px-10 md:py-28">
+
+    <div data-reveal>
+      <h2 class="font-display text-2xl font-medium sm:text-3xl lg:text-[40px] tracking-tight">
+        Proof in Practice
+      </h2>
+      <p class="mt-3 max-w-md text-base font-light text-[color:var(--color-ink-secondary)]">
+        Bold claims are easy. Real results are harder. Here's what GTM teams actually say.
+      </p>
+    </div>
+
+    <div class="columns-1 gap-5 sm:columns-2 lg:columns-3" data-reveal>
+      {[
+        {
+          text: "The social listening agent and AI reply agent are perfect for our GTM motions. They efficiently help us book 20+ meetings monthly without any manual prospecting.",
+          name: "Santosh Patil",
+          handle: "@santoshpatil",
+          role: "CEO",
+          init: "SP",
+          bg: "bg-green-100",
+          txt: "text-green-700",
+        },
+        {
+          text: "Typpout feels different, it's built for PMMs and GTM teams, not just sales. The ICP Finder alone saves me hours every week. I stopped using Apollo entirely.",
+          name: "Raiyaan Akhtar",
+          handle: "@raiyaan_gtm",
+          role: "GTM Lead, Carpl.AI",
+          init: "RA",
+          bg: "bg-blue-100",
+          txt: "text-blue-700",
+        },
+        {
+          text: "Instead of juggling 4-5 different tools, my team now finds ICPs, generates content, and runs outreach in one place. We booked 10 qualified meetings in the first two weeks.",
+          name: "Swapnil",
+          handle: "@swapnil_mktg",
+          role: "CEO, DigiMatrix Marketing",
+          init: "SW",
+          bg: "bg-pink-100",
+          txt: "text-pink-700",
+        },
+        {
+          text: "Speed matters. Typpout helped us move from idea to pipeline in days. The AI outreach felt personal, we closed our first 3 customers directly from campaigns.",
+          name: "Sanskar Pitta",
+          handle: "@sanskarpitta",
+          role: "Netmetschek Group",
+          init: "SK",
+          bg: "bg-yellow-100",
+          txt: "text-yellow-700",
+        },
+        {
+          text: "We were spending 3 hours a day manually monitoring LinkedIn. Typpout cut that to zero and the quality of leads went up. The ICP matching is genuinely impressive.",
+          name: "Priya Mehta",
+          handle: "@priyamehta_rev",
+          role: "Head of Revenue",
+          init: "PM",
+          bg: "bg-purple-100",
+          txt: "text-purple-700",
+        },
+        {
+          text: "Our reply rate jumped from 12% to 47% within the first month. The AI replies are fast and on-brand, prospects can't even tell it's automated until they're already on the calendar.",
+          name: "James Okafor",
+          handle: "@jamesokafor",
+          role: "VP Sales, Growthbase",
+          init: "JO",
+          bg: "bg-orange-100",
+          txt: "text-orange-700",
+        },
+        {
+          text: "I was skeptical about AI outreach tools but Typpout actually delivers. It picked up a competitor switch signal on X and booked a demo before we even knew the prospect existed.",
+          name: "Lauren Park",
+          handle: "@laurenpark_gtm",
+          role: "Demand Gen Manager",
+          init: "LP",
+          bg: "bg-indigo-100",
+          txt: "text-indigo-700",
+        },
+        {
+          text: "Finally a GTM tool that doesn't feel like it was designed for a 100-person sales team. Perfect for our lean 3-person GTM team. We punch way above our weight now.",
+          name: "Marcus Webb",
+          handle: "@marcuswebb",
+          role: "Founder, Synthos",
+          init: "MW",
+          bg: "bg-teal-100",
+          txt: "text-teal-700",
+        },
+        {
+          text: "The funding signal detection is a game changer. We get notified within minutes when a target account closes a round, and the outreach goes out while the news is still fresh.",
+          name: "Divya Rao",
+          handle: "@divyarao_sales",
+          role: "Sales Director",
+          init: "DR",
+          bg: "bg-rose-100",
+          txt: "text-rose-700",
+        },
+      ].map((t) => (
+        <div class="mb-5 break-inside-avoid rounded-2xl border border-[color:var(--color-border)] bg-white p-5">
+          <!-- X/Twitter icon -->
+          <div class="mb-3 flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+              <span class:list={["grid h-8 w-8 shrink-0 place-items-center rounded-full text-[11px] font-semibold", t.bg, t.txt]}>{t.init}</span>
+              <div>
+                <div class="text-[13px] font-medium text-[color:var(--color-ink)]">{t.name}</div>
+                <div class="text-[11px] text-[color:var(--color-ink-muted)]">{t.handle}</div>
+              </div>
+            </div>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-[color:var(--color-ink-subtle)]" aria-hidden="true">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.738l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </div>
+          <p class="text-[13px] leading-relaxed text-[color:var(--color-ink-strong)]">{t.text}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

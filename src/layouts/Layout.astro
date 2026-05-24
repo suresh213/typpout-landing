@@ -1,23 +1,130 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import "../styles/global.css";
+import SEO from "../components/SEO.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: "website" | "article";
+  noindex?: boolean;
+  canonical?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  author?: string;
+  jsonLd?: unknown;
+  keywords?: string[];
+  /** Hide the global header/footer (for bare landing variants). */
+  bare?: boolean;
+}
+
+const {
+  title,
+  description,
+  image,
+  type,
+  noindex,
+  canonical,
+  publishedTime,
+  modifiedTime,
+  author,
+  jsonLd,
+  keywords,
+  bare = false,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate" type="application/rss+xml" title="Typpout RSS" href="/rss.xml" />
+    <link rel="preload" href="/fonts/ApfelGrotezk-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/ApfelGrotezk-500.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/ApfelGrotezk-700.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" />
+    <SEO
+      title={title}
+      description={description}
+      image={image}
+      type={type}
+      noindex={noindex}
+      canonical={canonical}
+      publishedTime={publishedTime}
+      modifiedTime={modifiedTime}
+      author={author}
+      jsonLd={jsonLd}
+      keywords={keywords}
+    />
+  </head>
+  <body class="min-h-screen w-full bg-[color:var(--color-background)] text-[color:var(--color-foreground)] antialiased">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-md focus:bg-[color:var(--color-foreground)] focus:px-4 focus:py-2 focus:text-white focus:shadow-lg"
+    >
+      Skip to content
+    </a>
+
+    {!bare && <Header />}
+
+    <main id="main">
+      <slot />
+    </main>
+
+    {!bare && <Footer />}
+
+    <script>
+      const reveal = () => {
+        const els = document.querySelectorAll<HTMLElement>("[data-reveal]");
+        if (!("IntersectionObserver" in window) || els.length === 0) {
+          els.forEach((el) => el.classList.add("is-visible"));
+          return;
+        }
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add("is-visible");
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: "0px 0px -10% 0px" }
+        );
+        els.forEach((el) => io.observe(el));
+      };
+      reveal();
+
+      document.addEventListener("click", (e) => {
+        const a = (e.target as HTMLElement)?.closest("a[href^='#']");
+        if (!a) return;
+        const id = a.getAttribute("href");
+        if (!id || id === "#") return;
+        const el = document.querySelector(id);
+        if (el) {
+          e.preventDefault();
+          (el as HTMLElement).scrollIntoView({ behavior: "smooth", block: "start" });
+          history.pushState(null, "", id);
+        }
+      });
+    </script>
+
+    <style is:global>
+      [data-reveal] {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 0.6s var(--ease-out-quart), transform 0.6s var(--ease-out-quart);
+      }
+      [data-reveal].is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </body>
+</html>

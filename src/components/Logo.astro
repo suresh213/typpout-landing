@@ -1,0 +1,32 @@
+---
+interface Props {
+  class?: string;
+  size?: "sm" | "md" | "lg";
+  withMark?: boolean;
+}
+const { class: className = "", size = "md", withMark = true } = Astro.props;
+
+const dims = {
+  sm: { mark: "h-7 w-7", text: "text-[18px]" },
+  md: { mark: "h-8 w-8", text: "text-[20px]" },
+  lg: { mark: "h-10 w-10", text: "text-[26px]" },
+}[size];
+---
+
+<a href="/" aria-label="Typpout home" class={`group inline-flex items-center gap-2.5 ${className}`}>
+  {withMark && (
+    <img
+      src="/logo.png"
+      alt=""
+      width="40"
+      height="40"
+      class={`${dims.mark} rounded-[8px] object-contain`}
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+    />
+  )}
+  <span class={`font-display ${dims.text} font-medium tracking-[-0.03em] text-[color:var(--color-ink-strong)]`}>
+    Typpout
+  </span>
+</a>

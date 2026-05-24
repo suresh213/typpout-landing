@@ -1,0 +1,164 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { SITE } from "../data/site";
+
+const lastUpdated = "May 25, 2026";
+
+const privacyLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": SITE.url
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Privacy Policy",
+          "item": `${SITE.url}/privacy`
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "name": "Typpout Privacy Policy",
+      "description": "Read Typpout's Privacy Policy. Learn how we collect, use, and protect your personal data when you use the Typpout platform.",
+      "url": `${SITE.url}/privacy`,
+    }
+  ]
+};
+---
+
+<Layout
+  title="Privacy Policy - Typpout"
+  description="Read Typpout's Privacy Policy. Learn how we collect, use, and protect your personal data when you use the Typpout platform."
+  jsonLd={privacyLd}
+>
+  <section class="mx-auto w-full max-w-[1280px] border-x border-b border-[color:var(--color-border)] bg-[color:var(--color-surface-muted)]">
+    <div class="px-5 py-16 sm:px-8 lg:py-20">
+      <span class="eyebrow">Legal</span>
+      <h1 class="h-section mt-4">Privacy Policy</h1>
+      <p class="mt-4 text-sm text-[color:var(--color-ink-muted)]">Last updated: {lastUpdated}</p>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-[1280px] border-x border-[color:var(--color-border)]">
+    <div class="prose-typpout mx-auto max-w-3xl px-5 py-16 sm:px-8 lg:py-20">
+
+      <h2>1. Introduction</h2>
+      <p>
+        Typpout ("we", "us", or "our") operates the Typpout platform at <a href={SITE.url}>{SITE.url}</a>. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Service. Please read this policy carefully. If you disagree with its terms, please discontinue use of the Service.
+      </p>
+
+      <h2>2. Information We Collect</h2>
+      <h3>Information you provide directly</h3>
+      <ul>
+        <li><strong>Account data:</strong> Name, email address, company name, and password when you register.</li>
+        <li><strong>Billing data:</strong> Payment method details, processed securely by our payment providers (Stripe). We do not store raw card numbers.</li>
+        <li><strong>ICP configuration:</strong> Target audience criteria, keywords, and filters you configure within the platform.</li>
+        <li><strong>Communications:</strong> Messages you send to our support team.</li>
+      </ul>
+      <h3>Information collected automatically</h3>
+      <ul>
+        <li><strong>Usage data:</strong> Pages visited, features used, actions taken, and time spent on the Service.</li>
+        <li><strong>Device data:</strong> Browser type, operating system, IP address, and referrer URL.</li>
+        <li><strong>Cookies:</strong> Session cookies and analytics cookies. See our Cookie Policy below.</li>
+      </ul>
+      <h3>Data from third-party sources</h3>
+      <p>
+        To provide social intent signals, we monitor publicly available posts and content on LinkedIn, X (Twitter), Reddit, and Crunchbase. We do not access private messages or content that is not publicly shared.
+      </p>
+
+      <h2>3. How We Use Your Information</h2>
+      <ul>
+        <li>To provide, operate, and improve the Service.</li>
+        <li>To detect and deliver intent signals matching your ICP configuration.</li>
+        <li>To process payments and manage subscriptions.</li>
+        <li>To send transactional emails (receipts, alerts, password resets).</li>
+        <li>To send product updates and marketing communications (you may opt out at any time).</li>
+        <li>To comply with legal obligations.</li>
+      </ul>
+
+      <h2>4. Legal Basis for Processing (GDPR)</h2>
+      <p>If you are in the European Economic Area, our legal bases for processing your data are:</p>
+      <ul>
+        <li><strong>Contract:</strong> Processing necessary to perform the contract we have with you.</li>
+        <li><strong>Legitimate interests:</strong> Product improvement, fraud prevention, and security.</li>
+        <li><strong>Consent:</strong> Marketing communications (you may withdraw consent at any time).</li>
+        <li><strong>Legal obligation:</strong> Where required by applicable law.</li>
+      </ul>
+
+      <h2>5. Data Sharing and Disclosure</h2>
+      <p>We do not sell your personal data. We share data only:</p>
+      <ul>
+        <li><strong>With service providers:</strong> Stripe (payments), Resend (email), PostHog (analytics), Cloudflare (hosting/CDN), and other infrastructure providers under strict data processing agreements.</li>
+        <li><strong>With CRM integrations:</strong> When you connect HubSpot, Salesforce, or other tools, lead data is synced to those platforms per your configuration.</li>
+        <li><strong>For legal compliance:</strong> When required by law, court order, or governmental authority.</li>
+        <li><strong>Business transfers:</strong> In connection with a merger, acquisition, or sale of assets, subject to appropriate confidentiality obligations.</li>
+      </ul>
+
+      <h2>6. Data Retention</h2>
+      <p>
+        We retain your account data for as long as your account is active. If you close your account, we will delete or anonymise your personal data within 90 days, except where we are required to retain it for legal or legitimate business purposes.
+      </p>
+
+      <h2>7. Your Rights</h2>
+      <p>Depending on your location, you may have the right to:</p>
+      <ul>
+        <li>Access the personal data we hold about you.</li>
+        <li>Correct inaccurate or incomplete data.</li>
+        <li>Request deletion of your data ("right to be forgotten").</li>
+        <li>Object to or restrict certain processing activities.</li>
+        <li>Data portability - receive your data in a machine-readable format.</li>
+        <li>Withdraw consent at any time where processing is based on consent.</li>
+      </ul>
+      <p>
+        To exercise any of these rights, please contact us at <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. We will respond within 30 days.
+      </p>
+
+      <h2>8. Cookies</h2>
+      <p>We use the following types of cookies:</p>
+      <ul>
+        <li><strong>Essential cookies:</strong> Required for the Service to function (authentication, session management).</li>
+        <li><strong>Analytics cookies:</strong> PostHog and similar tools to understand how users interact with the Service. These are anonymised where possible.</li>
+        <li><strong>Marketing cookies:</strong> Only set with your explicit consent.</li>
+      </ul>
+      <p>You can control cookies through your browser settings or by using our cookie preference centre when available.</p>
+
+      <h2>9. Security</h2>
+      <p>
+        We implement appropriate technical and organisational measures to protect your data, including encryption in transit (TLS) and at rest, access controls, and regular security reviews. See our <a href="/security">Security page</a> for details. However, no method of transmission over the internet is 100% secure.
+      </p>
+
+      <h2>10. International Transfers</h2>
+      <p>
+        Your data may be processed in countries outside your home country. Where we transfer data from the EEA, we rely on Standard Contractual Clauses or adequacy decisions to ensure appropriate protection.
+      </p>
+
+      <h2>11. Children's Privacy</h2>
+      <p>
+        The Service is not directed to individuals under 16 years of age. We do not knowingly collect personal data from children. If you believe we have inadvertently collected such data, please contact us immediately.
+      </p>
+
+      <h2>12. Changes to This Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. We will notify you of material changes by email or by posting a notice on the Service. Your continued use after the effective date constitutes acceptance.
+      </p>
+
+      <h2>13. Contact Us</h2>
+      <p>
+        For privacy-related questions or to exercise your rights, contact us at:
+      </p>
+      <p>
+        <strong>Typpout</strong><br />
+        Email: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+      </p>
+
+    </div>
+  </section>
+</Layout>

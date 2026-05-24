@@ -1,11 +1,68 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import LogoMarquee from "../components/LogoMarquee.astro";
+import WhyTyppout from "../components/WhyTyppout.astro";
+import DarkAgents from "../components/DarkAgents.astro";
+import Stats from "../components/Stats.astro";
+import ProductStack from "../components/ProductStack.astro";
+import Testimonials from "../components/Testimonials.astro";
+import FAQ from "../components/FAQ.astro";
+import FinalCTA from "../components/FinalCTA.astro";
+import { SITE } from "../data/site";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const productLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "url": SITE.url,
+      "name": SITE.name,
+      "description": SITE.description,
+      "publisher": {
+        "@type": "Organization",
+        "name": SITE.name,
+        "logo": {
+          "@type": "ImageObject",
+          "url": `${SITE.url}/logo.png`
+        }
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Typpout",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": SITE.description,
+      "offers": {
+        "@type": "Offer",
+        "price": "99",
+        "priceCurrency": "USD",
+        "url": `${SITE.url}/pricing`
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "127"
+      },
+      "url": SITE.url
+    }
+  ]
+};
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="AI Go-To-Market Platform for Social Selling & Intent Signals"
+  description="Typpout is the AI GTM platform that listens to social signals on LinkedIn, X and Instagram, matches leads to your ICP, and books meetings on autopilot."
+  jsonLd={productLd}
+>
+  <Hero />
+  <LogoMarquee />
+  <WhyTyppout />
+  <DarkAgents />
+  <Stats />
+  <ProductStack />
+  <Testimonials />
+  <FAQ />
+  <FinalCTA />
 </Layout>

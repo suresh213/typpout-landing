@@ -1,0 +1,142 @@
+---
+import { SITE } from "../data/site";
+---
+
+<section id="features" class="mx-auto w-full max-w-[1280px] border-x border-[color:var(--color-border)]">
+  <div class="flex flex-col gap-20 border-b border-[color:var(--color-border)] px-4 py-20 md:px-10 md:py-28">
+
+    <div class="space-y-4 text-center" data-reveal>
+      <h2 class="font-display text-2xl font-medium sm:text-3xl lg:text-[40px] tracking-tight">
+        The Complete GTM Stack
+      </h2>
+      <p class="mx-auto max-w-md text-base font-light text-[color:var(--color-ink-secondary)]">
+        From social signals to closed meetings, handle every step of outbound without extra headcount or extra tools.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-16">
+
+      <!-- Row 1: Social Listening -->
+      <div data-reveal>
+        <div class="mb-6 flex items-center gap-2">
+          <span class="flex h-7 w-7 items-center justify-center rounded-lg border border-green-700 bg-green-600 text-white">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+              <circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 5v-2M12 21v-2" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </span>
+          <span class="font-display text-xl font-medium">Social Listening</span>
+        </div>
+        <div class="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-16">
+          <div class="flex flex-col gap-5 lg:w-[45%]">
+            <h3 class="font-display text-xl font-medium sm:text-2xl lg:text-3xl tracking-tight leading-tight">
+              Social Listening,<br />Built for Go-To-Market
+            </h3>
+            <p class="text-base font-light leading-relaxed text-[color:var(--color-ink-secondary)] max-w-lg">
+              Typpout monitors LinkedIn, X and Instagram in real time for buying intent keywords, competitor switches, SDR hiring signals, and funding announcements, all instantly matched against your ICP definition.
+            </p>
+            <a href={SITE.appUrl} aria-label="Learn more about Social Listening" class="font-display text-base font-medium underline text-[color:var(--color-ink)]">
+              Learn more about Social Listening
+            </a>
+          </div>
+          <div class="flex-1 grid-bg min-h-[200px] rounded-2xl p-5" style="--grid-color:#E5FBF2;--grid-line-color:#D6F6E9;--grid-size:14px">
+            <div class="space-y-2">
+              {[
+                { src: "#0A66C2", lbl: "in", text: "\"anyone using social listening for B2B? cold email is dead\"" },
+                { src: "#0E0D0D", lbl: "𝕏",  text: "\"moving off Apollo, looking for something signal-first\""    },
+                { src: "#0A66C2", lbl: "in", text: "\"We hired our 8th SDR. Tooling is the next problem.\""        },
+              ].map((r) => (
+                <div class="flex items-start gap-2 rounded-lg border border-green-200 bg-white/80 px-3 py-2 text-[12px] text-[color:var(--color-ink-strong)]">
+                  <span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[9px] font-semibold text-white" style={`background:${r.src}`}>{r.lbl}</span>
+                  {r.text}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: ICP Matching (image on right → reversed) -->
+      <div data-reveal>
+        <div class="mb-6 flex items-center gap-2">
+          <span class="flex h-7 w-7 items-center justify-center rounded-lg border border-blue-600 bg-blue-500 text-white">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+              <circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="2"/>
+              <path d="M3 20c0-3 3-5 6-5s6 2 6 5M16 11a3 3 0 100-6M21 20c0-2.5-2-4-4.5-4.5" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </span>
+          <span class="font-display text-xl font-medium">ICP Matching</span>
+        </div>
+        <div class="flex flex-col gap-10 lg:flex-row-reverse lg:items-center lg:gap-16">
+          <div class="flex flex-col gap-5 lg:w-[45%]">
+            <h3 class="font-display text-xl font-medium sm:text-2xl lg:text-3xl tracking-tight leading-tight">
+              ICP Matching,<br />Without the Manual Work
+            </h3>
+            <p class="text-base font-light leading-relaxed text-[color:var(--color-ink-secondary)] max-w-lg">
+              Every signal is automatically scored and matched against your ICP criteria. Typpout enriches each contact with job title, company size, funding stage, and tech stack, so you always know who to reach first and why.
+            </p>
+            <a href={SITE.appUrl} aria-label="Learn more about ICP Matching" class="font-display text-base font-medium underline text-[color:var(--color-ink)]">
+              Learn more about ICP Matching
+            </a>
+          </div>
+          <div class="flex-1 grid-bg min-h-[200px] rounded-2xl p-5" style="--grid-color:#E7EFFF;--grid-line-color:#D5E3FF;--grid-size:14px">
+            <div class="space-y-2">
+              {[
+                { who: "Sarah Kim",   role: "VP Sales · Growthbase",  score: "97" },
+                { who: "Marcus Webb", role: "Head of Revenue · Synthos", score: "93" },
+                { who: "Priya Shah",  role: "PMM · Northbeam",        score: "91" },
+              ].map((m) => (
+                <div class="flex items-center gap-2 rounded-lg border border-blue-200 bg-white/80 px-3 py-2 text-[12px]">
+                  <div class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-blue-100 text-[10px] font-semibold text-blue-700">{m.who.charAt(0)}</div>
+                  <span class="flex-1 truncate text-[color:var(--color-ink-strong)]">{m.who} · {m.role}</span>
+                  <span class="font-mono font-semibold text-blue-600">{m.score}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3: Outreach + AI Reply -->
+      <div data-reveal>
+        <div class="mb-6 flex items-center gap-2">
+          <span class="flex h-7 w-7 items-center justify-center rounded-lg border border-pink-600 bg-pink-500 text-white">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+              <path d="M13 2L4 14h7l-2 8 10-12h-7l1-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="font-display text-xl font-medium">Outreach & AI Reply</span>
+        </div>
+        <div class="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-16">
+          <div class="flex flex-col gap-5 lg:w-[45%]">
+            <h3 class="font-display text-xl font-medium sm:text-2xl lg:text-3xl tracking-tight leading-tight">
+              Personalised Outreach,<br />Replies in 8 Seconds
+            </h3>
+            <p class="text-base font-light leading-relaxed text-[color:var(--color-ink-secondary)] max-w-lg">
+              Typpout drafts personalised first messages grounded in the signal that triggered the match. When they respond, the AI Reply Agent handles objections, nurtures the conversation, and books a meeting on your calendar, without your team lifting a finger.
+            </p>
+            <a href={SITE.appUrl} aria-label="Learn more about AI Reply Agent" class="font-display text-base font-medium underline text-[color:var(--color-ink)]">
+              Learn more about AI Reply Agent
+            </a>
+          </div>
+          <div class="flex-1 grid-bg min-h-[200px] rounded-2xl p-5" style="--grid-color:#FDECF8;--grid-line-color:#FFD8F4;--grid-size:14px">
+            <div class="space-y-2">
+              <div class="flex items-start gap-2">
+                <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#0A66C2] text-[9px] font-semibold text-white">in</span>
+                <div class="rounded-xl rounded-tl-none border border-pink-200 bg-white/80 px-2.5 py-2 text-[12px]">"anyone using social listening for B2B?"</div>
+              </div>
+              <div class="flex justify-end">
+                <div class="max-w-xs rounded-xl rounded-tr-none bg-[color:var(--color-ink)] px-2.5 py-2 text-[12px] text-white">"Saw your post Maya, built Typpout for this. 5-min call?"</div>
+              </div>
+              <div class="rounded-xl border border-pink-200 bg-white/80 px-2.5 py-2 text-center text-[11px] font-medium text-pink-700">
+                Meeting booked ✓ · replied in 0:00:08
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

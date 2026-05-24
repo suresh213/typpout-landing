@@ -1,0 +1,229 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import BlogCard from "../../components/BlogCard.astro";
+import FinalCTA from "../../components/FinalCTA.astro";
+import { SITE } from "../../data/site";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const all = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+const related = all.filter((p) => p.id !== post.id).slice(0, 3);
+
+const pubDate = post.data.pubDate;
+const updated = post.data.updatedDate;
+
+const articleLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": SITE.url
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": `${SITE.url}/blogs`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": post.data.title,
+          "item": `${SITE.url}/blogs/${post.id}`
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": post.data.title,
+      "description": post.data.description,
+      "datePublished": pubDate.toISOString(),
+      "dateModified": (updated ?? pubDate).toISOString(),
+      "author": { "@type": "Organization", name: post.data.author },
+      "publisher": {
+        "@type": "Organization",
+        "name": SITE.name,
+        "logo": { "@type": "ImageObject", "url": `${SITE.url}/logo.png` },
+      },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": `${SITE.url}/blogs/${post.id}` },
+      "keywords": post.data.tags.join(", "),
+    }
+  ]
+};
+
+const dateStr = pubDate.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+const updatedStr = updated?.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+
+const accents = ["green", "blue", "pink", "yellow"] as const;
+---
+
+<Layout
+  title={post.data.title}
+  description={post.data.description}
+  type="article"
+  publishedTime={pubDate.toISOString()}
+  modifiedTime={updated?.toISOString()}
+  author={post.data.author}
+  keywords={post.data.tags}
+  jsonLd={articleLd}
+>
+  <article>
+    <!-- Hero -->
+    <header class="mx-auto w-full max-w-[1280px] border-x border-b border-[color:var(--color-border)] bg-[color:var(--color-surface-muted)]">
+      <div class="mx-auto w-full max-w-3xl px-5 py-16 text-center sm:px-8 lg:py-20">
+        <div class="flex items-center justify-center gap-2 text-[13px] font-medium uppercase tracking-[0.14em] text-[color:var(--color-foreground-secondary)]">
+          <a href="/blogs" class="hover:text-[color:var(--color-foreground)]">{post.data.category}</a>
+          {post.data.readingTime && (
+            <>
+              <span class="h-1 w-1 rounded-full bg-current opacity-60"></span>
+              <span>{post.data.readingTime}</span>
+            </>
+          )}
+        </div>
+        <h1 class="mt-5 font-display text-balance text-4xl leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+          {post.data.title}
+        </h1>
+        <p class="mx-auto mt-6 max-w-2xl text-[17px] leading-relaxed text-[color:var(--color-foreground-secondary)]">
+          {post.data.description}
+        </p>
+        <div class="mt-7 flex items-center justify-center gap-4 text-[13px] text-[color:var(--color-foreground-secondary)]">
+          <div class="flex items-center gap-2">
+            <span class="grid h-8 w-8 place-items-center rounded-full bg-[color:var(--color-foreground)] text-[10px] font-semibold uppercase text-[color:var(--color-brand)]">
+              T
+            </span>
+            <span class="font-medium text-[color:var(--color-foreground)]">{post.data.author}</span>
+          </div>
+          <span class="h-1 w-1 rounded-full bg-current opacity-60"></span>
+          <time datetime={pubDate.toISOString()}>{dateStr}</time>
+          {updatedStr && (
+            <>
+              <span class="h-1 w-1 rounded-full bg-current opacity-60"></span>
+              <span>Updated {updatedStr}</span>
+            </>
+          )}
+        </div>
+      </div>
+    </header>
+
+    <!-- Body -->
+    <div class="mx-auto grid w-full max-w-[1280px] border-x border-[color:var(--color-border)] grid-cols-1 gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1fr_280px] lg:gap-16 lg:py-24">
+      <div class="prose-typpout">
+        <Content />
+
+        <!-- tags -->
+        {post.data.tags.length > 0 && (
+          <div class="mt-12 flex flex-wrap gap-2 border-t border-[color:var(--color-border)] pt-8 not-prose">
+            {post.data.tags.map((t) => (
+              <span class="rounded-full bg-[color:var(--color-secondary)] px-3 py-1 text-[12px] font-medium text-[color:var(--color-foreground-secondary)]">
+                #{t}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <!-- Sticky aside -->
+      <aside class="lg:sticky lg:top-24 lg:self-start">
+        <div class="rounded-3xl border border-[color:var(--color-foreground)] bg-[color:var(--color-foreground)] p-6 text-white">
+          <div class="text-[11px] uppercase tracking-[0.14em] text-white/60">Get Typpout</div>
+          <h3 class="mt-2 font-display text-2xl leading-tight">
+            Turn social conversations into booked meetings.
+          </h3>
+          <p class="mt-3 text-[13px] text-white/70">
+            Start a 14-day free trial. No credit card required.
+          </p>
+          <a href={SITE.appUrl} class="mt-5 flex h-11 w-full items-center justify-center rounded-xl bg-[color:var(--color-brand)] text-[14px] font-medium text-white transition-colors hover:bg-[color:var(--color-brand-strong)]">
+            Get started - it's free
+          </a>
+        </div>
+
+        <div class="mt-6 rounded-2xl border border-[color:var(--color-border)] bg-white p-5">
+          <div class="text-[11px] uppercase tracking-[0.14em] text-[color:var(--color-foreground-secondary)]">Share</div>
+          <div class="mt-3 flex gap-2">
+            <button
+              data-share="copy"
+              class="grid h-9 w-9 place-items-center rounded-lg border border-[color:var(--color-border)] bg-white text-[color:var(--color-foreground-secondary)] transition hover:text-[color:var(--color-foreground)]"
+              aria-label="Copy link"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="9" y="9" width="10" height="10" rx="2" stroke="currentColor" stroke-width="2"/>
+                <path d="M5 15V5a2 2 0 012-2h10" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </button>
+            <a
+              data-share="x"
+              class="grid h-9 w-9 place-items-center rounded-lg border border-[color:var(--color-border)] bg-white text-[color:var(--color-foreground-secondary)] transition hover:text-[color:var(--color-foreground)]"
+              aria-label="Share on X"
+              target="_blank"
+              rel="noopener noreferrer"
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.data.title)}&url=${encodeURIComponent(`${SITE.url}/blogs/${post.id}`)}`}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2H21.5l-7.51 8.59L23 22h-6.91l-5.41-7.06L4.5 22H1.244l8.02-9.18L1 2h7.063l4.89 6.46L18.244 2z"/></svg>
+            </a>
+            <a
+              class="grid h-9 w-9 place-items-center rounded-lg border border-[color:var(--color-border)] bg-white text-[color:var(--color-foreground-secondary)] transition hover:text-[color:var(--color-foreground)]"
+              aria-label="Share on LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+              href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${SITE.url}/blogs/${post.id}`)}`}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </article>
+
+  {related.length > 0 && (
+    <section class="mx-auto w-full max-w-[1280px] border-x border-t border-[color:var(--color-border)] bg-[color:var(--color-surface-muted)]">
+      <div class="px-5 py-16 sm:px-8 lg:py-24">
+        <h2 class="h-section mb-10">Keep reading</h2>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {related.map((p, i) => (
+            <BlogCard
+              href={`/blogs/${p.id}`}
+              title={p.data.title}
+              description={p.data.description}
+              pubDate={p.data.pubDate}
+              category={p.data.category}
+              readingTime={p.data.readingTime}
+              accent={accents[i % accents.length]}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <FinalCTA />
+</Layout>
+
+<script>
+  const copyBtn = document.querySelector('[data-share="copy"]');
+  copyBtn?.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      copyBtn.setAttribute("aria-label", "Copied!");
+      copyBtn.classList.add("text-[color:var(--color-foreground)]");
+      setTimeout(() => copyBtn.setAttribute("aria-label", "Copy link"), 1500);
+    } catch {}
+  });
+</script>

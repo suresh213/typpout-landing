@@ -1,0 +1,228 @@
+---
+import Layout from "../layouts/Layout.astro";
+import FinalCTA from "../components/FinalCTA.astro";
+import { SITE } from "../data/site";
+
+const releases = [
+  {
+    version: "v0.9.2",
+    date: "May 20, 2026",
+    tag: "Improvement",
+    tagColor: "bg-blue-50 text-blue-700 border-blue-200",
+    title: "Crunchbase funding signal detection",
+    description: "Typpout now detects Series A, B, and Seed funding announcements from Crunchbase in real time and surfaces them as high-intent GTM signals. Funding rounds are automatically tagged and scored against your ICP.",
+    items: [
+      "Real-time Crunchbase funding event monitoring",
+      "Auto-tag signals with funding round size and stage",
+      "New 'Funding Signal' category in your Signals dashboard",
+      "CRM sync for funding-triggered leads",
+    ],
+  },
+  {
+    version: "v0.9.1",
+    date: "May 10, 2026",
+    tag: "New",
+    tagColor: "bg-[color:var(--color-brand-50)] text-[color:var(--color-brand-on-light)] border-[color:var(--color-brand-200)]",
+    title: "AI Reply Agent - 8-second response mode",
+    description: "The AI Reply Agent now operates in sub-8-second response mode for high-intent signals. When a prospect posts a buying signal matching your ICP, Typpout detects it, generates a hyper-personalised reply, and sends it before competitors even see the post.",
+    items: [
+      "Sub-8-second reply time for Tier 1 signals",
+      "Personalisation using prospect's company, role, and post context",
+      "A/B testing for reply templates",
+      "Reply approval mode (optional human-in-the-loop)",
+    ],
+  },
+  {
+    version: "v0.9.0",
+    date: "April 28, 2026",
+    tag: "Major",
+    tagColor: "bg-purple-50 text-purple-700 border-purple-200",
+    title: "Integrations hub launch",
+    description: "Native integrations for 22 GTM tools are now available in the Integrations hub. Connect Typpout to your entire stack - CRM, enrichment, automation, and alerting - without any code.",
+    items: [
+      "22 native integrations including HubSpot, Salesforce, Clay, Apollo, Slack, n8n",
+      "One-click OAuth connect for CRM tools",
+      "Zapier and n8n webhook triggers",
+      "New Integrations settings page in dashboard",
+    ],
+  },
+  {
+    version: "v0.8.5",
+    date: "April 14, 2026",
+    tag: "Improvement",
+    tagColor: "bg-blue-50 text-blue-700 border-blue-200",
+    title: "ICP Matching score improvements",
+    description: "We've overhauled the ICP scoring algorithm to incorporate more signals - tech stack, hiring velocity, recent funding, and role changes. Matches are now more precise with an average 34% reduction in false positives.",
+    items: [
+      "Tech stack detection added to ICP matching",
+      "Hiring velocity signals from LinkedIn job posts",
+      "Role change detection (new VP Sales, new Head of Growth)",
+      "Improved score explanations in the Matches view",
+    ],
+  },
+  {
+    version: "v0.8.0",
+    date: "March 30, 2026",
+    tag: "New",
+    tagColor: "bg-[color:var(--color-brand-50)] text-[color:var(--color-brand-on-light)] border-[color:var(--color-brand-200)]",
+    title: "Reddit signal detection",
+    description: "Typpout now monitors Reddit in addition to LinkedIn, X, and Instagram. Subreddits commonly used by B2B buyers - r/sales, r/startups, r/SaaS, r/entrepreneur - are scanned in real time for intent signals.",
+    items: [
+      "Real-time Reddit monitoring across 50+ GTM-relevant subreddits",
+      "Keyword and semantic signal detection for Reddit posts and comments",
+      "Reddit signals appear in your unified Signals dashboard",
+      "Reply directly to Reddit threads via AI Reply Agent (beta)",
+    ],
+  },
+  {
+    version: "v0.7.0",
+    date: "March 10, 2026",
+    tag: "Major",
+    tagColor: "bg-purple-50 text-purple-700 border-purple-200",
+    title: "Public launch - Typpout v0.7",
+    description: "Typpout launches publicly. The platform includes Signal Detection, ICP Matching, and the AI Reply Agent. Early access customers reported a 3x increase in qualified pipeline within their first 30 days.",
+    items: [
+      "LinkedIn and X social signal monitoring",
+      "ICP Matching with scoring and explanations",
+      "AI Reply Agent with meeting booking",
+      "HubSpot and Salesforce native sync",
+      "14-day free trial, no credit card required",
+    ],
+  },
+];
+
+const changelogLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": SITE.url
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Changelog",
+          "item": `${SITE.url}/changelog`
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "name": "Typpout Changelog",
+      "description": "Stay up to date with the latest Typpout features, improvements, and fixes. We ship fast and keep you in the loop.",
+      "url": `${SITE.url}/changelog`,
+    }
+  ]
+};
+---
+
+<Layout
+  title="Changelog - What's new in Typpout"
+  description="Stay up to date with the latest Typpout features, improvements, and fixes. We ship fast and keep you in the loop."
+  keywords={["Typpout changelog", "Typpout updates", "AI reply agent features", "GTM signal improvements"]}
+  jsonLd={changelogLd}
+>
+  <!-- Hero -->
+  <section class="mx-auto w-full max-w-[1280px] border-x border-b border-[color:var(--color-border)] bg-[color:var(--color-surface-muted)]">
+    <div class="px-5 py-16 sm:px-8 lg:py-20">
+      <span class="eyebrow">Changelog</span>
+      <h1 class="h-section mt-4">
+        What's new in Typpout
+        <span class="font-display-italic text-[color:var(--color-foreground-secondary)]"> - shipped fast.</span>
+      </h1>
+      <p class="mt-5 max-w-2xl text-[17px] leading-relaxed text-[color:var(--color-ink-secondary)]">
+        We build in the open and ship every week. Follow along to see what we've launched, fixed, and improved.
+      </p>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="mx-auto w-full max-w-[1280px] border-x border-[color:var(--color-border)]">
+    <div class="px-5 py-16 sm:px-8 lg:py-20">
+      <div class="relative">
+        <!-- Vertical line -->
+        <div class="absolute left-[calc(theme(spacing.6)+1px)] top-0 hidden h-full w-px bg-[color:var(--color-border)] lg:block" aria-hidden="true"></div>
+
+        <div class="space-y-12">
+          {releases.map((release) => (
+            <div class="group relative flex flex-col gap-6 lg:flex-row lg:gap-10">
+              <!-- Left: date + version -->
+              <div class="flex items-start gap-4 lg:w-52 lg:flex-col lg:items-end lg:gap-1 lg:pt-1 lg:text-right">
+                <!-- Timeline dot (desktop only) -->
+                <div class="absolute left-4 hidden h-5 w-5 translate-x-[1px] items-center justify-center lg:flex">
+                  <div class="h-2.5 w-2.5 rounded-full border-2 border-[color:var(--color-brand)] bg-white"></div>
+                </div>
+                <div>
+                  <div class="font-mono text-[12px] text-[color:var(--color-ink-muted)]">{release.date}</div>
+                  <div class="mt-0.5 font-mono text-[11px] text-[color:var(--color-ink-muted)] opacity-60">{release.version}</div>
+                </div>
+                <span class:list={["inline-flex items-center rounded-full border px-2.5 py-0.5 text-[10px] font-semibold", release.tagColor]}>
+                  {release.tag}
+                </span>
+              </div>
+
+              <!-- Right: content card -->
+              <div class="flex-1 rounded-2xl border border-[color:var(--color-border)] bg-white p-6 transition-all hover:border-[color:var(--color-brand)]/30 hover:shadow-[0_4px_24px_rgba(0,0,0,0.04)]">
+                <h2 class="font-display text-lg font-semibold text-[color:var(--color-ink-strong)]">
+                  {release.title}
+                </h2>
+                <p class="mt-2 text-[14px] leading-relaxed text-[color:var(--color-ink-secondary)]">
+                  {release.description}
+                </p>
+                {release.items.length > 0 && (
+                  <ul class="mt-4 space-y-1.5">
+                    {release.items.map((item) => (
+                      <li class="flex items-start gap-2 text-[13px] text-[color:var(--color-ink-secondary)]">
+                        <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[color:var(--color-brand)]"></span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscribe CTA -->
+  <section class="mx-auto w-full max-w-[1280px] border-x border-t border-[color:var(--color-border)] bg-[color:var(--color-surface-muted)]">
+    <div class="px-5 py-14 text-center sm:px-8">
+      <h2 class="font-display text-2xl font-semibold text-[color:var(--color-ink-strong)]">
+        Stay in the loop
+      </h2>
+      <p class="mx-auto mt-3 max-w-md text-[15px] text-[color:var(--color-ink-secondary)]">
+        We ship fast. Follow us on X or LinkedIn to get notified when we drop new features.
+      </p>
+      <div class="mt-6 flex flex-wrap justify-center gap-3">
+        <a
+          href="https://x.com/typpout"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-ghost gap-2"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2H21.5l-7.51 8.59L23 22h-6.91l-5.41-7.06L4.5 22H1.244l8.02-9.18L1 2h7.063l4.89 6.46L18.244 2z"/></svg>
+          Follow on X
+        </a>
+        <a
+          href="https://linkedin.com/company/typpout"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-ghost gap-2"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          Follow on LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+</Layout>

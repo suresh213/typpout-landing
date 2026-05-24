@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Page not found - 404" noindex>
+  <section class="grid min-h-[70vh] place-items-center px-5 py-24 sm:px-8">
+    <div class="mx-auto max-w-xl text-center">
+      <p class="eyebrow">404</p>
+      <h1 class="h-section mt-3">
+        This page wandered off.
+        <span class="font-display-italic text-[color:var(--color-foreground-secondary)]"> Let's get you home.</span>
+      </h1>
+      <p class="mt-5 text-[16px] leading-relaxed text-[color:var(--color-foreground-secondary)]">
+        The page you were looking for doesn't exist or has moved. Try the home page or browse the blog.
+      </p>
+      <div class="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+        <a href="/" class="btn btn-primary h-12 px-6">Go home</a>
+        <a href="/blogs" class="btn btn-ghost h-12 px-6">Read the blog</a>
+      </div>
+    </div>
+  </section>
+</Layout>

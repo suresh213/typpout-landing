@@ -1,0 +1,93 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Pricing from "../components/Pricing.astro";
+import PricingCompare from "../components/PricingCompare.astro";
+import FAQ from "../components/FAQ.astro";
+import FinalCTA from "../components/FinalCTA.astro";
+import { SITE } from "../data/site";
+
+const pricingFaqs = [
+  {
+    q: "Is there a free trial?",
+    a: "Yes, every plan comes with a 14-day free trial. No credit card required, and you can cancel anytime.",
+  },
+  {
+    q: "Can I switch plans later?",
+    a: "Absolutely. Upgrade or downgrade anytime from your dashboard, prorated to the day.",
+  },
+  {
+    q: "Do you offer annual discounts?",
+    a: "Yes. Annual billing saves 20% compared to monthly. The savings show up on the yearly toggle above.",
+  },
+  {
+    q: "What payment methods do you accept?",
+    a: "All major credit cards, ACH (US), SEPA (EU), and invoice billing on annual plans.",
+  },
+  {
+    q: "What's included in the Done For You plan?",
+    a: "A dedicated GTM strategist, fully managed campaigns, custom AI agents tuned to your motion, and a guarantee of 15 qualified meetings per month, or your money back.",
+  },
+  {
+    q: "Do you offer refunds?",
+    a: "Yes. If Typpout isn't a fit in the first 30 days, we'll refund you in full. Done For You comes with a meeting guarantee.",
+  },
+];
+
+const pricingLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": SITE.url
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Pricing",
+          "item": `${SITE.url}/pricing`
+        }
+      ]
+    },
+    {
+      "@type": "Product",
+      "name": "Typpout",
+      "description": "AI go-to-market platform for social listening, ICP-matched lead generation, and AI outreach.",
+      "offers": [
+        { "@type": "Offer", "name": "Solo", "price": "99", "priceCurrency": "USD", "url": `${SITE.url}/pricing` },
+        { "@type": "Offer", "name": "Growth", "price": "249", "priceCurrency": "USD", "url": `${SITE.url}/pricing` },
+        { "@type": "Offer", "name": "Done For You", "price": "990", "priceCurrency": "USD", "url": `${SITE.url}/pricing` },
+      ]
+    }
+  ]
+};
+---
+
+<Layout
+  title="Pricing - Simple plans for productive GTM teams"
+  description="Typpout pricing: Solo at $99/mo, Growth at $249/mo, Done For You with a 15-meeting guarantee. 14-day free trial on every plan."
+  keywords={["Typpout pricing", "AI SDR pricing", "AI GTM platform cost", "AI reply agent pricing", "social selling tool cost"]}
+  jsonLd={pricingLd}
+>
+  <section class="mx-auto w-full max-w-[1280px] border-x border-b border-[color:var(--color-border)] bg-[color:var(--color-surface-muted)]">
+    <div class="px-5 py-20 text-center sm:px-8 lg:py-24">
+      <span class="eyebrow">Pricing</span>
+      <h1 class="h-section mt-4 text-balance">
+        Simple pricing for
+        <span class="font-display-italic text-[color:var(--color-foreground-secondary)]"> productive GTM teams.</span>
+      </h1>
+      <p class="mx-auto mt-5 max-w-2xl text-[17px] leading-relaxed text-[color:var(--color-foreground-secondary)]">
+        Pick the plan that matches your motion. Every plan comes with a 14-day free trial, no credit card required.
+      </p>
+    </div>
+  </section>
+
+  <Pricing />
+  <PricingCompare />
+  <FAQ items={pricingFaqs} title="Pricing questions" subtitle="Common questions about plans, billing, trials, and refunds." />
+  <FinalCTA />
+</Layout>

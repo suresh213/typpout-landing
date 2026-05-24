@@ -1,0 +1,524 @@
+---
+import { SITE } from "../data/site";
+
+const tabs = [
+  { id: "signal", label: "Signal Detection", iconColor: "bg-blue-500 border-blue-600", gridBg: "#EBF5FF", gridLine: "#B9DDFF" },
+  { id: "icp",    label: "ICP Matching",     iconColor: "bg-[color:var(--color-brand)] border-[color:var(--color-brand-strong)]", gridBg: "#f3effe", gridLine: "#c9b3f5" },
+  { id: "reply",  label: "AI Reply",         iconColor: "bg-pink-500 border-pink-600", gridBg: "#FDECF8", gridLine: "#FFD8F4" },
+];
+
+const examples = [
+  "VP Sales at seed-funded AI companies talking about outbound",
+  "PMM leads switching away from Apollo or Clay",
+  "Founders hiring their first SDR this quarter",
+];
+---
+
+<section class="mx-auto w-full max-w-[1280px] border-x border-[color:var(--color-border)] relative isolate">
+  <!-- Animated mesh background -->
+  <div class="hero-bg pointer-events-none absolute inset-x-0 top-0 -z-10 overflow-hidden" aria-hidden="true">
+    <div class="hero-bg__mesh hero-bg__mesh--a"></div>
+    <div class="hero-bg__mesh hero-bg__mesh--b"></div>
+    <div class="hero-bg__dots hero-bg__dots--fine"></div>
+    <div class="hero-bg__dots hero-bg__dots--coarse"></div>
+  </div>
+
+  <div class="flex flex-col gap-8 pt-16 text-center md:gap-10 md:pt-20">
+
+    <!-- Headline block -->
+    <div class="flex flex-col items-center gap-5 px-4 md:gap-6 md:px-10">
+      <a
+        href="/#features"
+        class="eyebrow-badge group relative inline-flex items-center justify-center text-center gap-2 rounded-full px-4 py-[7px] text-[11px] sm:text-[13px] font-medium text-[color:var(--color-ink-secondary)] transition-colors hover:text-[color:var(--color-ink)]"
+      >
+        <span class="live-dot"></span>
+        New: AI Reply Agent books meetings in under 8 seconds
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="opacity-60 transition-transform group-hover:translate-x-0.5 group-hover:opacity-100">
+          <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
+      <h1 class="font-display text-3xl font-medium sm:text-5xl lg:text-[60px] tracking-[-0.8px] leading-[1.1] max-w-4xl mx-auto">
+        The Go-To-Market Platform<br class="hidden md:block" /> for Social Intent Signals
+      </h1>
+
+      <p class="text-base font-light text-[color:var(--color-ink-secondary)] max-w-2xl mx-auto leading-relaxed">
+        From ICP discovery to booked meetings. Typpout listens to LinkedIn, X and Instagram for buying intent, matches signals to your ICP, and books qualified meetings with personalised AI outreach, on autopilot.
+      </p>
+
+      <!-- Agentic chat input (Premium ChatInput design) -->
+      <div class="w-full max-w-3xl mx-auto mt-4 sm:mt-6" data-reveal id="chat-input-container" data-app-url={SITE.appUrl}>
+        <div class="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] p-1 dark:bg-[color:var(--color-surface-dark)]">
+          <div class="rounded-xl border border-[color:var(--color-border)] bg-white dark:border-transparent dark:bg-[color:var(--color-surface-soft)] overflow-hidden shadow-xs">
+            
+            <textarea
+              id="agent-input"
+              class="w-full resize-none border-0 bg-transparent px-4 py-3 text-base text-[color:var(--color-ink-strong)] outline-none placeholder:text-[color:var(--color-ink-muted)]/60 focus:ring-0 focus:outline-none min-h-[80px] max-h-[200px]"
+              placeholder="Describe your ideal customer..."
+              autocomplete="off"
+            ></textarea>
+
+            <!-- Action Bar -->
+            <div class="border-t border-[color:var(--color-border)]/50 flex items-center justify-between px-4 py-3 bg-[color:var(--color-surface-soft)]/20">
+              
+              <!-- Left Side: Tools -->
+              <div class="flex items-center gap-2">
+                <!-- Deep Search Button -->
+                <button
+                  type="button"
+                  id="deep-search-btn"
+                  class="h-7 gap-1.5 rounded-full border border-[color:var(--color-border)] bg-white px-3 hover:bg-[color:var(--color-surface-soft)] flex items-center transition-colors shadow-2xs cursor-pointer"
+                >
+                  <svg class="size-4 text-[color:var(--color-ink-secondary)] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="m16.2 16.2-3.8-3.8" />
+                    <path d="M12 2v2M20 12h2M12 20v2M2 12h2" stroke-dasharray="2 2" />
+                  </svg>
+                  <span class="text-[color:var(--color-ink-secondary)]/80 hidden sm:inline text-sm font-medium">
+                    Deep Search
+                  </span>
+                </button>
+
+                <!-- Think Button -->
+                <button
+                  type="button"
+                  id="think-btn"
+                  class="h-7 gap-1.5 rounded-full border border-[color:var(--color-border)] bg-white px-3 hover:bg-[color:var(--color-surface-soft)] flex items-center transition-colors shadow-2xs cursor-pointer"
+                >
+                  <svg class="size-4 text-[color:var(--color-ink-secondary)] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+                  </svg>
+                  <span class="text-[color:var(--color-ink-secondary)]/80 hidden sm:inline text-sm font-medium">
+                    Think
+                  </span>
+                </button>
+              </div>
+
+              <!-- Right Side: Muted Label & Send -->
+              <div class="flex items-center gap-3">
+                <!-- Static Claude Opus 4.7 Label -->
+                <div class="flex items-center gap-1.5 pr-0.5">
+                  <svg class="size-[18px] rounded" viewBox="0 0 512 509.64" fill="currentColor">
+                    <path fill="#D77655" d="M115.612 0h280.775C459.974 0 512 52.026 512 115.612v278.415c0 63.587-52.026 115.612-115.613 115.612H115.612C52.026 509.639 0 457.614 0 394.027V115.612C0 52.026 52.026 0 115.612 0z"/>
+                    <path fill="#FCF2EE" fill-rule="nonzero" d="M142.27 316.619l73.655-41.326 1.238-3.589-1.238-1.996-3.589-.001-12.31-.759-42.084-1.138-36.498-1.516-35.361-1.896-8.897-1.895-8.34-10.995.859-5.484 7.482-5.03 10.717.935 23.683 1.617 35.537 2.452 25.782 1.517 38.193 3.968h6.064l.86-2.451-2.073-1.517-1.618-1.517-36.776-24.922-39.81-26.338-20.852-15.166-11.273-7.683-5.687-7.204-2.451-15.721 10.237-11.273 13.75.935 3.513.936 13.928 10.716 29.749 23.027 38.848 28.612 5.687 4.727 2.275-1.617.278-1.138-2.553-4.271-21.13-38.193-22.546-38.848-10.035-16.101-2.654-9.655c-.935-3.968-1.617-7.304-1.617-11.374l11.652-15.823 6.445-2.073 15.545 2.073 6.547 5.687 9.655 22.092 15.646 34.78 24.265 47.291 7.103 14.028 3.791 12.992 1.416 3.968 2.449-.001v-2.275l1.997-26.641 3.69-32.707 3.589-42.084 1.239-11.854 5.863-14.206 11.652-7.683 9.099 4.348 7.482 10.716-1.036 6.926-4.449 28.915-8.72 45.294-5.687 30.331h3.313l3.792-3.791 15.342-20.372 25.782-32.227 11.374-12.789 13.27-14.129 8.517-6.724 16.1-.001 11.854 17.617-5.307 18.199-16.581 21.029-13.75 17.819-19.716 26.54-12.309 21.231 1.138 1.694 2.932-.278 44.536-9.479 24.062-4.347 28.714-4.928 12.992 6.066 1.416 6.167-5.106 12.613-30.71 7.583-36.018 7.204-53.636 12.689-.657.48.758.935 24.164 2.275 10.337.556h25.301l47.114 3.514 12.309 8.139 7.381 9.959-1.238 7.583-18.957 9.655-25.579-6.066-59.702-14.205-20.474-5.106-2.83-.001v1.694l17.061 16.682 31.266 28.233 39.152 36.397 1.997 8.999-5.03 7.102-5.307-.758-34.401-25.883-13.27-11.651-30.053-25.302-1.996-.001v2.654l6.926 10.136 36.574 54.975 1.895 16.859-2.653 5.485-9.479 3.311-10.414-1.895-21.408-30.054-22.092-33.844-17.819-30.331-2.173 1.238-10.515 113.261-4.929 5.788-11.374 4.348-9.478-7.204-5.03-11.652 5.03-23.027 6.066-30.052 4.928-23.886 4.449-29.674 2.654-9.858-.177-.657-2.173.278-22.37 30.71-34.021 45.977-26.919 28.815-6.445 2.553-11.173-5.789 1.037-10.337 6.243-9.2 37.257-47.392 22.47-29.371 14.508-16.961-.101-2.451h-.859l-98.954 64.251-17.618 2.275-7.583-7.103.936-11.652 3.589-3.791 29.749-20.474-.101.102.024.101z"/>
+                  </svg>
+                  <span class="text-xs text-[color:var(--color-ink-secondary)] sm:text-sm font-medium whitespace-nowrap hidden sm:inline">Claude Opus 4.7</span>
+                </div>
+
+                <!-- Send Button -->
+                <button
+                  type="button"
+                  id="send-message-btn"
+                  class="h-8 rounded-full bg-[color:var(--color-brand)] hover:bg-[color:var(--color-brand-strong)] text-white px-4 flex items-center gap-1.5 text-sm font-medium transition-colors cursor-pointer shadow-xs"
+                >
+                  <svg class="size-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                  <span>Send</span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Example chips -->
+        <div class="mt-4 flex flex-wrap justify-center gap-1.5">
+          {examples.map((ex) => (
+            <button
+              class="example-chip rounded-full border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 text-[11px] text-[color:var(--color-ink-muted)] transition-colors hover:border-[color:var(--color-brand)]/40 hover:bg-[color:var(--color-brand-50)] hover:text-[color:var(--color-brand-on-light)] cursor-pointer"
+              data-example={ex}
+            >
+              {ex}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab bar + panels -->
+    <div class="w-full" data-tabs>
+      <div class="flex flex-row flex-wrap justify-center gap-2 px-4 sm:gap-3" role="tablist" aria-label="Product capabilities">
+        {tabs.map((tab, i) => (
+          <button
+            id={`tab-${tab.id}`}
+            role="tab"
+            aria-selected={i === 0 ? "true" : "false"}
+            aria-controls={`panel-${tab.id}`}
+            data-tab-target={`panel-${tab.id}`}
+            data-grid-bg={tab.gridBg}
+            data-grid-line={tab.gridLine}
+            class:list={[
+              "group relative flex w-auto cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-t-xl border-x border-t px-3 py-1.5 sm:px-5 sm:py-2 transition-colors",
+              i === 0
+                ? "bg-white text-[color:var(--color-ink-strong)] border-[color:var(--color-border)]"
+                : "bg-[color:var(--color-surface-soft)] text-[color:var(--color-ink)] border-[color:var(--color-border)] opacity-50"
+            ]}
+          >
+            <span class:list={["flex h-5 w-5 items-center justify-center rounded-md border text-white", tab.iconColor]}>
+              {tab.id === "signal" && <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h.01"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M5 13a10 10 0 0 1 14 0"/><path d="M1.5 9.5a15 15 0 0 1 21 0"/></svg>}
+              {tab.id === "icp"   && <svg width="10" height="10" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="2"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M16 11a3 3 0 100-6M21 20c0-2.5-2-4-4.5-4.5" stroke="currentColor" stroke-width="2"/></svg>}
+              {tab.id === "reply" && <svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-2 8 10-12h-7l1-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>}
+            </span>
+            <span class="font-display text-sm sm:text-base font-medium">{tab.label}</span>
+          </button>
+        ))}
+      </div>
+
+      <div
+        id="tab-panels-container"
+        class="grid-bg border-y border-[color:var(--color-border)] p-6 sm:p-12"
+        style="--grid-color:#EBF5FF;--grid-line-color:#B9DDFF;--grid-bg-opacity:100%;--grid-line-opacity:100%;--grid-size:14px"
+      >
+        <!-- Panel: Signal Detection -->
+        <div id="panel-signal" role="tabpanel" aria-labelledby="tab-signal">
+          <div class="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-white shadow-[0_20px_60px_-20px_rgba(0,0,0,0.12)]">
+            <div class="flex items-center gap-1.5 border-b border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-3 py-2">
+              <span class="h-2 w-2 rounded-full bg-[#ff5f56]"></span>
+              <span class="h-2 w-2 rounded-full bg-[#ffbd2e]"></span>
+              <span class="h-2 w-2 rounded-full bg-[#27c93f]"></span>
+              <span class="mx-auto font-mono text-[11px] text-[color:var(--color-ink-muted)]">app.typpout.com / intent-signals</span>
+            </div>
+            <div class="p-4 sm:p-6 text-left">
+              <div class="mb-5 flex items-center justify-between">
+                <div>
+                  <div class="font-display text-base font-medium">Live Intent Signals</div>
+                  <div class="mt-0.5 text-[12px] text-[color:var(--color-ink-muted)]">Real-time signals detected across the web</div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="chip text-[10px]"><span class="live-dot"></span> 124 signals/min</span>
+                </div>
+              </div>
+              <div class="space-y-2.5">
+                {[
+                  { 
+                    platform: "Reddit",     
+                    user: "u/GrowthHacker", 
+                    role: "SaaS Founder",     
+                    score: 96, 
+                    intent: "automated social listening tools", 
+                    signal: "How can I track purchasing intent on LinkedIn, Reddit and X?", 
+                    labelColor: "text-[#FF4500]",
+                    logoKey: "reddit"
+                  },
+                  { 
+                    platform: "LinkedIn",   
+                    user: "Sarah Jenkins",  
+                    role: "VP Sales at Loom",  
+                    score: 95, 
+                    intent: "SDR hiring / outbound expansion", 
+                    signal: "Expanding our GTM team and hiring 3 outbound SDRs this quarter", 
+                    labelColor: "text-[#0A66C2]",
+                    logoKey: "linkedin"
+                  },
+                  { 
+                    platform: "X",  
+                    user: "@johndoe",       
+                    role: "VP Product at Vanta",
+                    score: 94, 
+                    intent: "tool switch / recommendation",  
+                    signal: "Outbound email ROI is dropping. Anyone tried Clay or Apollo lately?", 
+                    labelColor: "text-black dark:text-white",
+                    logoKey: "x"
+                  },
+                  { 
+                    platform: "Crunchbase", 
+                    user: "Synthos AI",     
+                    role: "Series A / $12M Funding",     
+                    score: 92, 
+                    intent: "GTM scale with funding",        
+                    signal: "Synthos AI raised $12M Series A funding to expand international sales", 
+                    labelColor: "text-[#0284c7]",
+                    logoKey: "crunchbase"
+                  },
+                  { 
+                    platform: "Google",     
+                    user: "Search Query",   
+                    role: "Intent Signal",       
+                    score: 89, 
+                    intent: "competitor research",           
+                    signal: "Competitor comparison: 'best clay.com alternative for social intent'", 
+                    labelColor: "text-[#ea4335]",
+                    logoKey: "google"
+                  },
+                ].map((m) => (
+                  <div class="group flex items-center gap-3 rounded-xl border border-[color:var(--color-border)] bg-white p-3.5 transition-all hover:border-[color:var(--color-brand)]/30 hover:shadow-[0_2px_12px_-4px_rgba(124,90,197,0.15)]">
+                    <div class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[color:var(--color-surface-soft)] overflow-hidden p-1.5 border border-[color:var(--color-border)]/50">
+                      <img
+                        src={`/logos/${m.logoKey}.png`}
+                        alt={`${m.platform} Logo`}
+                        class="h-full w-full object-contain rounded-full"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="min-w-0 flex-1">
+                      <div class="flex flex-wrap items-baseline gap-x-1.5 gap-y-0">
+                        <span class="text-[13px] font-semibold text-[color:var(--color-ink-strong)]">{m.user}</span>
+                        <span class="text-[11px] text-[color:var(--color-ink-muted)]">{m.role}</span>
+                      </div>
+                      <div class="mt-1 flex flex-wrap gap-1">
+                        <span class="rounded-full bg-[color:var(--color-brand-50)] px-1.5 py-0.5 text-[9px] font-medium text-[color:var(--color-brand-on-light)]">{m.intent}</span>
+                        <span class="rounded-full bg-[color:var(--color-surface-soft)] px-1.5 py-0.5 text-[9px] text-[color:var(--color-ink-muted)] font-light italic">"{m.signal}"</span>
+                      </div>
+                    </div>
+                    <div class="shrink-0 flex flex-col items-end gap-1.5">
+                      <div class="font-mono text-[16px] font-bold text-[color:var(--color-brand)] leading-none">{m.score}%</div>
+                      <div class:list={["text-[9px] uppercase font-bold tracking-wider", m.labelColor]}>{m.platform}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel: ICP Matching -->
+        <div id="panel-icp" role="tabpanel" aria-labelledby="tab-icp" class="hidden">
+          <div class="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-white shadow-[0_20px_60px_-20px_rgba(0,0,0,0.12)]">
+            <div class="flex items-center gap-1.5 border-b border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-3 py-2">
+              <span class="h-2 w-2 rounded-full bg-[#ff5f56]"></span>
+              <span class="h-2 w-2 rounded-full bg-[#ffbd2e]"></span>
+              <span class="h-2 w-2 rounded-full bg-[#27c93f]"></span>
+              <span class="mx-auto font-mono text-[11px] text-[color:var(--color-ink-muted)]">app.typpout.com / icp-matches</span>
+            </div>
+            <div class="p-4 sm:p-6">
+              <div class="mb-5 flex items-center justify-between">
+                <div>
+                  <div class="font-display text-base font-medium">ICP Matches</div>
+                  <div class="mt-0.5 text-[12px] text-[color:var(--color-ink-muted)]">Based on your target profile</div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="chip text-[10px]"><span class="live-dot"></span> 47 new today</span>
+                </div>
+              </div>
+              <div class="space-y-2.5">
+                {[
+                  { who: "Sarah Kim",   role: "VP Sales",        company: "Growthbase",  score: 97, tags: ["SDR hiring", "Seed-funded"], signal: "Complained about cold email ROI on LinkedIn" },
+                  { who: "Marcus Webb", role: "Head of Revenue",  company: "Synthos AI",  score: 93, tags: ["Tool switch", "AI-native"],  signal: "Posted about moving off Apollo on X" },
+                  { who: "Priya Shah",  role: "PMM",              company: "Northbeam",   score: 91, tags: ["Hiring SDRs", "Series A"],   signal: "Asked for outbound tool recs on LinkedIn" },
+                  { who: "Jake Torres", role: "CEO",               company: "SignalFlow",  score: 88, tags: ["Outbound pain", "Funded"],   signal: "Shared article about AI SDRs on LinkedIn" },
+                ].map((m) => (
+                  <div class="group flex items-center gap-3 rounded-xl border border-[color:var(--color-border)] bg-white p-3.5 transition-all hover:border-[color:var(--color-brand)]/30 hover:shadow-[0_2px_12px_-4px_rgba(124,90,197,0.15)]">
+                    <div class="grid h-10 w-10 shrink-0 place-items-center rounded-full text-[13px] font-semibold text-white" style="background: linear-gradient(135deg, #7C5AC5, #5a3fa8)">
+                      {m.who.charAt(0)}
+                    </div>
+                    <div class="min-w-0 flex-1">
+                      <div class="flex flex-wrap items-baseline gap-x-1.5 gap-y-0">
+                        <span class="text-[13px] font-semibold text-[color:var(--color-ink-strong)]">{m.who}</span>
+                        <span class="text-[11px] text-[color:var(--color-ink-muted)]">{m.role} at {m.company}</span>
+                      </div>
+                      <div class="mt-1 flex flex-wrap gap-1">
+                        {m.tags.map((t) => (
+                          <span class="rounded-full bg-[color:var(--color-brand-50)] px-1.5 py-0.5 text-[9px] font-medium text-[color:var(--color-brand-on-light)]">{t}</span>
+                        ))}
+                        <span class="rounded-full bg-[color:var(--color-surface-soft)] px-1.5 py-0.5 text-[9px] text-[color:var(--color-ink-muted)]">{m.signal}</span>
+                      </div>
+                    </div>
+                    <div class="shrink-0 flex flex-col items-end gap-1.5">
+                      <div class="font-mono text-[18px] font-bold text-[color:var(--color-brand)] leading-none">{m.score}</div>
+                      <div class="h-1 w-12 rounded-full bg-[color:var(--color-brand-100)]">
+                        <div class="h-1 rounded-full bg-[color:var(--color-brand)]" style={`width:${m.score}%`}></div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel: AI Reply -->
+        <div id="panel-reply" role="tabpanel" aria-labelledby="tab-reply" class="hidden">
+          <div class="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-white shadow-[0_20px_60px_-20px_rgba(0,0,0,0.12)]">
+            <div class="flex items-center gap-1.5 border-b border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-3 py-2">
+              <span class="h-2 w-2 rounded-full bg-[#ff5f56]"></span>
+              <span class="h-2 w-2 rounded-full bg-[#ffbd2e]"></span>
+              <span class="h-2 w-2 rounded-full bg-[#27c93f]"></span>
+              <span class="mx-auto font-mono text-[11px] text-[color:var(--color-ink-muted)]">app.typpout.com / reply-agent</span>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-[1fr_260px]">
+              <div class="border-r border-[color:var(--color-border)] p-4 sm:p-6">
+                <div class="mb-4 flex items-center gap-2">
+                  <span class="font-display text-base font-medium">AI Reply Agent</span>
+                  <span class="inline-flex items-center gap-1 rounded-full bg-green-100 px-2 py-0.5 text-[10px] font-medium text-green-700">
+                    <span class="h-1.5 w-1.5 rounded-full bg-green-500"></span>Active
+                  </span>
+                </div>
+                <div class="space-y-3">
+                  <div class="flex gap-2">
+                    <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-[#0A66C2] text-[10px] font-semibold text-white">in</span>
+                    <div class="rounded-2xl rounded-tl-none border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-3 py-2 text-[13px]">
+                      "anyone using social listening for B2B? cold email is dead in 2026"
+                    </div>
+                  </div>
+                  <div class="flex justify-end gap-2">
+                    <div class="max-w-xs rounded-2xl rounded-tr-none bg-[color:var(--color-ink)] px-3 py-2 text-[13px] text-white">
+                      "Saw your post Maya, built Typpout for exactly this. 5-min call on what we see in Pulse's space?"
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between text-[11px] text-[color:var(--color-ink-muted)]">
+                    <span class="font-mono">AI-generated in 0:00:08</span>
+                    <span class="font-medium text-[color:var(--color-brand)]">Sent</span>
+                  </div>
+                  <div class="flex gap-2">
+                    <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-[#0A66C2] text-[10px] font-semibold text-white">in</span>
+                    <div class="rounded-2xl rounded-tl-none border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-3 py-2 text-[13px]">
+                      "Yes please! Book here"
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between rounded-xl border border-[color:var(--color-brand-200)] bg-[color:var(--color-brand-50)] px-3 py-2.5">
+                    <span class="text-[13px] font-medium text-[color:var(--color-brand-on-light)]">Meeting booked: Wed 3:30 PM</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="text-[color:var(--color-brand)]"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-4">
+                <div class="font-display text-sm font-medium text-[color:var(--color-ink-strong)]">Today</div>
+                <div class="mt-3 space-y-2">
+                  {[
+                    { label: "Signals processed", value: "1,284" },
+                    { label: "Replies sent",       value: "47"    },
+                    { label: "Meetings booked",    value: "12"    },
+                    { label: "Avg reply time",     value: "8s"    },
+                  ].map((s) => (
+                    <div class="flex items-center justify-between rounded-lg border border-[color:var(--color-border)] px-3 py-2">
+                      <span class="text-[12px] text-[color:var(--color-ink-secondary)]">{s.label}</span>
+                      <span class="font-mono text-[13px] font-semibold text-[color:var(--color-ink-strong)]">{s.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Tab switching
+  const tabBtns = document.querySelectorAll<HTMLButtonElement>("[role='tab']");
+  const container = document.getElementById("tab-panels-container");
+
+  tabBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const targetId = btn.dataset.tabTarget!;
+      const bg   = btn.dataset.gridBg   || "#f3effe";
+      const line = btn.dataset.gridLine || bg;
+
+      tabBtns.forEach((t) => {
+        const active = t === btn;
+        t.setAttribute("aria-selected", String(active));
+        t.classList.toggle("bg-white",   active);
+        t.classList.toggle("opacity-100", active);
+        t.classList.toggle("bg-[color:var(--color-surface-soft)]", !active);
+        t.classList.toggle("opacity-50",  !active);
+      });
+
+      document.querySelectorAll("[role='tabpanel']").forEach((panel) => {
+        panel.classList.toggle("hidden", panel.id !== targetId);
+      });
+
+      if (container) {
+        container.style.setProperty("--grid-color", bg);
+        container.style.setProperty("--grid-line-color", line);
+      }
+    });
+  });
+
+  // Textarea auto-resize
+  const textarea = document.getElementById("agent-input") as HTMLTextAreaElement | null;
+  if (textarea) {
+    textarea.addEventListener("input", () => {
+      textarea.style.height = "auto";
+      textarea.style.height = `${Math.min(textarea.scrollHeight, 240)}px`;
+    });
+  }
+  // Deep search and Think toggles
+  const deepSearchBtn = document.getElementById("deep-search-btn");
+  const thinkBtn = document.getElementById("think-btn");
+
+  deepSearchBtn?.addEventListener("click", () => {
+    const active = deepSearchBtn.classList.toggle("bg-[color:var(--color-brand-50)]");
+    deepSearchBtn.classList.toggle("border-[color:var(--color-brand-200)]", active);
+    deepSearchBtn.classList.toggle("text-[color:var(--color-brand-on-light)]", active);
+    const icon = deepSearchBtn.querySelector("svg");
+    if (icon) {
+      icon.classList.toggle("text-[color:var(--color-brand-on-light)]", active);
+      icon.classList.toggle("text-[color:var(--color-ink-secondary)]", !active);
+    }
+  });
+
+  thinkBtn?.addEventListener("click", () => {
+    const active = thinkBtn.classList.toggle("bg-[color:var(--color-brand-50)]");
+    thinkBtn.classList.toggle("border-[color:var(--color-brand-200)]", active);
+    thinkBtn.classList.toggle("text-[color:var(--color-brand-on-light)]", active);
+    const icon = thinkBtn.querySelector("svg");
+    if (icon) {
+      icon.classList.toggle("text-[color:var(--color-brand-on-light)]", active);
+      icon.classList.toggle("text-[color:var(--color-ink-secondary)]", !active);
+    }
+  });
+
+  // Send action (Redirects to App)
+  const sendBtn = document.getElementById("send-message-btn");
+  const containerEl = document.getElementById("chat-input-container");
+  
+  const handleSendAction = () => {
+    const val = textarea?.value?.trim();
+    if (!val) return;
+
+    // Show loading state
+    if (sendBtn) {
+      sendBtn.setAttribute("disabled", "true");
+      sendBtn.innerHTML = `
+        <svg class="animate-spin size-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2.5" class="opacity-25"/>
+          <path d="M12 2a10 10 0 0 1 10 10" fill="currentColor" class="opacity-75"/>
+        </svg>
+        <span>Processing...</span>
+      `;
+    }
+
+    setTimeout(() => {
+      const appUrl = containerEl?.dataset.appUrl || "https://app.typpout.com";
+      window.location.href = `${appUrl}?q=${encodeURIComponent(val)}`;
+    }, 800);
+  };
+
+  sendBtn?.addEventListener("click", handleSendAction);
+  textarea?.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      handleSendAction();
+    }
+  });
+
+  // Example chip clicks populate input
+  document.querySelectorAll<HTMLButtonElement>(".example-chip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      if (textarea) {
+        textarea.value = chip.dataset.example || "";
+        textarea.style.height = "auto";
+        textarea.style.height = `${Math.min(textarea.scrollHeight, 240)}px`;
+        textarea.focus();
+      }
+    });
+  });
+
+  // Typewriter cycle on placeholder
+  const queries = [
+    "VP Sales at seed-funded AI companies...",
+    "PMM leads switching away from Apollo...",
+    "Founders hiring their first SDR this quarter...",
+  ];
+  let qi = 0;
+  if (textarea && !textarea.value) {
+    setInterval(() => {
+      qi = (qi + 1) % queries.length;
+      textarea.placeholder = queries[qi];
+    }, 3500);
+  }
+</script>

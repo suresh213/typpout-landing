@@ -1,0 +1,120 @@
+---
+---
+
+<section class="mx-auto w-full max-w-[1280px] border-x border-[color:var(--color-border)]">
+
+  <!-- Pain section - left text + right stacked pills (matches template layout exactly) -->
+  <div class="overflow-x-clip bg-secondary flex flex-col items-start justify-between border-b border-[color:var(--color-border)] py-20 md:py-28 lg:flex-row lg:items-center">
+    <div class="p-4 md:p-12" data-reveal>
+      <h2 class="font-display text-2xl font-medium sm:text-3xl lg:text-[40px] leading-tight tracking-tight text-[color:var(--color-ink)]">
+        You're running a go-to-market team.
+      </h2>
+      <h2 class="font-display mt-2 max-w-lg text-2xl font-medium sm:text-3xl lg:text-[40px] leading-tight tracking-tight text-[color:var(--color-ink-secondary)] opacity-50">
+        Why are you still prospecting manually?
+      </h2>
+      <p class="mt-6 max-w-lg text-base font-light leading-relaxed text-[color:var(--color-ink-secondary)]">
+        List-building, signal monitoring, personalised messaging, follow-ups, none of this should eat your team's time. Typpout gives you four AI agents that handle every step of outbound, from first signal to booked meeting.
+      </p>
+    </div>
+
+    <!-- Stacked pills sliding in from right -->
+    <div class="ml-auto flex w-full flex-col gap-8 pl-6 sm:w-1/3 sm:max-w-xl sm:pl-0" data-reveal>
+      {[
+        { label: "Social Listening", classes: "bg-green-600 border-green-700",  icon: "radar"   },
+        { label: "ICP Finder",       classes: "bg-blue-500 border-blue-600",    icon: "users"   },
+        { label: "AI Outreach",      classes: "bg-purple-500 border-purple-600", icon: "message" },
+        { label: "AI Reply Agent",   classes: "bg-orange-500 border-orange-600", icon: "bolt"    },
+      ].map((f) => (
+        <div class:list={[
+          "slide-in-left flex w-full items-center gap-3 rounded-l-2xl border border-r-0 py-4 pl-5 pr-6 text-white shadow-sm",
+          f.classes
+        ]}>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="shrink-0 text-white/80" aria-hidden="true">
+            {f.icon === "radar"   && <><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="2"/><path d="M12 5v-2M12 21v-2" stroke="currentColor" stroke-width="2"/></>}
+            {f.icon === "users"   && <><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="2"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M16 11a3 3 0 100-6M21 20c0-2.5-2-4-4.5-4.5" stroke="currentColor" stroke-width="2"/></>}
+            {f.icon === "message" && <path d="M4 6a2 2 0 012-2h12a2 2 0 012 2v9a2 2 0 01-2 2H9l-5 4V6z" stroke="currentColor" stroke-width="2"/>}
+            {f.icon === "bolt"    && <path d="M13 2L4 14h7l-2 8 10-12h-7l1-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>}
+          </svg>
+          <span class="font-display text-lg font-medium">{f.label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Everything You Need - 2×2 feature grid (matches template "Everything You Need to Monetise") -->
+  <div class="flex flex-col gap-20 px-4 py-20 md:px-10 md:py-28">
+    <div class="mx-auto max-w-xl space-y-4 text-center" data-reveal>
+      <h2 class="font-display text-2xl font-medium sm:text-3xl lg:text-[40px] tracking-tight">
+        Everything You Need to Turn<br class="hidden md:block" /> Conversations into Revenue
+      </h2>
+      <p class="text-base font-light text-[color:var(--color-ink-secondary)]">
+        The all-in-one engine to find, engage, and convert social conversations into pipeline. Designed for the new generation of GTM teams.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+      {[
+        {
+          title: "Social Signal Detection",
+          desc: "Monitor LinkedIn, X and Instagram for buying intent keywords, competitor mentions, job postings, and funding announcements, all matched to your ICP in real time.",
+          gridColor: "#E5FBF2", lineColor: "#D6F6E9",
+          preview: [
+            "\"anyone using social listening for B2B?\"",
+            "\"moving off Apollo, looking for signal-first\"",
+            "\"evaluating AI SDR tools this week\"",
+          ],
+          tagColor: "bg-green-100 text-green-800",
+        },
+        {
+          title: "ICP Finder & Enrichment",
+          desc: "Every signal is automatically matched against your ideal customer profile. Get enriched contact data, firmographics, and a fit score so you always know who to reach first.",
+          gridColor: "#E7EFFF", lineColor: "#D5E3FF",
+          preview: [
+            "Sarah Kim · VP Sales · Growthbase · 97",
+            "Marcus Webb · Head of Revenue · Synthos · 93",
+            "Priya Shah · PMM · Northbeam · 91",
+          ],
+          tagColor: "bg-blue-100 text-blue-800",
+        },
+        {
+          title: "Personalised AI Outreach",
+          desc: "Stop sending templates. Typpout drafts personalised first messages grounded in the exact social signal that triggered the match, sent at the right moment, automatically.",
+          gridColor: "#F5F1FF", lineColor: "#E3D6FF",
+          preview: [
+            "\"Saw your post Maya, built Typpout for exactly this.\"",
+            "\"Your comment about Apollo caught my eye, Jake.\"",
+            "\"Noticed you're hiring 3 SDRs, we can help.\"",
+          ],
+          tagColor: "bg-purple-100 text-purple-800",
+        },
+        {
+          title: "AI Reply Agent",
+          desc: "Typpout replies to responses in under 8 seconds, handles objections, nurtures the conversation, and books a meeting on your calendar, without your team lifting a finger.",
+          gridColor: "#FDECF8", lineColor: "#FFD8F4",
+          preview: [
+            "Replied in 0:00:08 · Meeting booked ✓",
+            "Handled objection · Follow-up sent",
+            "47 replies sent today · 12 meetings",
+          ],
+          tagColor: "bg-pink-100 text-pink-800",
+        },
+      ].map((f) => (
+        <div class="bg-secondary flex flex-col gap-8 overflow-hidden rounded-3xl p-8 shadow-[0_0_1px_1px_rgba(0,0,0,0.04)]" data-reveal>
+          <div class="flex flex-col gap-2">
+            <h3 class="font-display text-base font-medium sm:text-lg lg:text-xl tracking-tight">{f.title}</h3>
+            <p class="text-sm font-light text-[color:var(--color-ink-secondary)]">{f.desc}</p>
+          </div>
+          <!-- preview rows -->
+          <div class="grid-bg flex-1 rounded-2xl p-4" style={`--grid-color:${f.gridColor};--grid-line-color:${f.lineColor};--grid-size:14px`}>
+            <div class="space-y-2">
+              {f.preview.map((row) => (
+                <div class:list={["rounded-lg px-3 py-2 text-[12px] font-medium", f.tagColor]}>{row}</div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+</section>

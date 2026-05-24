@@ -1,0 +1,45 @@
+---
+const logos = [
+  { name: "Clay", logoKey: "clay" },
+  { name: "Apollo", logoKey: "apollo" },
+  { name: "Attio", logoKey: "attio" },
+  { name: "Loom", logoKey: "loom" },
+  { name: "Retool", logoKey: "retool" },
+  { name: "Vanta", logoKey: "vanta" },
+  { name: "Linear", logoKey: "linear" },
+  { name: "Ramp", logoKey: "ramp" },
+  { name: "Deel", logoKey: "deel" },
+  { name: "Gong", logoKey: "gong" },
+  { name: "n8n", logoKey: "n8n" },
+  { name: "Lusha", logoKey: "lusha" },
+  { name: "Cognism", logoKey: "cognism" },
+  { name: "PostHog", logoKey: "posthog" },
+  { name: "Cal.com", logoKey: "cal" },
+];
+const doubleLogos = [...logos, ...logos];
+---
+
+<section aria-label="Trusted by" class="border-y border-[color:var(--color-border)] bg-white py-8 sm:py-10">
+  <div class="mx-auto w-full max-w-[1280px] px-5 sm:px-8">
+    <p class="text-center text-[13px] font-medium tracking-[0.08em] uppercase text-[color:var(--color-ink-secondary)] opacity-80">
+      Trusted by GTM teams shipping pipeline, not busywork
+    </p>
+    <div class="marquee mt-8">
+      <div class="marquee__track gap-12 sm:gap-16">
+        {doubleLogos.map((logo) => (
+          <div class="flex items-center gap-2.5 whitespace-nowrap opacity-65 hover:opacity-100 transition-opacity duration-200">
+            <img
+              src={`/logos/${logo.logoKey}.png`}
+              alt={`${logo.name} Logo`}
+              class="h-5 w-5 object-contain"
+              loading="lazy"
+            />
+            <span class="font-display text-[19px] font-semibold text-[color:var(--color-ink-strong)] tracking-tight">
+              {logo.name}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
