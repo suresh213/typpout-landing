@@ -1,10 +1,14 @@
 ---
+import { Image } from "astro:assets";
+import logoImage from "../assets/logo.webp";
+
 interface Props {
   class?: string;
   size?: "sm" | "md" | "lg";
   withMark?: boolean;
+  loading?: "eager" | "lazy";
 }
-const { class: className = "", size = "md", withMark = true } = Astro.props;
+const { class: className = "", size = "md", withMark = true, loading = "lazy" } = Astro.props;
 
 const dims = {
   sm: { mark: "h-7 w-7", text: "text-[18px]" },
@@ -15,15 +19,13 @@ const dims = {
 
 <a href="/" aria-label="Typpout home" class={`group inline-flex items-center gap-2.5 ${className}`}>
   {withMark && (
-    <img
-      src="/logo.png"
-      alt=""
-      width="40"
-      height="40"
+    <Image
+      src={logoImage}
+      alt="Typpout Logo"
+      width={40}
+      height={40}
       class={`${dims.mark} rounded-[8px] object-contain`}
-      loading="eager"
-      decoding="async"
-      fetchpriority="high"
+      loading={loading}
     />
   )}
   <span class={`font-display ${dims.text} font-medium tracking-[-0.03em] text-[color:var(--color-ink-strong)]`}>

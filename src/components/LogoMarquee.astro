@@ -29,8 +29,10 @@ const doubleLogos = [...logos, ...logos];
         {doubleLogos.map((logo) => (
           <div class="flex items-center gap-2.5 whitespace-nowrap opacity-65 hover:opacity-100 transition-opacity duration-200">
             <img
-              src={`/logos/${logo.logoKey}.png`}
+              src={`/logos/${logo.logoKey}.webp`}
               alt={`${logo.name} Logo`}
+              width="20"
+              height="20"
               class="h-5 w-5 object-contain"
               loading="lazy"
             />

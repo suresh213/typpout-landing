@@ -109,9 +109,6 @@ const ldData = jsonLd ?? defaultLd;
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImageUrl} />
 
-<!-- Performance hints -->
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="dns-prefetch" href="https://fonts.gstatic.com" />
 
 <!-- Structured data -->
 <script type="application/ld+json" set:html={JSON.stringify(ldData)} />

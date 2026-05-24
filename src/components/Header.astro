@@ -9,7 +9,7 @@ const path = Astro.url.pathname;
   class="sticky top-0 z-50 w-full border-b border-[color:var(--color-border)] bg-white/95 backdrop-blur-sm transition-shadow duration-200"
 >
   <div class="mx-auto flex h-[60px] w-full max-w-[1280px] items-center justify-between px-5 sm:px-8">
-    <Logo />
+    <Logo loading="eager" />
 
     <ul class="pointer-events-auto absolute left-1/2 hidden -translate-x-1/2 items-center gap-0.5 lg:flex">
       {NAV.map((item) => {
