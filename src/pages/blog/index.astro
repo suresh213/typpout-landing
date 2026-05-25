@@ -27,7 +27,7 @@ const blogLd = {
           "@type": "ListItem",
           "position": 2,
           "name": "Blog",
-          "item": `${SITE.url}/blogs`
+          "item": `${SITE.url}/blog`
         }
       ]
     },
@@ -35,7 +35,7 @@ const blogLd = {
       "@type": "Blog",
       "name": "Typpout Blog",
       "description": "GTM playbooks, comparisons, and social-selling insights from the Typpout team.",
-      "url": `${SITE.url}/blogs`,
+      "url": `${SITE.url}/blog`,
     }
   ]
 };
@@ -70,7 +70,7 @@ const blogLd = {
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
           {posts.map((p, i) => (
             <BlogCard
-              href={`/blogs/${p.id}`}
+              href={`/blog/${p.id}`}
               title={p.data.title}
               description={p.data.description}
               pubDate={p.data.pubDate}

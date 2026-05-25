@@ -11,16 +11,16 @@ export const SITE = {
   appUrl: "https://dashboard.typpout.com",
   demoUrl: "https://cal.com/typpout/demo",
   founder: {
-    name: "Founder, Typpout",
+    name: "Suresh, Founder, Typpout",
     handle: "@typpout",
-    avatarInitials: "TP",
+    avatarInitials: "S",
   },
 } as const;
 
 export const NAV = [
   { label: "Integrations", href: "/integrations" },
   { label: "Pricing", href: "/pricing" },
-  { label: "Blog", href: "/blogs" },
+  { label: "Blog", href: "/blog" },
 ] as const;
 
 export const FOOTER_NAV = {
@@ -30,15 +30,16 @@ export const FOOTER_NAV = {
     { label: "Changelog", href: "/changelog" },
   ],
   Resources: [
-    { label: "Blog", href: "/blogs" },
+    { label: "Blog", href: "/blog" },
     { label: "Book a demo", href: "https://cal.com/typpout/demo" },
     { label: "Contact us", href: "mailto:founders@typpout.com" },
   ],
   Compare: [
-    { label: "vs Jeeva AI", href: "/blogs/jeeva-ai-alternative" },
-    { label: "vs Orange Slice", href: "/blogs/orange-slice-alternative" },
-    { label: "vs HeyReach", href: "/blogs/heyreach-alternative" },
-    { label: "vs Signalbase", href: "/blogs/signalbase-alternative" },
+    { label: "vs Jeeva AI", href: "/blog/jeeva-ai-alternative" },
+    { label: "vs HeyReach", href: "/blog/heyreach-alternative" },
+    { label: "vs Trigify", href: "/blog/trigify-alternative" },
+    { label: "vs Buffer", href: "/blog/buffer-alternative" },
+    { label: "vs Expandi", href: "/blog/expandi-alternative" },
   ],
   Legal: [
     { label: "Terms of service", href: "/terms" },
@@ -56,8 +57,8 @@ export const SOCIAL = [
 
 /* =========================================================================
    SEO keyword strategy - clusters mapped to user intent, informed by
-   competitive analysis of jeeva.ai, orangeslice.ai, trysignalbase.com,
-   heyreach.io, apollo.io, clay.com.
+   competitive analysis of jeeva.ai, heyreach.io, trigify.io, buffer.com,
+   expandi.io, apollo.io, clay.com.
 
    Each cluster represents a search intent we rank for. Long-tail variations
    live in blog posts; short-tail anchors live on the home & pricing pages.
@@ -83,9 +84,10 @@ export const KEYWORD_CLUSTERS = {
   ],
   competitor: [
     "Jeeva AI alternative",
-    "Orange Slice alternative",
     "HeyReach alternative",
-    "Signalbase alternative",
+    "Trigify alternative",
+    "Buffer alternative",
+    "Expandi alternative",
     "Apollo alternative for social selling",
     "Clay alternative",
     "PhantomBuster alternative",

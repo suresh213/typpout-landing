@@ -3,7 +3,7 @@ title: "The Social Selling Playbook for 2026: How GTM Teams Are Replacing Cold E
 description: "Cold email reply rates dropped below 1% in 2025. Here's the data-backed social selling playbook the top 1% of GTM teams are running in 2026."
 pubDate: 2026-04-22
 updatedDate: 2026-05-12
-author: "Typpout Founders"
+author: "Suresh, Founder, Typpout"
 category: "Go-to-market"
 tags: ["social selling", "AI SDR", "intent signals", "GTM"]
 readingTime: "9 min read"
@@ -74,4 +74,4 @@ You don't need to rip out your stack. The fastest way to add signal-based outbou
 
 Run that for 30 days. Most teams book 8-15 net-new meetings in that window — without spending a dollar on more lists.
 
-When you're ready, [start a 14-day free trial of Typpout](/pricing) and let the AI agents do the listening, matching and replying for you.
+When you're ready, [start a 3-day free trial of Typpout](/pricing) and let the AI agents do the listening, matching and replying for you.
