@@ -39,17 +39,31 @@ const examples = [
       </a>
 
       <h1 class="font-display text-3xl font-medium sm:text-5xl lg:text-[60px] tracking-[-0.8px] leading-[1.1] max-w-4xl mx-auto">
-        The Go-To-Market Platform<br class="hidden md:block" /> for Social Intent Signals
+        Listen to Socials. Find the Signals.<br class="hidden md:block" />
+        <span class="text-[color:var(--color-brand)]">Win the Go-To-Market</span>
       </h1>
 
       <p class="text-base font-light text-[color:var(--color-ink-secondary)] max-w-2xl mx-auto leading-relaxed">
-        From ICP discovery to booked meetings. Typpout listens to LinkedIn, X and Instagram for buying intent, matches signals to your ICP, and books qualified meetings with personalised AI outreach, on autopilot.
+        Go to market with social intent signals and the ability to act on it.
       </p>
+
+      <!-- Supported Platforms -->
+      <div class="flex flex-col items-center gap-2">
+        <span class="text-[11px] font-sans font-semibold uppercase tracking-[0.12em] text-[color:var(--color-ink-secondary)] opacity-75">Supported platforms</span>
+        <div class="flex items-center justify-center gap-5 mt-2 flex-wrap">
+          <img src="/logos/linkedin.webp" alt="LinkedIn" title="LinkedIn" class="h-5.5 w-auto object-contain rounded-sm hover:scale-110 transition-transform duration-200" width="22" height="22" loading="eager" />
+          <img src="/logos/x.webp" alt="X" title="X" class="h-5.5 w-auto object-contain rounded-sm hover:scale-110 transition-transform duration-200" width="22" height="22" loading="eager" />
+          <img src="/logos/instagram.webp" alt="Instagram" title="Instagram" class="h-5.5 w-auto object-contain rounded-sm hover:scale-110 transition-transform duration-200" width="22" height="22" loading="eager" />
+          <img src="/logos/reddit.webp" alt="Reddit" title="Reddit" class="h-5.5 w-auto object-contain rounded-sm hover:scale-110 transition-transform duration-200" width="22" height="22" loading="eager" />
+          <img src="/logos/github.webp" alt="GitHub" title="GitHub" class="h-5.5 w-auto object-contain rounded-sm hover:scale-110 transition-transform duration-200" width="22" height="22" loading="eager" />
+          <img src="/logos/crunchbase.webp" alt="Crunchbase" title="Crunchbase" class="h-5.5 w-auto object-contain rounded-sm hover:scale-110 transition-transform duration-200" width="22" height="22" loading="eager" />
+        </div>
+      </div>
 
       <!-- Agentic chat input (Premium ChatInput design) -->
       <div class="w-full max-w-3xl mx-auto mt-4 sm:mt-6" data-reveal id="chat-input-container" data-app-url={SITE.appUrl}>
-        <div class="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] p-1 dark:bg-[color:var(--color-surface-dark)]">
-          <div class="rounded-xl border border-[color:var(--color-border)] bg-white dark:border-transparent dark:bg-[color:var(--color-surface-soft)] overflow-hidden shadow-xs">
+        <div class="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] p-1">
+          <div class="rounded-xl border border-[color:var(--color-border)] bg-white overflow-hidden shadow-xs">
             
             <textarea
               id="agent-input"
@@ -223,7 +237,7 @@ const examples = [
                     score: 94, 
                     intent: "tool switch / recommendation",  
                     signal: "Outbound email ROI is dropping. Anyone tried Clay or Apollo lately?", 
-                    labelColor: "text-black dark:text-white",
+                    labelColor: "text-black",
                     logoKey: "x"
                   },
                   { 

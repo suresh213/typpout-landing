@@ -17,25 +17,23 @@
       </p>
     </div>
 
-    <!-- Stacked pills sliding in from right -->
-    <div class="ml-auto flex w-full flex-col gap-8 pl-6 sm:w-1/3 sm:max-w-xl sm:pl-0" data-reveal>
+    <div class="ml-auto flex w-full flex-col gap-5 pl-6 sm:w-1/3 sm:max-w-xl sm:pl-0" data-reveal>
       {[
-        { label: "Social Listening", classes: "bg-green-600 border-green-700",  icon: "radar"   },
-        { label: "ICP Finder",       classes: "bg-blue-500 border-blue-600",    icon: "users"   },
-        { label: "AI Outreach",      classes: "bg-purple-500 border-purple-600", icon: "message" },
-        { label: "AI Reply Agent",   classes: "bg-orange-500 border-orange-600", icon: "bolt"    },
+        { label: "Social Listening", iconBg: "bg-emerald-50 border-emerald-100/60 text-emerald-600 group-hover:bg-emerald-100 group-hover:border-emerald-200", icon: "radar" },
+        { label: "ICP Finder",       iconBg: "bg-blue-50 border-blue-100/60 text-blue-600 group-hover:bg-blue-100 group-hover:border-blue-200",    icon: "users" },
+        { label: "AI Outreach",      iconBg: "bg-purple-50 border-purple-100/60 text-purple-600 group-hover:bg-purple-100 group-hover:border-purple-200", icon: "message" },
+        { label: "AI Reply Agent",   iconBg: "bg-orange-50 border-orange-100/60 text-orange-600 group-hover:bg-orange-100 group-hover:border-orange-200", icon: "bolt" },
       ].map((f) => (
-        <div class:list={[
-          "slide-in-left flex w-full items-center gap-3 rounded-l-2xl border border-r-0 py-4 pl-5 pr-6 text-white shadow-sm",
-          f.classes
-        ]}>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="shrink-0 text-white/80" aria-hidden="true">
-            {f.icon === "radar"   && <><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="2"/><path d="M12 5v-2M12 21v-2" stroke="currentColor" stroke-width="2"/></>}
-            {f.icon === "users"   && <><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="2"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M16 11a3 3 0 100-6M21 20c0-2.5-2-4-4.5-4.5" stroke="currentColor" stroke-width="2"/></>}
-            {f.icon === "message" && <path d="M4 6a2 2 0 012-2h12a2 2 0 012 2v9a2 2 0 01-2 2H9l-5 4V6z" stroke="currentColor" stroke-width="2"/>}
-            {f.icon === "bolt"    && <path d="M13 2L4 14h7l-2 8 10-12h-7l1-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>}
-          </svg>
-          <span class="font-display text-lg font-medium">{f.label}</span>
+        <div class="slide-in-left flex w-full items-center gap-4 rounded-l-2xl border border-r-0 border-stone-200/80 bg-white py-4 pl-6 pr-6 text-stone-800 shadow-[0_2px_8px_-3px_rgba(0,0,0,0.05)] transition-all duration-300 hover:bg-stone-50/50 hover:translate-x-[-8px] hover:shadow-md cursor-pointer group">
+          <div class:list={["flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border transition-all duration-200", f.iconBg]}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="shrink-0" aria-hidden="true">
+              {f.icon === "radar"   && <><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="2"/><path d="M12 5v-2M12 21v-2" stroke="currentColor" stroke-width="2"/></>}
+              {f.icon === "users"   && <><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="2"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M16 11a3 3 0 100-6M21 20c0-2.5-2-4-4.5-4.5" stroke="currentColor" stroke-width="2"/></>}
+              {f.icon === "message" && <path d="M4 6a2 2 0 012-2h12a2 2 0 012 2v9a2 2 0 01-2 2H9l-5 4V6z" stroke="currentColor" stroke-width="2"/>}
+              {f.icon === "bolt"    && <path d="M13 2L4 14h7l-2 8 10-12h-7l1-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>}
+            </svg>
+          </div>
+          <span class="font-display text-[17px] font-semibold text-stone-700 tracking-tight transition-colors group-hover:text-stone-900">{f.label}</span>
         </div>
       ))}
     </div>
@@ -57,63 +55,121 @@
         {
           title: "Social Signal Detection",
           desc: "Monitor LinkedIn, X and Instagram for buying intent keywords, competitor mentions, job postings, and funding announcements, all matched to your ICP in real time.",
-          gridColor: "#E5FBF2", lineColor: "#D6F6E9",
+          previewType: "signals",
           preview: [
-            "\"anyone using social listening for B2B?\"",
-            "\"moving off Apollo, looking for signal-first\"",
-            "\"evaluating AI SDR tools this week\"",
-          ],
-          tagColor: "bg-green-100 text-green-800",
+            { platform: "linkedin", text: "anyone using social listening for B2B? cold email is dead", iconBg: "bg-[#0A66C2]", label: "in" },
+            { platform: "x", text: "moving off Apollo, looking for something signal-first", iconBg: "bg-black", label: "𝕏" },
+            { platform: "reddit", text: "evaluating AI SDR tools this week", iconBg: "bg-[#FF4500]", label: "r/" }
+          ]
         },
         {
           title: "ICP Finder & Enrichment",
           desc: "Every signal is automatically matched against your ideal customer profile. Get enriched contact data, firmographics, and a fit score so you always know who to reach first.",
-          gridColor: "#E7EFFF", lineColor: "#D5E3FF",
+          previewType: "icp",
           preview: [
-            "Sarah Kim · VP Sales · Growthbase · 97",
-            "Marcus Webb · Head of Revenue · Synthos · 93",
-            "Priya Shah · PMM · Northbeam · 91",
-          ],
-          tagColor: "bg-blue-100 text-blue-800",
+            { name: "Sarah Kim", title: "VP Sales · Growthbase", score: "97%", init: "SK", scoreColor: "text-emerald-600 bg-emerald-50 border-emerald-100/50" },
+            { name: "Marcus Webb", title: "Head of Revenue · Synthos", score: "93%", init: "MW", scoreColor: "text-blue-600 bg-blue-50 border-blue-100/50" },
+            { name: "Priya Shah", title: "PMM · Northbeam", score: "91%", init: "PS", scoreColor: "text-purple-600 bg-purple-50 border-purple-100/50" }
+          ]
         },
         {
           title: "Personalised AI Outreach",
           desc: "Stop sending templates. Typpout drafts personalised first messages grounded in the exact social signal that triggered the match, sent at the right moment, automatically.",
-          gridColor: "#F5F1FF", lineColor: "#E3D6FF",
+          previewType: "outreach",
           preview: [
-            "\"Saw your post Maya, built Typpout for exactly this.\"",
-            "\"Your comment about Apollo caught my eye, Jake.\"",
-            "\"Noticed you're hiring 3 SDRs, we can help.\"",
-          ],
-          tagColor: "bg-purple-100 text-purple-800",
+            { sender: "prospect", text: "outbound email is dead in 2026..." },
+            { sender: "ai", text: "Saw your post Maya, built Typpout for this. 5-min call?" }
+          ]
         },
         {
           title: "AI Reply Agent",
           desc: "Typpout replies to responses in under 8 seconds, handles objections, nurtures the conversation, and books a meeting on your calendar, without your team lifting a finger.",
-          gridColor: "#FDECF8", lineColor: "#FFD8F4",
+          previewType: "reply",
           preview: [
-            "Replied in 0:00:08 · Meeting booked ✓",
-            "Handled objection · Follow-up sent",
-            "47 replies sent today · 12 meetings",
-          ],
-          tagColor: "bg-pink-100 text-pink-800",
-        },
-      ].map((f) => (
-        <div class="bg-secondary flex flex-col gap-8 overflow-hidden rounded-3xl p-8 shadow-[0_0_1px_1px_rgba(0,0,0,0.04)]" data-reveal>
-          <div class="flex flex-col gap-2">
-            <h3 class="font-display text-base font-medium sm:text-lg lg:text-xl tracking-tight">{f.title}</h3>
-            <p class="text-sm font-light text-[color:var(--color-ink-secondary)]">{f.desc}</p>
-          </div>
-          <!-- preview rows -->
-          <div class="grid-bg flex-1 rounded-2xl p-4" style={`--grid-color:${f.gridColor};--grid-line-color:${f.lineColor};--grid-size:14px`}>
-            <div class="space-y-2">
-              {f.preview.map((row) => (
-                <div class:list={["rounded-lg px-3 py-2 text-[12px] font-medium", f.tagColor]}>{row}</div>
-              ))}
+            { status: "success", text: "Meeting booked ✓ Wed 3:30 PM", desc: "replied in 8s" },
+            { status: "info", text: "Handled objection · Follow-up sent", desc: "objection: pricing" }
+          ]
+        }
+      ].map((f, i) => {
+        const delays = ["", "delay-100", "delay-200", "delay-300"];
+        return (
+          <div
+            class:list={[
+              "bg-secondary flex flex-col justify-between gap-8 overflow-hidden rounded-3xl p-8 shadow-[0_0_1px_1px_rgba(0,0,0,0.04)] hover:-translate-y-1 hover:shadow-md transition-all duration-300",
+              delays[i]
+            ]}
+            data-reveal
+          >
+            <div class="flex flex-col gap-2">
+              <h3 class="font-display text-base font-medium sm:text-lg lg:text-xl tracking-tight text-stone-800">{f.title}</h3>
+              <p class="text-sm font-light text-[color:var(--color-ink-secondary)] leading-relaxed">{f.desc}</p>
+            </div>
+            
+            <!-- preview container with grid background and a floating white card panel inside -->
+            <div class="grid-bg rounded-2xl p-5 border border-stone-200/40" style="--grid-color:#f6f5f3;--grid-line-color:#e7e5e4;--grid-bg-opacity:100%;--grid-line-opacity:100%;--grid-size:14px">
+              <div class="rounded-xl border border-stone-200/85 bg-white p-4 shadow-sm space-y-2.5">
+                
+                {f.previewType === "signals" && f.preview.map((row) => (
+                  <div class="flex items-center gap-2.5 rounded-lg border border-stone-100 bg-stone-50/50 px-3 py-2 text-[12px] text-stone-700">
+                    <span class="grid h-5 w-5 shrink-0 place-items-center rounded-full text-[9px] font-semibold text-white" style={`background:${row.iconBg}`}>{row.label}</span>
+                    <span class="truncate font-medium text-stone-800">{row.text}</span>
+                  </div>
+                ))}
+
+                {f.previewType === "icp" && f.preview.map((row) => (
+                  <div class="flex items-center justify-between gap-3 rounded-lg border border-stone-100 bg-stone-50/50 px-3 py-2 text-[12px] text-stone-750">
+                    <div class="flex items-center gap-2">
+                      <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-stone-100 text-[10px] font-semibold text-stone-600 border border-stone-200/60">{row.init}</span>
+                      <div class="min-w-0">
+                        <div class="font-semibold text-stone-800 leading-none">{row.name}</div>
+                        <div class="text-[10px] text-stone-500 mt-1 leading-none">{row.title}</div>
+                      </div>
+                    </div>
+                    <span class:list={["font-mono text-[11px] font-bold px-1.5 py-0.5 rounded border border-stone-200 bg-white shrink-0", row.scoreColor]}>{row.score}</span>
+                  </div>
+                ))}
+
+                {f.previewType === "outreach" && f.preview.map((row) => (
+                  row.sender === "prospect" ? (
+                    <div class="flex items-start gap-2 max-w-[90%]">
+                      <span class="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-stone-100 text-[10px] font-semibold text-stone-600 border border-stone-200">P</span>
+                      <div class="rounded-xl rounded-tl-none border border-stone-200 bg-stone-50/50 px-3 py-2 text-[11px] text-stone-700 leading-relaxed">
+                        {row.text}
+                      </div>
+                    </div>
+                  ) : (
+                    <div class="flex items-start gap-2 justify-end">
+                      <div class="rounded-xl rounded-tr-none bg-[color:var(--color-brand)] px-3 py-2 text-[11px] text-white leading-relaxed max-w-[90%] shadow-2xs">
+                        {row.text}
+                      </div>
+                      <span class="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[color:var(--color-brand-100)] text-[9px] font-semibold text-[color:var(--color-brand-on-light)] border border-[color:var(--color-brand-200)]">AI</span>
+                    </div>
+                  )
+                ))}
+
+                {f.previewType === "reply" && f.preview.map((row) => (
+                  <div class:list={[
+                    "flex items-center justify-between gap-3 rounded-lg border px-3.5 py-2 text-[12px] shadow-3xs",
+                    row.status === "success" 
+                      ? "bg-emerald-50/40 border-emerald-250 text-emerald-800" 
+                      : "bg-white border-stone-200 text-stone-700"
+                  ]}>
+                    <div class="flex items-center gap-2">
+                      <span class:list={[
+                        "h-1.5 w-1.5 rounded-full",
+                        row.status === "success" ? "bg-emerald-500 animate-pulse" : "bg-blue-500"
+                      ]}></span>
+                      <span class="font-semibold">{row.text}</span>
+                    </div>
+                    <span class="font-mono text-[10px] opacity-75">{row.desc}</span>
+                  </div>
+                ))}
+                
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   </div>
 

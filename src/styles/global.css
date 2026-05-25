@@ -610,3 +610,35 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .eyebrow-badge::before { animation: none; }
 }
+
+/* =========================================================================
+   Custom Animation Utilities (Staggers, Accordions, Chat Bubbles)
+   ========================================================================= */
+.delay-75  { transition-delay: 75ms !important; }
+.delay-100 { transition-delay: 100ms !important; }
+.delay-150 { transition-delay: 150ms !important; }
+.delay-200 { transition-delay: 200ms !important; }
+.delay-250 { transition-delay: 250ms !important; }
+.delay-300 { transition-delay: 300ms !important; }
+.delay-400 { transition-delay: 400ms !important; }
+.delay-500 { transition-delay: 500ms !important; }
+.delay-600 { transition-delay: 600ms !important; }
+
+/* FAQ details sweep animation */
+@keyframes sweep {
+  0%    { opacity: 0; transform: translateY(-8px); }
+  100%  { opacity: 1; transform: translateY(0); }
+}
+details[open] summary ~ * {
+  animation: sweep 0.25s var(--ease-out-quart) both;
+}
+
+/* Chat bubble entry animations */
+@keyframes bubble-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-bubble {
+  animation: bubble-in 0.4s var(--ease-spring) both;
+}
+

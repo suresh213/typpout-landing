@@ -13,7 +13,7 @@
       </p>
     </div>
 
-    <div class="columns-1 gap-5 sm:columns-2 lg:columns-3" data-reveal>
+    <div class="columns-1 gap-5 sm:columns-2 lg:columns-3">
       {[
         {
           text: "The social listening agent and AI reply agent are perfect for our GTM motions. They efficiently help us book 20+ meetings monthly without any manual prospecting.",
@@ -96,24 +96,33 @@
           bg: "bg-rose-100",
           txt: "text-rose-700",
         },
-      ].map((t) => (
-        <div class="mb-5 break-inside-avoid rounded-2xl border border-[color:var(--color-border)] bg-white p-5">
-          <!-- X/Twitter icon -->
-          <div class="mb-3 flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <span class:list={["grid h-8 w-8 shrink-0 place-items-center rounded-full text-[11px] font-semibold", t.bg, t.txt]}>{t.init}</span>
-              <div>
-                <div class="text-[13px] font-medium text-[color:var(--color-ink)]">{t.name}</div>
-                <div class="text-[11px] text-[color:var(--color-ink-muted)]">{t.handle}</div>
+      ].map((t, i) => {
+        const delays = ["", "delay-75", "delay-150", "delay-200", "delay-250", "delay-300", "delay-450", "delay-600"];
+        return (
+          <div
+            class:list={[
+              "mb-5 break-inside-avoid rounded-2xl border border-[color:var(--color-border)] bg-white p-5 hover:-translate-y-0.5 hover:shadow-md transition-all duration-250",
+              delays[i % delays.length]
+            ]}
+            data-reveal
+          >
+            <!-- X/Twitter icon -->
+            <div class="mb-3 flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class:list={["grid h-8 w-8 shrink-0 place-items-center rounded-full text-[11px] font-semibold", t.bg, t.txt]}>{t.init}</span>
+                <div>
+                  <div class="text-[13px] font-medium text-[color:var(--color-ink)]">{t.name}</div>
+                  <div class="text-[11px] text-[color:var(--color-ink-muted)]">{t.handle}</div>
+                </div>
               </div>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-[color:var(--color-ink-subtle)]" aria-hidden="true">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.738l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
             </div>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-[color:var(--color-ink-subtle)]" aria-hidden="true">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.738l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-            </svg>
+            <p class="text-[13px] leading-relaxed text-[color:var(--color-ink-strong)]">{t.text}</p>
           </div>
-          <p class="text-[13px] leading-relaxed text-[color:var(--color-ink-strong)]">{t.text}</p>
-        </div>
-      ))}
+        );
+      })}
     </div>
 
   </div>

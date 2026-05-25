@@ -15,29 +15,35 @@
 
     <div class="space-y-6">
       <!-- 4 colored stat cards -->
-      <div class="grid grid-cols-2 gap-6 lg:grid-cols-4">
+      <div class="grid grid-cols-2 gap-6 lg:grid-cols-4" data-reveal-stats>
         {[
           { stat: "20+",  label: "Signal types monitored",        textColor: "text-indigo-700", bg: "#e7efff", line: "#6082D2" },
           { stat: "8s",   label: "Average AI reply time",         textColor: "text-purple-700", bg: "#f2eefe", line: "#786EC8" },
           { stat: "94%",  label: "Reply rate on warm signals",    textColor: "text-yellow-800", bg: "#fefce8", line: "#BEA032" },
           { stat: "3-5x", label: "Meeting lift vs cold outbound", textColor: "text-orange-700", bg: "#fff7ed", line: "#C8823C" },
-        ].map((s) => (
-          <div
-            class="grid-bg rounded-xl p-8"
-            style={`--grid-color:${s.bg};--grid-line-color:${s.line};--grid-bg-opacity:100%;--grid-line-opacity:3%;--grid-size:14px`}
-            data-reveal
-          >
-            <h3 class:list={["font-display text-xl font-medium sm:text-2xl lg:text-3xl tracking-tight", s.textColor]}>
-              {s.stat}
-            </h3>
-            <p class:list={["mt-2 text-[18px] font-normal", s.textColor]}>{s.label}</p>
-          </div>
-        ))}
+        ].map((s, i) => {
+          const delays = ["", "delay-100", "delay-200", "delay-300"];
+          return (
+            <div
+              class:list={[
+                "grid-bg rounded-xl p-8 hover:-translate-y-1 hover:shadow-md transition-all duration-300",
+                delays[i]
+              ]}
+              style={`--grid-color:${s.bg};--grid-line-color:${s.line};--grid-bg-opacity:100%;--grid-line-opacity:3%;--grid-size:14px`}
+              data-reveal
+            >
+              <h3 class:list={["font-display text-xl font-medium sm:text-2xl lg:text-3xl tracking-tight", s.textColor]}>
+                <span data-countup-target={s.stat}>{s.stat}</span>
+              </h3>
+              <p class:list={["mt-2 text-[18px] font-normal", s.textColor]}>{s.label}</p>
+            </div>
+          );
+        })}
       </div>
 
       <!-- 1 wide card -->
       <div
-        class="grid-bg rounded-xl p-8"
+        class="grid-bg rounded-xl p-8 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
         style="--grid-color:#e9f7f0;--grid-line-color:#58A786;--grid-bg-opacity:100%;--grid-line-opacity:3%;--grid-size:14px"
         data-reveal
       >
@@ -52,3 +58,58 @@
 
   </div>
 </section>
+
+<script>
+  const startCountUp = (el: HTMLElement) => {
+    const targetStr = el.dataset.countupTarget || "";
+    const targetNum = parseFloat(targetStr.replace(/[^\d.]/g, ""));
+    if (isNaN(targetNum)) return;
+    
+    const prefix = targetStr.match(/^[^\d.]+/)?.[0] || "";
+    const suffix = targetStr.match(/[^\d.]+$/)?.[0] || "";
+    
+    const duration = 1200;
+    const startTime = performance.now();
+    
+    const step = (currentTime: number) => {
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      const easeProgress = 1 - Math.pow(1 - progress, 4); // easeOutQuart
+      const currentVal = easeProgress * targetNum;
+      
+      let formattedVal = "";
+      if (targetStr.includes(".")) {
+        formattedVal = currentVal.toFixed(1);
+      } else {
+        formattedVal = Math.floor(currentVal).toString();
+      }
+      
+      if (targetStr === "3-5x") {
+        const startVal = 1 + easeProgress * 2;
+        const endVal = 2 + easeProgress * 3;
+        el.textContent = `${Math.floor(startVal)}-${Math.floor(endVal)}x`;
+      } else {
+        el.textContent = `${prefix}${formattedVal}${suffix}`;
+      }
+      
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        el.textContent = targetStr;
+      }
+    };
+    requestAnimationFrame(step);
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const targets = entry.target.querySelectorAll("[data-countup-target]");
+        targets.forEach((t) => startCountUp(t as HTMLElement));
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  const statsContainer = document.querySelector("[data-reveal-stats]");
+  if (statsContainer) observer.observe(statsContainer);
+</script>

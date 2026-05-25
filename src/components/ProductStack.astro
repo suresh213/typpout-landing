@@ -46,12 +46,18 @@ import { SITE } from "../data/site";
                 { src: "#0A66C2", lbl: "in", text: "\"anyone using social listening for B2B? cold email is dead\"" },
                 { src: "#0E0D0D", lbl: "𝕏",  text: "\"moving off Apollo, looking for something signal-first\""    },
                 { src: "#0A66C2", lbl: "in", text: "\"We hired our 8th SDR. Tooling is the next problem.\""        },
-              ].map((r) => (
-                <div class="flex items-start gap-2 rounded-lg border border-green-200 bg-white/80 px-3 py-2 text-[12px] text-[color:var(--color-ink-strong)]">
-                  <span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[9px] font-semibold text-white" style={`background:${r.src}`}>{r.lbl}</span>
-                  {r.text}
-                </div>
-              ))}
+              ].map((r, rIdx) => {
+                const delays = ["", "delay-150", "delay-300"];
+                return (
+                  <div class:list={[
+                    "chat-bubble flex items-start gap-2 rounded-lg border border-green-200 bg-white/80 px-3 py-2 text-[12px] text-[color:var(--color-ink-strong)] opacity-0 translate-y-2 transition-all duration-500 ease-out",
+                    delays[rIdx]
+                  ]}>
+                    <span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[9px] font-semibold text-white" style={`background:${r.src}`}>{r.lbl}</span>
+                    {r.text}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -86,13 +92,19 @@ import { SITE } from "../data/site";
                 { who: "Sarah Kim",   role: "VP Sales · Growthbase",  score: "97" },
                 { who: "Marcus Webb", role: "Head of Revenue · Synthos", score: "93" },
                 { who: "Priya Shah",  role: "PMM · Northbeam",        score: "91" },
-              ].map((m) => (
-                <div class="flex items-center gap-2 rounded-lg border border-blue-200 bg-white/80 px-3 py-2 text-[12px]">
-                  <div class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-blue-100 text-[10px] font-semibold text-blue-700">{m.who.charAt(0)}</div>
-                  <span class="flex-1 truncate text-[color:var(--color-ink-strong)]">{m.who} · {m.role}</span>
-                  <span class="font-mono font-semibold text-blue-600">{m.score}</span>
-                </div>
-              ))}
+              ].map((m, rIdx) => {
+                const delays = ["", "delay-150", "delay-300"];
+                return (
+                  <div class:list={[
+                    "chat-bubble flex items-center gap-2 rounded-lg border border-blue-200 bg-white/80 px-3 py-2 text-[12px] opacity-0 translate-y-2 transition-all duration-500 ease-out",
+                    delays[rIdx]
+                  ]}>
+                    <div class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-blue-100 text-[10px] font-semibold text-blue-700">{m.who.charAt(0)}</div>
+                    <span class="flex-1 truncate text-[color:var(--color-ink-strong)]">{m.who} · {m.role}</span>
+                    <span class="font-mono font-semibold text-blue-600">{m.score}</span>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -122,14 +134,14 @@ import { SITE } from "../data/site";
           </div>
           <div class="flex-1 grid-bg min-h-[200px] rounded-2xl p-5" style="--grid-color:#FDECF8;--grid-line-color:#FFD8F4;--grid-size:14px">
             <div class="space-y-2">
-              <div class="flex items-start gap-2">
+              <div class="chat-bubble flex items-start gap-2 opacity-0 translate-y-2 transition-all duration-500 ease-out">
                 <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#0A66C2] text-[9px] font-semibold text-white">in</span>
                 <div class="rounded-xl rounded-tl-none border border-pink-200 bg-white/80 px-2.5 py-2 text-[12px]">"anyone using social listening for B2B?"</div>
               </div>
-              <div class="flex justify-end">
+              <div class="chat-bubble flex justify-end opacity-0 translate-y-2 transition-all duration-500 ease-out delay-200">
                 <div class="max-w-xs rounded-xl rounded-tr-none bg-[color:var(--color-ink)] px-2.5 py-2 text-[12px] text-white">"Saw your post Maya, built Typpout for this. 5-min call?"</div>
               </div>
-              <div class="rounded-xl border border-pink-200 bg-white/80 px-2.5 py-2 text-center text-[11px] font-medium text-pink-700">
+              <div class="chat-bubble rounded-xl border border-pink-200 bg-white/80 px-2.5 py-2 text-center text-[11px] font-medium text-pink-700 opacity-0 translate-y-2 transition-all duration-500 ease-out delay-400">
                 Meeting booked ✓ · replied in 0:00:08
               </div>
             </div>
@@ -140,3 +152,10 @@ import { SITE } from "../data/site";
     </div>
   </div>
 </section>
+
+<style>
+  [data-reveal].is-visible .chat-bubble {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+</style>

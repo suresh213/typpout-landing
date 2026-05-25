@@ -29,7 +29,7 @@ import { SITE } from "../data/site";
       </div>
 
       <!-- Right: 4 stat chips -->
-      <div class="w-full pr-4 lg:w-[42%] lg:translate-x-[50px] lg:pr-12" data-reveal>
+      <div class="w-full pr-4 lg:w-[42%] lg:translate-x-[50px] lg:pr-12" data-reveal-stats data-reveal>
         <div class="grid grid-cols-2 gap-3">
           {[
             { stat: "1.2k",  label: "Signals processed / day",    color: "text-[color:var(--color-brand)]" },
@@ -37,8 +37,10 @@ import { SITE } from "../data/site";
             { stat: "94%",   label: "Reply rate on warm signals",  color: "text-pink-400"  },
             { stat: "3-5x",  label: "Meeting lift vs cold email",  color: "text-orange-400" },
           ].map((s) => (
-            <div class="rounded-xl border border-white/10 bg-white/5 p-4">
-              <div class:list={["font-display text-3xl font-medium", s.color]}>{s.stat}</div>
+            <div class="rounded-xl border border-white/10 bg-white/5 p-4 hover:bg-white/10 transition-colors duration-250">
+              <div class:list={["font-display text-3xl font-medium", s.color]}>
+                <span data-countup-target={s.stat}>{s.stat}</span>
+              </div>
               <div class="mt-1 text-[11px] text-white/60">{s.label}</div>
             </div>
           ))}
@@ -58,7 +60,7 @@ import { SITE } from "../data/site";
       </p>
     </div>
 
-    <div class="grid grid-cols-1 overflow-hidden rounded-xl border border-dashed border-white/10 md:grid-cols-2 lg:grid-cols-4" data-reveal>
+    <div class="grid grid-cols-1 overflow-hidden rounded-xl border border-dashed border-white/10 md:grid-cols-2 lg:grid-cols-4">
       {[
         {
           icon: "radar",
@@ -96,26 +98,96 @@ import { SITE } from "../data/site";
           link: "/#features",
           linkLabel: "Learn more about AI Reply Agent",
         },
-      ].map((a) => (
-        <div class="flex flex-col justify-between px-8 pt-8 pb-10">
-          <div class:list={["flex h-10 w-10 items-center justify-center rounded-xl border", a.iconBg]}>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class={a.iconColor} aria-hidden="true">
-              {a.icon === "radar"   && <><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="2"/><path d="M12 5v-2M12 21v-2" stroke="currentColor" stroke-width="2"/></>}
-              {a.icon === "users"   && <><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="2"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M16 11a3 3 0 100-6M21 20c0-2.5-2-4-4.5-4.5" stroke="currentColor" stroke-width="2"/></>}
-              {a.icon === "message" && <path d="M4 6a2 2 0 012-2h12a2 2 0 012 2v9a2 2 0 01-2 2H9l-5 4V6z" stroke="currentColor" stroke-width="2"/>}
-              {a.icon === "bolt"    && <path d="M13 2L4 14h7l-2 8 10-12h-7l1-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>}
-            </svg>
+      ].map((a, i) => {
+        const delays = ["", "delay-100", "delay-200", "delay-300"];
+        return (
+          <div
+            class:list={[
+              "group flex flex-col justify-between px-8 pt-8 pb-10 transition-all duration-300 hover:bg-white/[0.02] hover:-translate-y-0.5",
+              delays[i]
+            ]}
+            data-reveal
+          >
+            <div>
+              <div class:list={["flex h-10 w-10 items-center justify-center rounded-xl border transition-colors duration-300 group-hover:border-white/20", a.iconBg]}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class={a.iconColor} aria-hidden="true">
+                  {a.icon === "radar"   && <><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="2"/><path d="M12 5v-2M12 21v-2" stroke="currentColor" stroke-width="2"/></>}
+                  {a.icon === "users"   && <><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="2"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M16 11a3 3 0 100-6M21 20c0-2.5-2-4-4.5-4.5" stroke="currentColor" stroke-width="2"/></>}
+                  {a.icon === "message" && <path d="M4 6a2 2 0 012-2h12a2 2 0 012 2v9a2 2 0 01-2 2H9l-5 4V6z" stroke="currentColor" stroke-width="2"/>}
+                  {a.icon === "bolt"    && <path d="M13 2L4 14h7l-2 8 10-12h-7l1-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>}
+                </svg>
+              </div>
+              <div class="mt-8 flex flex-col gap-3">
+                <h3 class="font-display text-lg font-light text-white">{a.name}</h3>
+                <p class="text-sm font-light leading-relaxed text-white/60">{a.desc}</p>
+              </div>
+            </div>
+            <div class="mt-4">
+              <a href={a.link} aria-label={a.linkLabel} class="font-display text-sm text-white underline transition-colors hover:text-[color:var(--color-brand)]">
+                Learn more →
+              </a>
+            </div>
           </div>
-          <div class="mt-8 flex flex-col gap-3">
-            <h3 class="font-display text-lg font-light text-white">{a.name}</h3>
-            <p class="text-sm font-light leading-relaxed text-white/60">{a.desc}</p>
-            <a href={a.link} aria-label={a.linkLabel} class="mt-1 font-display text-sm text-white underline transition-colors hover:text-[color:var(--color-brand)]">
-              Learn more →
-            </a>
-          </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   </div>
+
+</section>
+
+<script>
+  const startCountUp = (el: HTMLElement) => {
+    const targetStr = el.dataset.countupTarget || "";
+    const targetNum = parseFloat(targetStr.replace(/[^\d.]/g, ""));
+    if (isNaN(targetNum)) return;
+    
+    const prefix = targetStr.match(/^[^\d.]+/)?.[0] || "";
+    const suffix = targetStr.match(/[^\d.]+$/)?.[0] || "";
+    
+    const duration = 1200;
+    const startTime = performance.now();
+    
+    const step = (currentTime: number) => {
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      const easeProgress = 1 - Math.pow(1 - progress, 4); // easeOutQuart
+      const currentVal = easeProgress * targetNum;
+      
+      let formattedVal = "";
+      if (targetStr.includes(".")) {
+        formattedVal = currentVal.toFixed(1);
+      } else {
+        formattedVal = Math.floor(currentVal).toString();
+      }
+      
+      if (targetStr === "3-5x") {
+        const startVal = 1 + easeProgress * 2;
+        const endVal = 2 + easeProgress * 3;
+        el.textContent = `${Math.floor(startVal)}-${Math.floor(endVal)}x`;
+      } else {
+        el.textContent = `${prefix}${formattedVal}${suffix}`;
+      }
+      
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        el.textContent = targetStr;
+      }
+    };
+    requestAnimationFrame(step);
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const targets = entry.target.querySelectorAll("[data-countup-target]");
+        targets.forEach((t) => startCountUp(t as HTMLElement));
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  const statsContainer = document.querySelector("[data-reveal-stats]");
+  if (statsContainer) observer.observe(statsContainer);
+</script>
 
 </section>

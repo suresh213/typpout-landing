@@ -14,25 +14,37 @@ const year = new Date().getFullYear();
       <div class="flex flex-col gap-5">
         <Logo />
         <p class="max-w-[260px] text-[14px] leading-relaxed text-[color:var(--color-ink-secondary)]">
-          The AI go-to-market platform. Listen to socials, find in-market buyers, and book meetings on autopilot.
+          The AI go-to-market platform for social selling. Turn social intent signals into qualified pipeline and book meetings on autopilot.
         </p>
-        <div class="flex flex-wrap gap-2">
+        <div class="flex flex-wrap gap-1">
           {SOCIAL.map((s) => (
             <a
               href={s.href}
               aria-label={s.label}
               rel="noopener noreferrer"
               target="_blank"
-              class="grid h-8 w-8 place-items-center rounded-lg border border-[color:var(--color-border)] bg-white transition-all duration-200 hover:border-[color:var(--color-brand)]/40 hover:bg-[color:var(--color-brand-50)] hover:scale-105"
+              class="grid h-8 w-8 place-items-center transition-all duration-200 hover:scale-110 text-[color:var(--color-ink-secondary)] hover:text-[color:var(--color-brand)] opacity-100"
             >
-              <img
-                src={`/logos/${s.icon}.webp`}
-                alt={s.label}
-                width="16"
-                height="16"
-                class="h-4 w-4 object-contain rounded-sm"
-                loading="lazy"
-              />
+              {s.icon === "x" && (
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M18.244 2H21.5l-7.51 8.59L23 22h-6.91l-5.41-7.06L4.5 22H1.244l8.02-9.18L1 2h7.063l4.89 6.46L18.244 2zm-1.214 18.05h1.92L7.06 3.83H5.02L17.03 20.05z"/>
+                </svg>
+              )}
+              {s.icon === "linkedin" && (
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/>
+                </svg>
+              )}
+              {s.icon === "youtube" && (
+                <svg class="h-5.5 w-5.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 00.5 6.2C0 8 0 12 0 12s0 4 .5 5.8a3 3 0 002.1 2.1c1.8.6 9.4.6 9.4.6s7.6 0 9.4-.6a3 3 0 002.1-2.1c.5-1.8.5-5.8.5-5.8s0-4-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/>
+                </svg>
+              )}
+              {s.icon === "instagram" && (
+                <svg class="h-4.5 w-4.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.5 1 .5.5.8.9 1 1.5.2.4.4 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-1 1.5-.5.5-.9.8-1.5 1-.4.2-1 .4-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.5-1-.5-.5-.8-.9-1-1.5-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 1-1.5.5-.5.9-.8 1.5-1 .4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 5.8.1 4.9.3 4.1.6c-.8.3-1.5.7-2.2 1.4C1.2 2.6.8 3.3.5 4.1c-.3.8-.5 1.7-.5 3C0 8.3 0 8.7 0 12s0 3.7.1 4.9c0 1.3.2 2.2.5 3 .3.8.7 1.5 1.4 2.2.7.7 1.4 1.1 2.2 1.4.8.3 1.7.5 3 .5 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c1.3 0 2.2-.2 3-.5.8-.3 1.5-.7 2.2-1.4.7-.7 1.1-1.4 1.4-2.2.3-.8.5-1.7.5-3 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c0-1.3-.2-2.2-.5-3-.3-.8-.7-1.5-1.4-2.2C21.4 1.2 20.7.8 19.9.5c-.8-.3-1.7-.5-3-.5C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 100 12.4 6.2 6.2 0 000-12.4zm0 10.2a4 4 0 110-8 4 4 0 010 8zm6.4-10.4a1.4 1.4 0 11-2.8 0 1.4 1.4 0 012.8 0z"/>
+                </svg>
+              )}
             </a>
           ))}
         </div>
@@ -66,7 +78,7 @@ const year = new Date().getFullYear();
       <div class="flex items-center gap-1.5">
         <span class="h-1.5 w-1.5 rounded-full bg-[color:var(--color-brand)]"></span>
         <p class="text-[13px] text-[color:var(--color-ink-muted)]">
-          Built for GTM teams who want pipeline.
+          Built for modern GTM teams driving pipeline.
         </p>
       </div>
     </div>

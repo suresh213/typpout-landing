@@ -5,7 +5,7 @@ export const SITE = {
   description:
     "Typpout is the AI go-to-market platform that listens to social conversations on LinkedIn, X and Instagram, finds in-market buyers matching your ICP, and books meetings with personalised AI outreach and instant replies.",
   shortDescription: "Go-To-Market with socials data and the ability to act on it",
-  ogImage: "/logo.png",
+  ogImage: "/logo-full.webp",
   twitter: "@typpout",
   email: "founders@typpout.com",
   appUrl: "https://dashboard.typpout.com",
