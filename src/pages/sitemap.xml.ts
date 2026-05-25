@@ -18,8 +18,9 @@ export async function GET(context: APIContext) {
   ];
 
   const urls = [
-    ...staticPages.map((page) => `${siteUrl}/${page ? page + "/" : ""}`),
-    ...posts.map((post) => `${siteUrl}/blog/${post.id}/`),
+    siteUrl,
+    ...staticPages.filter(Boolean).map((page) => `${siteUrl}/${page}`),
+    ...posts.map((post) => `${siteUrl}/blog/${post.id}`),
   ];
 
   const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>

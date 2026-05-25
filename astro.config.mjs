@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://www.typpout.com',
-  trailingSlash: 'ignore',
+  trailingSlash: 'never',
   vite: {
     plugins: [tailwindcss()],
   },
