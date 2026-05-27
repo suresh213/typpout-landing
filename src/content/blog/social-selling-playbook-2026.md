@@ -1,12 +1,13 @@
 ---
 title: "The Social Selling Playbook for 2026: How GTM Teams Are Replacing Cold Email"
+seoTitle: "The Social Selling Playbook for 2026"
 description: "Cold email reply rates dropped below 1% in 2025. Here's the data-backed social selling playbook the top 1% of GTM teams are running in 2026."
 pubDate: 2026-04-22
 updatedDate: 2026-05-12
 author: "Suresh, Founder, Typpout"
 category: "Go-to-market"
 tags: ["social selling", "AI SDR", "intent signals", "GTM"]
-readingTime: "9 min read"
+readingTime: "4 min read"
 featured: true
 ---
 

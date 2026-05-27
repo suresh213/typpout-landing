@@ -33,7 +33,7 @@ const securityLd = {
 ---
 
 <Layout
-  title="Security - Typpout"
+  title="How Typpout Protects Your Data"
   description="Typpout's security practices: encryption, access controls, data handling, and compliance. Your data is safe with us."
   jsonLd={securityLd}
 >
@@ -105,7 +105,7 @@ const securityLd = {
             <div class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[color:var(--color-brand-50)] text-[color:var(--color-brand)]">
               <Fragment set:html={item.icon} />
             </div>
-            <h3 class="font-display text-base font-semibold text-[color:var(--color-ink-strong)]">{item.title}</h3>
+            <h2 class="font-display text-base font-semibold text-[color:var(--color-ink-strong)]">{item.title}</h2>
             <p class="mt-2 text-[13px] leading-relaxed text-[color:var(--color-ink-secondary)]">{item.body}</p>
           </div>
         ))}

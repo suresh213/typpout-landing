@@ -15,18 +15,30 @@ const productLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "name": SITE.name,
+      "url": SITE.url,
+      "logo": { "@type": "ImageObject", "url": `${SITE.url}/logo-full.webp` },
+      "sameAs": [
+        "https://x.com/typpout",
+        "https://linkedin.com/company/typpout",
+        "https://youtube.com/@typpout",
+        "https://instagram.com/typpout",
+      ],
+      "description": SITE.description,
+      "foundingDate": "2025",
+      "founder": {
+        "@type": "Person",
+        "name": "Suresh",
+        "url": `https://x.com/${SITE.founder.handle.replace("@", "")}`,
+      },
+    },
+    {
       "@type": "WebSite",
       "url": SITE.url,
       "name": SITE.name,
       "description": SITE.description,
-      "publisher": {
-        "@type": "Organization",
-        "name": SITE.name,
-        "logo": {
-          "@type": "ImageObject",
-          "url": `${SITE.url}/logo-full.webp`
-        }
-      }
+      "publisher": { "@type": "Organization", "name": SITE.name },
     },
     {
       "@type": "SoftwareApplication",
@@ -34,20 +46,16 @@ const productLd = {
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web",
       "description": SITE.description,
-      "offers": {
-        "@type": "Offer",
-        "price": "99",
-        "priceCurrency": "USD",
-        "url": `${SITE.url}/pricing`
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "127"
-      },
-      "url": SITE.url
-    }
-  ]
+      "brand": { "@type": "Brand", "name": SITE.name },
+      "url": SITE.url,
+      "image": `${SITE.url}/logo-full.webp`,
+      "offers": [
+        { "@type": "Offer", "name": "Solo", "price": "99",  "priceCurrency": "USD", "url": `${SITE.url}/pricing` },
+        { "@type": "Offer", "name": "Growth", "price": "249", "priceCurrency": "USD", "url": `${SITE.url}/pricing` },
+        { "@type": "Offer", "name": "Done For You", "price": "990", "priceCurrency": "USD", "url": `${SITE.url}/pricing` },
+      ],
+    },
+  ],
 };
 ---
 

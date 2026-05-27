@@ -56,11 +56,14 @@ const pricingLd = {
     {
       "@type": "Product",
       "name": "Typpout",
+      "brand": { "@type": "Brand", "name": "Typpout" },
+      "image": `${SITE.url}/logo-full.webp`,
+      "url": `${SITE.url}/pricing`,
       "description": "AI go-to-market platform for social listening, ICP-matched lead generation, and AI outreach.",
       "offers": [
-        { "@type": "Offer", "name": "Solo", "price": "99", "priceCurrency": "USD", "url": `${SITE.url}/pricing` },
-        { "@type": "Offer", "name": "Growth", "price": "249", "priceCurrency": "USD", "url": `${SITE.url}/pricing` },
-        { "@type": "Offer", "name": "Done For You", "price": "990", "priceCurrency": "USD", "url": `${SITE.url}/pricing` },
+        { "@type": "Offer", "name": "Solo", "price": "99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": `${SITE.url}/pricing` },
+        { "@type": "Offer", "name": "Growth", "price": "249", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": `${SITE.url}/pricing` },
+        { "@type": "Offer", "name": "Done For You", "price": "990", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": `${SITE.url}/pricing` },
       ]
     }
   ]

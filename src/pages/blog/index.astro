@@ -70,6 +70,7 @@ const blogLd = {
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
           {posts.map((p, i) => (
             <BlogCard
+              headingLevel="h2"
               href={`/blog/${p.id}`}
               title={p.data.title}
               description={p.data.description}

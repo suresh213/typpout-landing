@@ -40,6 +40,9 @@ export const FOOTER_NAV = {
     { label: "vs Trigify", href: "/blog/trigify-alternative" },
     { label: "vs Buffer", href: "/blog/buffer-alternative" },
     { label: "vs Expandi", href: "/blog/expandi-alternative" },
+    { label: "vs PhantomBuster", href: "/blog/phantombuster-alternative" },
+    { label: "vs Apollo", href: "/blog/apollo-alternative" },
+    { label: "vs Sales Navigator", href: "/blog/linkedin-sales-navigator-alternative" },
   ],
   Legal: [
     { label: "Terms of service", href: "/terms" },
@@ -91,6 +94,9 @@ export const KEYWORD_CLUSTERS = {
     "Apollo alternative for social selling",
     "Clay alternative",
     "PhantomBuster alternative",
+    "Lemlist alternative",
+    "Instantly alternative",
+    "AI SDR alternative",
   ],
   longtail: [
     "how to find buyers on LinkedIn",
@@ -100,6 +106,9 @@ export const KEYWORD_CLUSTERS = {
     "AI outbound for PMM teams",
     "best social selling tool 2026",
     "intent-based outbound platform",
+    "best AI SDR tools 2026",
+    "how to book meetings on LinkedIn",
+    "signal-based outbound",
   ],
 };
 
