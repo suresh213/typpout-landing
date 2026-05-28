@@ -98,43 +98,7 @@ import { SITE } from "../data/site";
       ))}
     </div>
 
-    <!-- Comparison -->
-    <div class="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] p-6 sm:p-8" data-reveal>
-      <div class="mb-6 text-center">
-        <h3 class="font-display text-lg font-medium sm:text-xl tracking-tight">Typpout vs. Traditional Outbound</h3>
-        <p class="mt-1 text-[13px] text-[color:var(--color-ink-muted)]">Based on aggregated data from 1.2M+ outreach events</p>
-      </div>
-      <div class="space-y-5">
-        {[
-          { label: "Reply Rate", typpout: "47%", traditional: "1-5%", typpoutWidth: "94", tradWidth: "10" },
-          { label: "Cost per Meeting", typpout: "$12", traditional: "$180+", typpoutWidth: "12", tradWidth: "90" },
-          { label: "Time to First Meeting", typpout: "3 days", traditional: "18 days", typpoutWidth: "17", tradWidth: "100" },
-          { label: "Meetings per Month", typpout: "25+", traditional: "6-8", typpoutWidth: "100", tradWidth: "32" },
-        ].map((row) => (
-          <div>
-            <div class="mb-2 text-[13px] font-medium text-[color:var(--color-ink-strong)]">{row.label}</div>
-            <div class="space-y-1.5">
-              <div class="flex items-center gap-3">
-                <span class="w-16 text-[11px] font-medium text-[color:var(--color-ink-secondary)] shrink-0">Typpout</span>
-                <div class="flex-1 h-7 rounded-md bg-white border border-[color:var(--color-border)] overflow-hidden">
-                  <div class="h-full rounded-md bg-[color:var(--color-ink-strong)] flex items-center px-3 transition-all duration-700" style={`width: ${row.typpoutWidth}%`}>
-                    <span class="text-[11px] font-semibold text-white whitespace-nowrap">{row.typpout}</span>
-                  </div>
-                </div>
-              </div>
-              <div class="flex items-center gap-3">
-                <span class="w-16 text-[11px] text-[color:var(--color-ink-muted)] shrink-0">Cold</span>
-                <div class="flex-1 h-7 rounded-md bg-white border border-[color:var(--color-border)] overflow-hidden">
-                  <div class="h-full rounded-md bg-[color:var(--color-ink-muted)]/20 flex items-center px-3 transition-all duration-700" style={`width: ${row.tradWidth}%`}>
-                    <span class="text-[11px] text-[color:var(--color-ink-muted)] whitespace-nowrap">{row.traditional}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
+
 
   </div>
 </section>
