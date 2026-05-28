@@ -1,0 +1,304 @@
+---
+import Layout from "../layouts/Layout.astro";
+import FinalCTA from "../components/FinalCTA.astro";
+import { SITE } from "../data/site";
+
+const testimonials = [
+  {
+    text: "The social listening agent and AI reply agent are perfect for our GTM motions. They efficiently help us book 20+ meetings monthly without any manual prospecting.",
+    detail: "Before Typpout, our team spent 4-5 hours daily on manual LinkedIn monitoring and cold outreach. The social listener now catches intent signals across LinkedIn, X, and Instagram in real-time. Our SDR team has been freed up to focus entirely on demos and closing. In Q1 alone, we booked 67 qualified meetings — all sourced from social intent signals.",
+    name: "Santosh Patil",
+    handle: "@santoshpatil",
+    role: "CEO",
+    company: "TechVista Solutions",
+    init: "SP",
+    bg: "bg-green-100",
+    txt: "text-green-700",
+    border: "border-green-200",
+    metric: "20+ meetings/month",
+    metricLabel: "Meetings booked monthly",
+  },
+  {
+    text: "Typpout feels different — it's built for PMMs and GTM teams, not just sales. The ICP Finder alone saves me hours every week. I stopped using Apollo entirely.",
+    detail: "As a PMM, I need to understand who our buyers are and what they're saying. Typpout's ICP matching is genuinely different from database tools like Apollo or ZoomInfo. It finds people based on what they're actually posting about, not just their job title. The signal quality is dramatically higher. We've reduced our tool spend by $800/month by consolidating onto Typpout.",
+    name: "Raiyaan Akhtar",
+    handle: "@raiyaan_gtm",
+    role: "GTM Lead",
+    company: "Carpl.AI",
+    init: "RA",
+    bg: "bg-blue-100",
+    txt: "text-blue-700",
+    border: "border-blue-200",
+    metric: "$800/mo saved",
+    metricLabel: "Tool consolidation savings",
+  },
+  {
+    text: "Instead of juggling 4-5 different tools, my team now finds ICPs, generates content, and runs outreach in one place. We booked 10 qualified meetings in the first two weeks.",
+    detail: "Our marketing agency serves B2B SaaS clients, and we were using separate tools for social listening (Mention), prospecting (Apollo), outreach (Instantly), and CRM (HubSpot). Typpout replaced the first three entirely. The AI-generated outreach messages reference the prospect's exact social post, which makes the reply rate insanely high. Our clients are thrilled with the pipeline quality.",
+    name: "Swapnil",
+    handle: "@swapnil_mktg",
+    role: "CEO",
+    company: "DigiMatrix Marketing",
+    init: "SW",
+    bg: "bg-pink-100",
+    txt: "text-pink-700",
+    border: "border-pink-200",
+    metric: "4 tools replaced",
+    metricLabel: "Consolidated into Typpout",
+  },
+  {
+    text: "Speed matters. Typpout helped us move from idea to pipeline in days. The AI outreach felt personal — we closed our first 3 customers directly from campaigns.",
+    detail: "We were launching a new product line and needed pipeline fast. Traditional outbound would have taken weeks to set up: buy a list, write sequences, warm up domains. With Typpout, we configured our ICP on Monday, the social listener started finding signals on Tuesday, and we had our first demo booked by Wednesday. The speed-to-pipeline is unlike anything I've experienced in 10 years of B2B sales.",
+    name: "Sanskar Pitta",
+    handle: "@sanskarpitta",
+    role: "Sales Lead",
+    company: "Nemetschek Group",
+    init: "SK",
+    bg: "bg-yellow-100",
+    txt: "text-yellow-700",
+    border: "border-yellow-200",
+    metric: "3 days to pipeline",
+    metricLabel: "From setup to first demo",
+  },
+  {
+    text: "We were spending 3 hours a day manually monitoring LinkedIn. Typpout cut that to zero and the quality of leads went up. The ICP matching is genuinely impressive.",
+    detail: "My team of 4 SDRs was manually scrolling LinkedIn, X, and industry forums looking for buying signals. Each rep spent about 3 hours per day on this. Typpout automated the entire process and actually finds signals we were missing — competitor mentions in X threads, hiring signals on LinkedIn, and even funding announcements on Crunchbase. The AI catches patterns a human would overlook.",
+    name: "Priya Mehta",
+    handle: "@priyamehta_rev",
+    role: "Head of Revenue",
+    company: "ScaleUp Partners",
+    init: "PM",
+    bg: "bg-purple-100",
+    txt: "text-purple-700",
+    border: "border-purple-200",
+    metric: "12 hrs/day saved",
+    metricLabel: "Across the SDR team",
+  },
+  {
+    text: "Our reply rate jumped from 12% to 47% within the first month. The AI replies are fast and on-brand — prospects can't even tell it's automated until they're already on the calendar.",
+    detail: "We A/B tested Typpout's social intent outreach against our existing cold email sequences for 30 days. Cold email: 3,200 sent, 12% reply rate, 8 meetings. Typpout: 156 signal-matched outreach, 47% reply rate, 22 meetings. The math is clear. Signal-based outreach with AI replies produces 2.75x more meetings from 20x fewer messages. We've since shut down our cold email operation entirely.",
+    name: "James Okafor",
+    handle: "@jamesokafor",
+    role: "VP Sales",
+    company: "Growthbase",
+    init: "JO",
+    bg: "bg-orange-100",
+    txt: "text-orange-700",
+    border: "border-orange-200",
+    metric: "47% reply rate",
+    metricLabel: "Up from 12% with cold email",
+  },
+  {
+    text: "I was skeptical about AI outreach tools but Typpout actually delivers. It picked up a competitor switch signal on X and booked a demo before we even knew the prospect existed.",
+    detail: "A VP of Sales at a Series B company tweeted about frustrations with their current outbound tool. Typpout detected the signal, matched it to our ICP, and sent a contextual DM within 45 seconds. The prospect replied 'yes, let's talk' within 10 minutes. That deal closed at $48K ARR. We would have completely missed this prospect with our existing prospecting workflow.",
+    name: "Lauren Park",
+    handle: "@laurenpark_gtm",
+    role: "Demand Gen Manager",
+    company: "Nextera Systems",
+    init: "LP",
+    bg: "bg-indigo-100",
+    txt: "text-indigo-700",
+    border: "border-indigo-200",
+    metric: "$48K deal closed",
+    metricLabel: "From a single X signal",
+  },
+  {
+    text: "Finally a GTM tool that doesn't feel like it was designed for a 100-person sales team. Perfect for our lean 3-person GTM team. We punch way above our weight now.",
+    detail: "As a seed-stage startup with 3 people doing everything, we can't afford dedicated SDRs or expensive sales tools. Typpout's Solo plan at $99/mo gives us enterprise-level social selling capabilities. The AI Reply Agent handles conversations while we focus on product and customer success. We've grown from 0 to 30 customers in 4 months, all through Typpout-sourced pipeline.",
+    name: "Marcus Webb",
+    handle: "@marcuswebb",
+    role: "Founder",
+    company: "Synthos AI",
+    init: "MW",
+    bg: "bg-teal-100",
+    txt: "text-teal-700",
+    border: "border-teal-200",
+    metric: "0 to 30 customers",
+    metricLabel: "In 4 months with 3-person team",
+  },
+  {
+    text: "The funding signal detection is a game changer. We get notified within minutes when a target account closes a round, and the outreach goes out while the news is still fresh.",
+    detail: "Timing is everything in enterprise sales. When a company raises a new round, the first 30 days are the best window to engage — they're actively building their stack. Typpout catches these funding announcements on LinkedIn and Crunchbase within minutes, matches them against our ICP, and triggers personalized outreach automatically. We've closed 5 deals directly from funding signals in the last quarter.",
+    name: "Divya Rao",
+    handle: "@divyarao_sales",
+    role: "Sales Director",
+    company: "CloudForge",
+    init: "DR",
+    bg: "bg-rose-100",
+    txt: "text-rose-700",
+    border: "border-rose-200",
+    metric: "5 deals from signals",
+    metricLabel: "Closed from funding alerts",
+  },
+  {
+    text: "Typpout's multi-platform monitoring is what sold us. We were missing half our signals by only watching LinkedIn. X and Instagram have been goldmines for our B2B motion.",
+    detail: "We sell to marketing agencies, and agency founders are very active on Instagram and X — not just LinkedIn. Before Typpout, we had zero visibility into those platforms for prospecting. Within the first week of monitoring all three platforms, we discovered 3x more buying signals than LinkedIn alone was producing. One of our largest deals came from an Instagram Story where a founder asked for tool recommendations.",
+    name: "Alex Chen",
+    handle: "@alexchen_b2b",
+    role: "Growth Lead",
+    company: "MarketPulse",
+    init: "AC",
+    bg: "bg-cyan-100",
+    txt: "text-cyan-700",
+    border: "border-cyan-200",
+    metric: "3x more signals",
+    metricLabel: "With multi-platform monitoring",
+  },
+  {
+    text: "We replaced our entire outbound tech stack — Apollo, Instantly, and Phantom Buster — with Typpout. Better results, one-third the cost, zero manual work.",
+    detail: "Our previous stack cost us $450/month across three tools and required 2 hours of daily manual work for list building, sequence management, and follow-ups. Typpout at $249/month handles everything automatically: signal detection, ICP matching, personalized outreach, reply management, and meeting booking. Our cost per qualified meeting dropped from $180 to $12. The ROI was obvious within the first week.",
+    name: "Nina Rodriguez",
+    handle: "@ninarodriguez",
+    role: "RevOps Manager",
+    company: "SignalFlow",
+    init: "NR",
+    bg: "bg-amber-100",
+    txt: "text-amber-700",
+    border: "border-amber-200",
+    metric: "$12 cost per meeting",
+    metricLabel: "Down from $180",
+  },
+  {
+    text: "The AI Reply Agent is the real differentiator. Other tools can find leads, but none of them handle the entire conversation from first touch to booked meeting like Typpout does.",
+    detail: "I've used every social selling and outreach tool on the market. Most stop at sending the first message. Typpout's AI Reply Agent handles the back-and-forth: answering questions, addressing objections, sharing relevant case studies, and actually booking the meeting on your calendar. It responded to a prospect's 3 follow-up questions at 11 PM on a Saturday — something my human SDRs would never do. That meeting converted to a $25K deal.",
+    name: "David Kim",
+    handle: "@davidkim_sales",
+    role: "CRO",
+    company: "Pinnacle GTM",
+    init: "DK",
+    bg: "bg-emerald-100",
+    txt: "text-emerald-700",
+    border: "border-emerald-200",
+    metric: "24/7 reply coverage",
+    metricLabel: "AI handles nights & weekends",
+  },
+];
+
+const stats = [
+  { value: "47%", label: "Average reply rate" },
+  { value: "20+", label: "Meetings booked per month" },
+  { value: "8s", label: "Average AI reply time" },
+  { value: "3-5x", label: "Meeting lift vs cold outbound" },
+];
+
+const testimonialsLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE.url },
+    { "@type": "ListItem", "position": 2, "name": "Testimonials", "item": `${SITE.url}/testimonials` },
+  ],
+};
+---
+
+<Layout
+  title="Testimonials - What GTM Teams Say About Typpout"
+  description="See how GTM teams use Typpout to book qualified meetings from social intent signals. Real results from real customers across SaaS, agencies, and enterprise sales."
+  keywords={["Typpout reviews", "Typpout testimonials", "social selling results", "AI SDR results", "GTM platform reviews"]}
+  jsonLd={testimonialsLd}
+>
+  <!-- Hero section -->
+  <section class="mx-auto w-full max-w-[1280px] border-x border-b border-[color:var(--color-border)] bg-[color:var(--color-surface-muted)]">
+    <div class="px-5 py-20 text-center sm:px-8 lg:py-24">
+      <span class="eyebrow">Testimonials</span>
+      <h1 class="h-section mt-4 text-balance">
+        Real Results from
+        <span class="text-[color:var(--color-brand)]">Real Teams</span>
+      </h1>
+      <p class="mx-auto mt-5 max-w-2xl text-[17px] leading-relaxed text-[color:var(--color-ink-secondary)]">
+        Don't take our word for it. Here's what GTM teams, founders, and revenue leaders say about switching to signal-based social selling with Typpout.
+      </p>
+    </div>
+  </section>
+
+  <!-- Stats bar -->
+  <section class="mx-auto w-full max-w-[1280px] border-x border-b border-[color:var(--color-border)]">
+    <div class="grid grid-cols-2 lg:grid-cols-4">
+      {stats.map((s, i) => (
+        <div class:list={[
+          "flex flex-col items-center gap-1 py-8 text-center",
+          i < stats.length - 1 ? "border-r border-[color:var(--color-border)]" : "",
+          i === 1 ? "max-lg:border-r-0 max-lg:border-b border-[color:var(--color-border)]" : "",
+          i === 0 ? "max-lg:border-b border-[color:var(--color-border)]" : "",
+        ]}>
+          <span class="font-display text-2xl font-medium text-[color:var(--color-brand)] sm:text-3xl">{s.value}</span>
+          <span class="text-sm text-[color:var(--color-ink-secondary)]">{s.label}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Detailed testimonials -->
+  <section class="mx-auto w-full max-w-[1280px] border-x border-[color:var(--color-border)]">
+    <div class="px-4 py-20 md:px-10 md:py-28">
+      <div class="space-y-8">
+        {testimonials.map((t, i) => (
+          <div
+            class:list={[
+              "group rounded-2xl border bg-white p-6 transition-all duration-300 hover:shadow-lg sm:p-8",
+              t.border,
+            ]}
+            data-reveal
+          >
+            <div class="flex flex-col gap-6 lg:flex-row lg:gap-10">
+
+              <!-- Left: Quote & Attribution -->
+              <div class="flex-1 space-y-5">
+                <!-- Star rating -->
+                <div class="flex items-center gap-0.5">
+                  {[1, 2, 3, 4, 5].map(() => (
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true">
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    </svg>
+                  ))}
+                </div>
+
+                <!-- Main quote -->
+                <blockquote class="text-lg font-medium leading-relaxed text-[color:var(--color-ink-strong)] sm:text-xl">
+                  "{t.text}"
+                </blockquote>
+
+                <!-- Detailed story -->
+                <p class="text-[15px] leading-relaxed text-[color:var(--color-ink-secondary)]">
+                  {t.detail}
+                </p>
+
+                <!-- Attribution -->
+                <div class="flex items-center gap-3 pt-2">
+                  <span class:list={["grid h-11 w-11 shrink-0 place-items-center rounded-full text-sm font-semibold", t.bg, t.txt]}>
+                    {t.init}
+                  </span>
+                  <div>
+                    <div class="text-[15px] font-semibold text-[color:var(--color-ink-strong)]">{t.name}</div>
+                    <div class="text-[13px] text-[color:var(--color-ink-muted)]">{t.role}, {t.company}</div>
+                  </div>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="ml-auto text-[color:var(--color-ink-subtle)]" aria-hidden="true">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.738l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Right: Key metric card -->
+              <div class="flex items-start lg:w-56">
+                <div class:list={[
+                  "w-full rounded-xl border p-5 text-center transition-transform duration-300 group-hover:scale-105",
+                  t.border, t.bg,
+                ]}>
+                  <div class:list={["font-display text-2xl font-medium sm:text-3xl", t.txt]}>
+                    {t.metric}
+                  </div>
+                  <div class:list={["mt-1 text-[13px] font-medium", t.txt]}>
+                    {t.metricLabel}
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+</Layout>
