@@ -705,15 +705,15 @@ body {
    Hero background — exact port of Dodo template hero-bg system
    ========================================================================= */
 .hero-bg {
-  --mesh-green: #ede5f7;
-  --mesh-mint: #f3effe;
-  --mesh-blue: #e7edff;
-  --mesh-blue-deep: #d8e3ff;
-  --mesh-pink: #f0e5fa;
-  --mesh-peach: #fff0f5;
-  --mesh-bg: #fdfbff;
-  --dot-color: #1f3a8a;
-  --dot-opacity: 0.1;
+  --mesh-green: #f5f0e0;
+  --mesh-mint: #faf6eb;
+  --mesh-blue: #f0ece0;
+  --mesh-blue-deep: #ebe6d6;
+  --mesh-pink: #faf3e8;
+  --mesh-peach: #fdf5ec;
+  --mesh-bg: #faf8f3;
+  --dot-color: #8b7355;
+  --dot-opacity: 0.06;
   --dot-size: 1.4px;
   --dot-cell: 22px;
   height: clamp(680px, 92vh, 900px);
