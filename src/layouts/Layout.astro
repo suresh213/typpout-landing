@@ -3,6 +3,7 @@ import "../styles/global.css";
 import SEO from "../components/SEO.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import CookieConsent from "../components/CookieConsent.astro";
 
 interface Props {
   title?: string;
@@ -80,6 +81,8 @@ const {
     </main>
 
     {!bare && <Footer />}
+
+    <CookieConsent />
 
     <script>
       const reveal = () => {

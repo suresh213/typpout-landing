@@ -1,0 +1,64 @@
+---
+---
+
+<div
+  id="cookie-consent"
+  class="fixed bottom-4 left-4 right-4 z-[999] translate-y-[calc(100%+2rem)] transition-transform duration-500 ease-out sm:left-auto sm:right-5 sm:max-w-md"
+  role="dialog"
+  aria-label="Cookie consent"
+  aria-hidden="true"
+>
+  <div class="rounded-xl border border-[color:var(--color-border)] bg-white px-5 py-4 shadow-[0_8px_30px_-8px_rgba(0,0,0,0.15)]">
+    <p class="text-[13px] leading-relaxed text-[color:var(--color-ink-secondary)]">
+      We use cookies to improve your experience and analyse traffic.
+      <a href="/privacy" class="underline text-[color:var(--color-ink-strong)] hover:text-[color:var(--color-brand)]">Privacy Policy</a>
+    </p>
+    <div class="mt-3 flex items-center gap-2">
+      <button
+        id="cookie-reject"
+        type="button"
+        class="h-8 flex-1 rounded-lg border border-[color:var(--color-border)] text-[13px] font-medium text-[color:var(--color-ink-secondary)] transition-colors hover:bg-[color:var(--color-surface-soft)] cursor-pointer"
+      >
+        Decline
+      </button>
+      <button
+        id="cookie-accept"
+        type="button"
+        class="h-8 flex-1 rounded-lg bg-[color:var(--color-ink)] text-[13px] font-medium text-white transition-colors hover:bg-[#2d2c2c] cursor-pointer"
+      >
+        Accept
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const COOKIE_KEY = "typpout_cookie_consent";
+  const banner = document.getElementById("cookie-consent");
+
+  const hide = () => {
+    if (!banner) return;
+    banner.classList.add("translate-y-[calc(100%+2rem)]");
+    banner.setAttribute("aria-hidden", "true");
+    setTimeout(() => { banner.style.display = "none"; }, 500);
+  };
+
+  const save = (accepted: boolean) => {
+    localStorage.setItem(COOKIE_KEY, JSON.stringify({ accepted, ts: Date.now() }));
+    hide();
+  };
+
+  if (!localStorage.getItem(COOKIE_KEY)) {
+    setTimeout(() => {
+      if (!banner) return;
+      banner.style.display = "block";
+      banner.setAttribute("aria-hidden", "false");
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        banner.classList.remove("translate-y-[calc(100%+2rem)]");
+      }));
+    }, 1500);
+  }
+
+  document.getElementById("cookie-accept")?.addEventListener("click", () => save(true));
+  document.getElementById("cookie-reject")?.addEventListener("click", () => save(false));
+</script>
