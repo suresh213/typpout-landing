@@ -119,11 +119,17 @@
    Base
    ========================================================================= */
 html {
+  font-size: 110%; /* Scale all rem units, font sizes, and layout gaps by 10% (equivalent to 110% zoom level) */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 5.5rem; /* Scaled from 5rem to match the zoom */
+}
+
+/* Ensure the main layout grid wrapper (1280px) is also scaled up by exactly 10% (1280px * 1.1 = 1408px) */
+.max-w-\[1280px\] {
+  max-width: 1408px !important;
 }
 
 body {
