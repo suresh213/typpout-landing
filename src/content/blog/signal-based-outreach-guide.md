@@ -34,7 +34,7 @@ Instead of starting with a static list of companies that match your Ideal Custom
 
 ## The 4 Main Types of Buying Signals
 
-To build a high-converting signal-based outreach program, you must monitor four key types of intent signals:
+To build a high-converting signal-based outreach program, you must monitor four key types of intent signals. For a deeper taxonomy of signal categories, see our guide on [what buying intent data actually is](/blog/what-is-buying-intent-data).
 
 ### 1. Social Intent Signals
 When decision-makers post about challenges, ask for recommendations, or express frustration with competitors on LinkedIn, X, or Instagram. For example, a VP of Sales posting: *"Looking for a better way to coordinate our warm outreach sequences. What are people using?"* This is the highest-value signal because it represents active buying mode.
@@ -72,6 +72,6 @@ If a prospect shows intent on LinkedIn, don't stop there. Connect with them, eng
 
 ## The Bottom Line
 
-In a world saturated with generic outbound volume, relevance is the only currency that matters. Signal-based outbound guarantees that your message is relevant because it is written in response to the buyer's own public behavior.
+In a world saturated with generic outbound volume, relevance is the only currency that matters. Signal-based outbound guarantees that your message is relevant because it is written in response to the buyer's own public behavior. If you are still evaluating the shift, our [cold email vs social selling comparison](/blog/cold-email-vs-social-selling) breaks down the data side by side.
 
 Ready to automate your social intent listening and respond to warm buyers before your competitors do? [Book a 15-minute demo with the Typpout team](https://calendly.com/arjitsinghrajput24/15min) to see it in action.

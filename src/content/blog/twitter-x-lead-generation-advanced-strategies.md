@@ -17,7 +17,7 @@ On X, engineers, CTOs, product managers, and founders speak candidly. They compl
 
 If your GTM team is not actively listening to these public X discussions, you are leaving massive pipelines on the table.
 
-Here is the advanced playbook to source B2B buyers on X.
+Here is the advanced playbook to source B2B buyers on X. For a broader strategic overview, see our [X/Twitter for B2B lead generation](/blog/x-twitter-b2b-lead-generation) guide and our [Twitter/X for B2B prospecting](/blog/twitter-x-for-b2b-prospecting) deep-dive.
 
 ---
 

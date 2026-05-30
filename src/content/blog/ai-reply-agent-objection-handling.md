@@ -17,7 +17,7 @@ This is a valid concern. Standard chat bots are notoriously bad at handling B2B 
 
 In 2026, advanced AI Reply Agents use **semantic intent mapping** and secure product knowledge bases to handle hard sales objections with the same nuance and empathy as a top-performing human rep.
 
-Here is the exact playbook to train and configure your AI Reply Agent to resolve objections and book meetings on autopilot.
+Here is the exact playbook to train and configure your AI Reply Agent to resolve objections and book meetings on autopilot. For the technical foundations, see our [AI reply agents explained](/blog/ai-reply-agents-explained) guide.
 
 ---
 
@@ -67,6 +67,6 @@ To ensure your AI Reply Agent maintains perfect professional standards, implemen
 * **The Multi-Language Switch**: Ensure your agent automatically detects the incoming language and matches the reply, allowing you to seamlessly handle European and global prospects in their native language.
 * **The Human-in-the-Loop Hand-off**: If a prospect sends a highly technical question or requests a custom security questionnaire review, the AI must instantly say: *"Let me grab our lead architect to get you an exact answer on this security protocol,"* and trigger a high-priority Slack notification to your team.
 
-By combining the speed of automation with the strategic nuance of human sales playbooks, you build a reply engine that turns cold objections into warm sales opportunities.
+For a broader framework of sales objection tactics in social contexts, read our guide on [objection handling in social selling](/blog/objection-handling-in-social-selling). By combining the speed of automation with the strategic nuance of human sales playbooks, you build a reply engine that turns cold objections into warm sales opportunities.
 
 Want to see how Typpout's AI Reply Agent handles objections and books meetings on your calendar? [Schedule a 15-minute demo with our team](https://calendly.com/arjitsinghrajput24/15min).

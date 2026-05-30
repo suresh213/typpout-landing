@@ -19,7 +19,7 @@ These moments of transition are called **Social Trigger Events**.
 
 In 2026, high-performing B2B sales teams don't wait for prospects to find them. They deploy automated social listeners to detect trigger events in real-time, allowing them to swoop in and initiate conversations at the moment of peak intent.
 
-Here are the top 10 social trigger events you must monitor.
+Here are the top 10 social trigger events you must monitor. For a deeper dive into event-driven selling workflows, read our [event-triggered social selling](/blog/event-triggered-social-selling) guide.
 
 ---
 
@@ -89,6 +89,6 @@ Deploy [Typpout](/) as your autonomous trigger listener.
 
 Our real-time engine scans LinkedIn, X, and Instagram for all 10 events 24/7. When a trigger is detected, Typpout enriches the contact’s corporate identity, evaluates their ICP fit, and queues up a contextual outreach draft, allowing you to engage at the moment of peak intent, before any competitor spots the window.
 
-Timing is your unfair advantage. Automate your listening today.
+For a complementary keyword-level approach, see our guide on [buyer intent keywords by industry](/blog/buyer-intent-keywords-by-industry). Timing is your unfair advantage. Automate your listening today.
 
 Ready to capture real-time trigger events and book more meetings? [Book a 15-minute demo with Typpout today](https://calendly.com/arjitsinghrajput24/15min).

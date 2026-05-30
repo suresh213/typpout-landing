@@ -19,7 +19,7 @@ In the age of autonomous sales, asking a prospect to fill out a long form or ans
 
 When deploying an **AI SDR**, you must design a qualification framework that feels natural, helpful, and conversational, while still gathering the critical data points your sales team needs to close the deal.
 
-Here is how to design the perfect AI lead qualification framework for 2026.
+Here is how to design the perfect AI lead qualification framework for 2026. Start by defining your ideal buyer profile using our [ICP definition guide](/blog/icp-definition-guide).
 
 ---
 

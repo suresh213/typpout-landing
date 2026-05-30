@@ -143,3 +143,5 @@ If you want to test social listening without any new tools:
 5. Track how many DM conversations this generates over 30 days.
 
 When you are ready to automate the process so it runs 24/7 and catches signals across all three platforms regardless of time zone or time of day, [start a 3-day free trial of Typpout](/pricing) and let the platform handle the monitoring, matching, and first touch automatically.
+
+**Keep reading**: For specialized applications of social listening, see our guides on [competitor keyword monitoring](/blog/competitor-keywords-social-listening), [SaaS churn prevention via social listening](/blog/saas-churn-prevention-social-listening), and [social listening tools for agency lead generation](/blog/social-listening-tools-for-agency-leads).

@@ -19,7 +19,7 @@ An incoming reply could be a positive expression of interest, but more often, it
 
 If a human SDR takes 4 hours to research the answer, write a response, and send it back, the lead has already gone cold. Speed-to-lead is critical. 
 
-In 2026, high-performing sales teams are solving this by deploying **AI Reply Agents** that autonomously handle objections, qualify interest, and book meetings in real-time.
+In 2026, high-performing sales teams are solving this by deploying **AI Reply Agents** that autonomously handle objections, qualify interest, and book meetings in real-time. For a deeper technical explanation of how these agents work, see our [AI reply agents explained](/blog/ai-reply-agents-explained) guide.
 
 ---
 
@@ -72,6 +72,6 @@ Deploying an AI reply agent does not mean removing humans from the loop. The mos
 * **AI** monitors social channels, sources lead opportunities, triggers warm outreach, handles incoming replies, and books the demo.
 * **Humans** show up to the demo, build deep relationships, negotiate deals, and close the contract.
 
-This eliminates 90% of the repetitive top-of-funnel work, allowing your sales reps to focus entirely on closing revenue.
+For a broader framework on handling tough sales conversations, see our guide on [objection handling in social selling](/blog/objection-handling-in-social-selling). This eliminates 90% of the repetitive top-of-funnel work, allowing your sales reps to focus entirely on closing revenue.
 
 Want to see how an AI Reply Agent can handle objections and book meetings on autopilot for your team? [Book a 15-minute demo with Typpout](https://calendly.com/arjitsinghrajput24/15min) today.

@@ -20,7 +20,7 @@ An AI SDR can send 10,000 emails in a second, making "emails sent" a meaningless
 
 To build a high-performance sales machine, you must update your GTM dashboard to track unit economics, intent-to-meeting conversion, and pipeline velocity.
 
-Here are the modern sales metrics that actually matter.
+Here are the modern sales metrics that actually matter. For a complementary view on individual rep efficiency, see our [SDR productivity metrics](/blog/sdr-productivity-metrics) guide.
 
 ---
 
@@ -71,6 +71,6 @@ To transition your sales operations team to this modern tracking model:
 2. **Focus on Quality Indicators**: Build CRM reports in HubSpot or Salesforce that track **Signal Quality**, **Meeting Booking Efficiency**, and **Cost Per Lead (CPL)**.
 3. **Optimize the Unit Economics**: Use the cost per booked meeting metric to allocate budget away from legacy contact databases and toward real-time social listening resources like [Typpout](/).
 
-Stop measuring how hard your GTM tools are working. Start measuring how efficiently they are converting intent into closed-won revenue.
+For guidance on connecting these metrics to revenue attribution, read our guide on [measuring social selling ROI](/blog/measuring-social-selling-roi). Stop measuring how hard your GTM tools are working. Start measuring how efficiently they are converting intent into closed-won revenue.
 
 Ready to deploy a high-efficiency AI SDR dashboard for your team? [Book a 15-minute demo with Typpout today](https://calendly.com/arjitsinghrajput24/15min).

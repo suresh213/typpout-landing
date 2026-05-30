@@ -17,7 +17,7 @@ Marketing runs display ads on LinkedIn targeting the account. Meanwhile, sales r
 
 In 2026, the key to winning enterprise accounts is **Multichannel Social Orchestration**. You must coordinate your touchpoints across LinkedIn, email, and X (Twitter) so they feel like a single, cohesive, and helpful discussion.
 
-Here is the exact playbook to orchestrate a seamless multichannel ABM campaign.
+Here is the exact playbook to orchestrate a seamless multichannel ABM campaign. For the strategic foundation, read our [account-based social selling](/blog/account-based-social-selling) guide.
 
 ---
 
@@ -70,6 +70,6 @@ Executing this level of orchestration manually across 100 accounts is an adminis
 2. **Automate the Listening Layer**: Deploy a platform like [Typpout](/) to monitor LinkedIn, X, and Instagram for activity from these specific individuals.
 3. **Queue Contextual Tasks**: When Typpout detects a social post or hiring trigger, it automatically queues up the coordinated multichannel cadence, prompting your sales rep with the exact copy and action needed at each step.
 
-By coordinating your outreach across channels and leading with genuine value, you break through the noise of legacy outbound and build the trust required to secure enterprise partnerships.
+For more on combining social touchpoints across platforms, see our [multi-channel social selling](/blog/multi-channel-social-selling) guide. By coordinating your outreach across channels and leading with genuine value, you break through the noise of legacy outbound and build the trust required to secure enterprise partnerships.
 
 Want to see how to automate multichannel social orchestration for your top 100 target accounts? [Book a 15-minute demo with Typpout today](https://calendly.com/arjitsinghrajput24/15min).

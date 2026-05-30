@@ -20,7 +20,7 @@ To fix this, the typical response is to increase volume: *"If we want 10 meeting
 
 In 2026, the path to repeatable pipeline is not volume; it is **conversion optimization**.
 
-Here is the exact framework to move your outreach campaigns from 1% reply rates to 20% calendar booking rates.
+Here is the exact framework to move your outreach campaigns from 1% reply rates to 20% calendar booking rates. For benchmarks on what good SDR metrics look like, check our [SDR productivity metrics](/blog/sdr-productivity-metrics) guide.
 
 ---
 
@@ -75,6 +75,6 @@ Let's look at the financial and operational impact of running an optimized, sign
 | **Total Booked Demos** | **12 meetings** | **100 meetings** |
 | **Cost per Booking** | **$450+** | **$25+** |
 
-By focusing on high-intent social signals and optimizing every step of your copy and reply handling, you generate **8 times more meetings** while sending **95% less volume**.
+For common pitfalls to avoid during optimization, read our [sales automation mistakes](/blog/sales-automation-mistakes) guide. By focusing on high-intent social signals and optimizing every step of your copy and reply handling, you generate **8 times more meetings** while sending **95% less volume**.
 
 Ready to optimize your outbound pipeline and move your booking rates to 20%? [Schedule a 15-minute demo with Typpout today](https://calendly.com/arjitsinghrajput24/15min).

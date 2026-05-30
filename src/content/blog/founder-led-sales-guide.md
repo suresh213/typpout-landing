@@ -38,3 +38,5 @@ Social selling is the best channel for founder-led sales for three reasons:
 This stack turns a solo founder into a one-person sales machine that operates at the speed of a 5-person SDR team.
 
 **Pricing**: $99/mo. [Start a 3-day free trial](/pricing).
+
+**Keep reading**: For the daily tactical execution plan, read our [founder-led social selling playbook](/blog/founder-led-social-selling-playbook) with a 30-minute daily routine.

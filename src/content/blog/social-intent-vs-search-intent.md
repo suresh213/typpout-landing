@@ -29,7 +29,7 @@ To understand which strategy fits your GTM goals, let's define how both intent l
 Search intent is triggered when a prospect types a query into a search engine. They are looking for information, comparison sheets, or a product vendor. Because they initiated the search, their buying intent is high. However, they are completely anonymous until they decide to fill out a demo request form on your site.
 
 ### What is Social Intent?
-Social intent is triggered when a decision-maker posts a challenge, asks their peer network for recommendations, or comments on a competitor's profile on LinkedIn, X, or Instagram. They are publicly discussing a need in real-time. Because they are posting from their personal profile, they are **fully identified** from the very first signal.
+Social intent is triggered when a decision-maker posts a challenge, asks their peer network for recommendations, or comments on a competitor's profile on LinkedIn, X, or Instagram. They are publicly discussing a need in real-time. Because they are posting from their personal profile, they are **fully identified** from the very first signal. For a deeper taxonomy of intent signal types, read our [guide to buying intent data](/blog/what-is-buying-intent-data).
 
 ---
 

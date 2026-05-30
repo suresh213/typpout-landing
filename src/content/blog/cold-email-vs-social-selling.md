@@ -91,6 +91,8 @@ Most teams that run this test find that social intent leads are cheaper per meet
 
 [Typpout](/) automates the social intent side of this test: 24/7 monitoring across LinkedIn, X, and Instagram, AI-generated personalized first touches, and an AI Reply Agent that qualifies and books meetings. [Start a 3-day free trial](/pricing) and run it alongside your cold email for a month. The data tends to settle the channel debate quickly.
 
+For teams looking to bridge the gap between cold email and social, read our [warm email deliverability with socials](/blog/warm-email-deliverability-with-socials) playbook. Also see our [signal-based outbound guide](/blog/signal-based-outreach-guide) for the complete framework.
+
 ## Frequently Asked Questions
 
 ### Is cold email dead in 2026?

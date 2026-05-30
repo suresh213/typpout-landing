@@ -17,7 +17,7 @@ To achieve consistent **95%+ inbox placement**, you must prove to the spam filte
 
 The secret weapon to bypass modern spam filters is **Social Warm-up**. By executing micro-touchpoints on social media before your email ever hits the prospect's inbox, you drastically increase open and reply rates, sending strong positive engagement signals to the email algorithms.
 
-Here is the exact playbook to use socials to maintain pristine email deliverability.
+Here is the exact playbook to use socials to maintain pristine email deliverability. For the full strategic comparison of email vs social outreach, read our [cold email vs social selling](/blog/cold-email-vs-social-selling) analysis.
 
 ---
 
@@ -77,6 +77,6 @@ Executing this sequence manually for dozens of accounts takes hours of tracking.
 2. **Auto-Trigger the Touchpoints**: When a signal is detected, Typpout automatically visits the profile, triggers a connection request, and enriches their email.
 3. **Pipe to Your Sequencer**: Sync the enriched contact and their custom trigger data directly to your email tool (HubSpot, Instantly, or Lemlist) to start the contextual sequence immediately.
 
-By ensuring that every cold email is preceded by a warm social touchpoint, you protect your email domains, beat the spam filters, and book significantly more meetings.
+For more on combining channels effectively, see our [multi-channel social selling](/blog/multi-channel-social-selling) guide. By ensuring that every cold email is preceded by a warm social touchpoint, you protect your email domains, beat the spam filters, and book significantly more meetings.
 
 Want to see how to coordinate social triggers and email sequences for maximum deliverability? [Book a 15-minute demo with Typpout today](https://calendly.com/arjitsinghrajput24/15min).

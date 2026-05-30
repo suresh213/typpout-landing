@@ -50,3 +50,5 @@ Choose three topics where your expertise intersects with your buyer's interests:
 The personal brand makes every social selling touchpoint more effective. When [Typpout](/) engages with a buyer's intent signal, the buyer checks the profile of the person behind the outreach. A strong personal brand converts that profile visit into a reply.
 
 [Start a 3-day free trial of Typpout](/pricing) and combine personal brand with signal-based outreach.
+
+**Keep reading**: To take your personal brand a step further and convert content views into sales pipeline, read our [B2B creator-led growth](/blog/b2b-creator-led-growth-sales) guide.

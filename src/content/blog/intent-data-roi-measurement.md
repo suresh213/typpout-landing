@@ -15,7 +15,7 @@ If you are proposing a shift from traditional cold list blasting (using database
 
 canned pitches about "better data" don't close budgets. You need **hard financial formulas**, conversion comparisons, and customer acquisition cost (CAC) calculations.
 
-Here is the exact financial framework to measure the ROI of intent-based prospecting against traditional static databases.
+For a foundational understanding of intent data categories, start with our guide on [what buying intent data is](/blog/what-is-buying-intent-data). Here is the exact financial framework to measure the ROI of intent-based prospecting against traditional static databases.
 
 ---
 
@@ -78,6 +78,6 @@ When pitching the budget transition to your executive team:
 2. **Present the Conversion Delta**: Show that targeting active buyers on socials yields a **24% reply rate** compared to the 1% industry average for cold databases.
 3. **Run a 30-Day Pilot**: Set up a low-cost trial on [Typpout](/pricing), let it source intent leads for 30 days, and measure the exact cost-per-booked-meeting against your active database sequences.
 
-Stop throwing money at cold list databases that buy ignored inbox placement. Invest in real-time intent.
+For a complementary perspective on tying social selling activities to revenue, read our guide on [measuring social selling ROI](/blog/measuring-social-selling-roi). Stop throwing money at cold list databases that buy ignored inbox placement. Invest in real-time intent.
 
 Ready to maximize your outbound GTM ROI? [Book a 15-minute demo with Typpout today](https://calendly.com/arjitsinghrajput24/15min).

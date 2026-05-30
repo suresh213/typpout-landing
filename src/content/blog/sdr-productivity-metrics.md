@@ -52,3 +52,5 @@ When AI handles signal monitoring, initial outreach, and reply management, the h
 * **Human SDR metrics**: Meeting quality score, deal progression rate, pipeline value, close rate
 
 [Typpout](/) provides built-in analytics for AI-driven metrics. [Start a 3-day free trial](/pricing).
+
+**Keep reading**: For team-level metrics beyond individual SDR productivity, read our [outbound sales metrics that matter](/blog/outbound-sales-metrics-that-matter) guide. For conversion optimization, see [maximizing outreach conversion rates](/blog/maximizing-outreach-conversion-rates).

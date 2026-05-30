@@ -22,7 +22,7 @@ By the time a client stops logging into your platform, the decision to churn has
 
 In 2026, forward-thinking Customer Success (CS) and account management teams are preventing churn by monitoring **real-time social signals** to spot dissatisfied accounts and intercept cancellation risks early.
 
-Here is how to set up social listening for churn prevention.
+Here is how to set up social listening for churn prevention. For the foundational techniques, read our comprehensive [social listening for sales](/blog/social-listening-for-sales) guide.
 
 ---
 
@@ -79,6 +79,6 @@ To integrate social health into your GTM operations:
 * **Sync Alerts to CS Slack Channels**: Route risk notifications directly to the Slack channel monitored by your Customer Success Managers (CSMs).
 * **Speed to Intercept**: Set an SLA of **2 hours** for CSMs to reach out once a public customer frustration signal is detected.
 
-By listening to your customers’ public thoughts and helping them proactively, you protect your net revenue retention (NRR) and build lasting client relationships.
+For more on building competitive intelligence processes that also protect existing accounts, see our [competitor monitoring for social selling](/blog/competitor-monitoring-social-selling) playbook. By listening to your customers’ public thoughts and helping them proactively, you protect your net revenue retention (NRR) and build lasting client relationships.
 
 Want to see how Typpout keeps your CS team alerted to active client risks and opportunities? [Book a 15-minute demo with our team today](https://calendly.com/arjitsinghrajput24/15min).

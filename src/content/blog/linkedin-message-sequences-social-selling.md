@@ -17,7 +17,7 @@ On social networks, this behavior is a conversion killer. LinkedIn is a conversa
 
 Your sequence should slowly build trust, deliver upfront value, and only ask for a meeting once the prospect has engaged.
 
-Here is the exact **4-step LinkedIn messaging sequence** designed to achieve a 20%+ booking rate.
+Here is the exact **4-step LinkedIn messaging sequence** designed to achieve a 20%+ booking rate. For the psychology behind high-performing LinkedIn copy, read our [how to write LinkedIn messages](/blog/how-to-write-linkedin-messages) guide.
 
 ---
 
@@ -72,6 +72,6 @@ You can automate this entire execution chain using [Typpout](/).
 
 Our conversational sales platform automatically tracks connection acceptances, schedules the randomized delays, monitors for replies, and drafts the next step of the sequence for your team to review and send. You maintain a warm, human-like cadence at scale, without the manual overhead.
 
-Stop spamming the LinkedIn inbox. Start orchestrating conversations.
+For complementary DM-specific best practices, see our [LinkedIn DM outreach best practices](/blog/linkedin-dm-outreach-best-practices) guide. Stop spamming the LinkedIn inbox. Start orchestrating conversations.
 
 Ready to build a high-conversion LinkedIn sequence for your team? [Book a 15-minute demo with Typpout today](https://calendly.com/arjitsinghrajput24/15min).

@@ -13,7 +13,7 @@ Sending cold LinkedIn messages in 2026 is a quick way to get your account flagge
 
 The secret to booked meetings is **contextual warmth**. You must connect your message to a specific trigger—a post they wrote, a comment they made, or a change in their company stack.
 
-Here are 10 highly effective, signal-driven LinkedIn templates that bypass the noise and book demos.
+Here are 10 highly effective, signal-driven LinkedIn templates that bypass the noise and book demos. For deeper guidance on LinkedIn messaging psychology, see our [complete guide to writing LinkedIn messages](/blog/how-to-write-linkedin-messages).
 
 ---
 
@@ -78,6 +78,8 @@ When a company installs or switches marketing tools.
 ---
 
 ## How to Maximize Your LinkedIn Conversion
+
+For more on crafting the perfect connection request, read our [LinkedIn connection request strategies guide](/blog/linkedin-connection-request-strategies).
 
 1. **Keep it under 300 characters**: Shorter messages are easier to read and respond to on mobile.
 2. **Never sell on the first touch**: Your goal is to start a conversation, not close a deal. Sell the *resource* or the *idea*, not the product.

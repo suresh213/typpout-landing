@@ -20,7 +20,7 @@ In 2026, high-growth agencies are winning high-value **retainer clients** using 
 
 By monitoring public discussions from startup founders, CMOs, and heads of product on LinkedIn and X, agencies can identify companies experiencing immediate pain points and offer help exactly when they need it.
 
-Here is the step-by-step agency lead generation playbook.
+Here is the step-by-step agency lead generation playbook. For a broader overview of social selling in the agency context, read our [social selling for agencies](/blog/social-selling-for-agencies) guide.
 
 ---
 
@@ -79,6 +79,6 @@ Deploy [Typpout](/) as your autonomous agency SDR.
 
 Our social listening engine scans LinkedIn, X, and Instagram 24/7 for founders and marketing leaders looking for help. It resolves their professional emails, enriches their stack details, and alerts your team instantly, allowing you to drop a custom Loom into their inbox before any competitor agency even spots the post.
 
-Break the feast-or-famine cycle. Automate your agency pipeline today.
+For the underlying technology and strategy, see our comprehensive guide on [social listening for sales](/blog/social-listening-for-sales). Break the feast-or-famine cycle. Automate your agency pipeline today.
 
 Ready to win high-value retainer clients on autopilot? [Schedule a 15-minute demo with Typpout](https://calendly.com/arjitsinghrajput24/15min) today.

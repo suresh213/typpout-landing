@@ -15,7 +15,7 @@ As sales organizations transition to autonomous **AI SDRs** that source leads an
 
 With regulatory bodies imposing massive fines for non-compliant spam, and social platforms aggressively restricting accounts that use unapproved automation, compliance is no longer a check-box chore. It is a critical requirement to protect your brand, your domains, and your company.
 
-Here is the ultimate guide to running **fully compliant** AI-driven outbound campaigns in 2026.
+Here is the ultimate guide to running **fully compliant** AI-driven outbound campaigns in 2026. For GDPR-specific compliance in the social selling context, also read our [social selling compliance and GDPR](/blog/social-selling-compliance-gdpr) guide.
 
 ---
 
@@ -70,6 +70,6 @@ At Typpout, we built compliance directly into our platform architecture:
 * **Intent-Backed Sourcing**: We only source leads based on active, public intent signals, providing a robust legal foundation for Legitimate Interest under GDPR.
 * **residential IP Protection**: Every client profile is assigned a clean, dedicated residential proxy matching their corporate geography, keeping LinkedIn interactions completely safe and organic.
 
-Run a high-converting pipeline with zero legal or deliverability risks.
+For platform-specific safety tips, see our guide on [automating LinkedIn outreach safely](/blog/automating-linkedin-outreach-safely). Run a high-converting pipeline with zero legal or deliverability risks.
 
 Ready to deploy a fully compliant AI SDR sequence for your team? [Book a 15-minute demo with Typpout today](https://calendly.com/arjitsinghrajput24/15min).

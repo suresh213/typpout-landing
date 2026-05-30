@@ -13,7 +13,7 @@ The absolute easiest customer to close is a prospect who is already paying for a
 
 They have already gone through the education phase. They understand why they need the technology. They have allocated budget. The only thing they are missing is a better alternative.
 
-In the past, catching these disgruntled buyers was a matter of luck. In 2026, you can automate this process using **social listening**. By monitoring specific competitor keywords and phrases across LinkedIn, X, and Instagram, you can identify buyers looking to switch and swoop in with a contextual pitch within minutes.
+In the past, catching these disgruntled buyers was a matter of luck. In 2026, you can automate this process using **social listening**. By monitoring specific competitor keywords and phrases across LinkedIn, X, and Instagram — a technique we cover in depth in our [social listening for sales guide](/blog/social-listening-for-sales) —, you can identify buyers looking to switch and swoop in with a contextual pitch within minutes.
 
 Here are the 15 competitor keywords and phrases every B2B SaaS GTM team should monitor.
 
@@ -86,6 +86,6 @@ Manually searching for these keywords every day takes hours and misses the speed
 3. **Configure Instant Alerts**: Set up a Slack or email alert to notify your sales team the millisecond a post matches a competitor keyword.
 4. **Draft Your Alternative Script**: Prepare a value-first response that doesn't just pitch, but directly solves the specific gap mentioned.
 
-By entering competitor discussions exactly when the prospect is frustrated, you achieve conversion rates that traditional cold lists can never match.
+For more on building an ongoing competitive intelligence process, see our [competitor monitoring for social selling](/blog/competitor-monitoring-social-selling) playbook. By entering competitor discussions exactly when the prospect is frustrated, you achieve conversion rates that traditional cold lists can never match.
 
 Ready to steal your competitors' frustrated buyers in real-time? [Book a 15-minute demo with Typpout](https://calendly.com/arjitsinghrajput24/15min) to see our social listener in action.

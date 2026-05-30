@@ -19,7 +19,7 @@ They generate 50,000 views, 300 likes, and dozens of comments on a post, but str
 
 To scale a creator-led business, you need an automated playbook to bridge this gap, converting superficial post engagements into direct B2B sales pipeline.
 
-Here is the exact step-by-step strategy.
+Here is the exact step-by-step strategy. For the foundations of building a high-authority personal brand, read our guide on [building a personal brand for sales](/blog/building-a-personal-brand-for-sales).
 
 ---
 
@@ -71,6 +71,6 @@ Outreach to social engagers yields conversion rates that are **10 to 15 times hi
 2. **Instant Context**: You don't have to struggle to find a hook; the post they engaged with provides immediate, relevant context.
 3. **Conversational Ease**: The interaction begins on a social network as a peer-to-peer discussion, bypassing corporate email defense mechanisms.
 
-Stop letting your social views go to waste. Turn your audience into a predictable, automated pipeline of qualified business.
+For more on what types of content actually generate pipeline, see our guide on [LinkedIn content that generates leads](/blog/linkedin-content-that-generates-leads). Stop letting your social views go to waste. Turn your audience into a predictable, automated pipeline of qualified business.
 
 Ready to turn your social content views into paying customer demos? [Schedule a 15-minute demo with Typpout today](https://calendly.com/arjitsinghrajput24/15min).

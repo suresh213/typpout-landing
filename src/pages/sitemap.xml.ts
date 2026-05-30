@@ -25,6 +25,7 @@ export async function GET(context: APIContext) {
     { loc: `${siteUrl}/blog`,           lastmod: today,  changefreq: "daily",   priority: "0.9" },
     { loc: `${siteUrl}/pricing`,        lastmod: today,  changefreq: "weekly",  priority: "0.8" },
     { loc: `${siteUrl}/integrations`,   lastmod: today,  changefreq: "weekly",  priority: "0.7" },
+    { loc: `${siteUrl}/testimonials`,   lastmod: today,  changefreq: "weekly",  priority: "0.7" },
     { loc: `${siteUrl}/changelog`,      lastmod: today,  changefreq: "weekly",  priority: "0.6" },
     { loc: `${siteUrl}/privacy`,        lastmod: today,  changefreq: "monthly", priority: "0.3" },
     { loc: `${siteUrl}/security`,       lastmod: today,  changefreq: "monthly", priority: "0.3" },

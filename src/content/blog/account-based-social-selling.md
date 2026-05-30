@@ -42,3 +42,5 @@ When a stakeholder at a target account posts a relevant signal, engage immediate
 ABM social selling often surfaces multiple signals from the same account. If the VP posts about a problem, the Director might comment with additional context, and an IC might share a related frustration. Engaging with multiple stakeholders simultaneously gives you presence across the buying committee before a formal evaluation process begins.
 
 [Start a 3-day free trial of Typpout](/pricing) and configure it for your top 50 target accounts.
+
+**Keep reading**: For a hands-on multichannel execution playbook, read our [multichannel ABM social orchestration](/blog/multichannel-abm-social-orchestration) guide.

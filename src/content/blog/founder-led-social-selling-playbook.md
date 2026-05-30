@@ -19,7 +19,7 @@ The most effective, highest-conversion channel for early-stage founders is **Fou
 
 Buyers don't want to buy from a junior sales rep or an anonymous corporate account at this stage; they want to engage directly with the founder who is building the solution.
 
-Here is a lean, **30-minute daily routine** you can execute to build a consistent, warm sales pipeline without losing focus on your product.
+For the strategic foundation of founder-led GTM, read our full [founder-led sales guide](/blog/founder-led-sales-guide). Here is a lean, **30-minute daily routine** you can execute to build a consistent, warm sales pipeline without losing focus on your product.
 
 ---
 
@@ -59,6 +59,6 @@ This is the exact stage to automate your listening infrastructure using [Typpout
 
 Our platform acts as your digital co-founder, handling 100% of the daily monitoring work, scrubbing target accounts, and drafting customized outreach copy. You show up for 5 minutes, review the drafts, click send, and watch the qualified demos land directly on your calendar.
 
-Protect your runway, scale your pipeline, and build a relationship-driven brand.
+For a roadmap from 0 to 100 customers using this approach, read our [first 100 customers through social selling](/blog/first-100-customers-social-selling) guide. Protect your runway, scale your pipeline, and build a relationship-driven brand.
 
 Ready to automate your founder-led GTM pipeline? [Book a 15-minute demo with Typpout today](https://calendly.com/arjitsinghrajput24/15min).

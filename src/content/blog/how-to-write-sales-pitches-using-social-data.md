@@ -18,7 +18,7 @@ This is what we call "personalization theater." You are simply reflecting their 
 
 To convert a warm social signal into a booked demo, you must use the **Social Context Copywriting Formula**. Your message should bridge the gap between *what the prospect said* and *the exact value you deliver*, proving that you understand their situation deeply.
 
-Here is the step-by-step blueprint to write highly custom sales pitches using social listening context.
+Here is the step-by-step blueprint to write highly custom sales pitches using social listening context. For the foundational principles of context-driven messaging, read our guide on [AI personalization at scale](/blog/ai-personalization-at-scale).
 
 ---
 
@@ -80,6 +80,6 @@ Writing these custom pitches manually for 50 leads a day is time-consuming. You 
 
 Our AI outreach engine automatically reads the context of the social post, applies the Social Context Formula, references your product knowledge base, and drafts a hyper-personalized response for you to review and approve with a single click.
 
-Stop pitch-slapping your prospects. Start engaging with context.
+For more copywriting templates, check our guide on [how to write cold DMs that convert](/blog/how-to-write-cold-dms-that-convert). Stop pitch-slapping your prospects. Start engaging with context.
 
 Want to see how Typpout writes custom, high-conversion pitches in seconds? [Book a 15-minute demo with our team today](https://calendly.com/arjitsinghrajput24/15min).

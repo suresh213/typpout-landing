@@ -18,7 +18,7 @@ This is a decent baseline, but it has a major blind spot: it ignores the **entir
 
 If a target executive at a key account posts on LinkedIn that they are actively looking to replace their current sales stack, your CRM remains completely blind to that event. The lead score doesn't change, and your sales rep has no idea a massive buying window has opened.
 
-In 2026, high-performing sales ops teams are solving this by piping **real-time social intent signals** directly into their CRM to create dynamic lead scoring models.
+In 2026, high-performing sales ops teams are solving this by piping — as we explain in our [CRM integration for social selling](/blog/crm-integration-social-selling) guide — **real-time social intent signals** directly into their CRM to create dynamic lead scoring models.
 
 ---
 
@@ -76,6 +76,6 @@ Piping social signals directly into your central CRM delivers three massive bene
 * **Flawless Context for Calls**: When an SDR calls a prospect, they can view the exact LinkedIn post the prospect wrote directly on their CRM activity timeline, making the call feel incredibly warm.
 * **Accurate ROI Attribution**: You can track exactly which deals were sourced by social signals, allowing you to measure the exact ROI of your social listening program against cold list purchases.
 
-Stop letting warm sales conversations happen in silos. Pipe your social intent straight into your CRM.
+For a full breakdown of the different types of intent signals you can score, see our [intent data types comparison](/blog/intent-data-types-comparison). Stop letting warm sales conversations happen in silos. Pipe your social intent straight into your CRM.
 
 Want to see how Typpout syncs real-time LinkedIn and X intent leads directly into HubSpot or Salesforce? [Book a 15-minute demo with our team](https://calendly.com/arjitsinghrajput24/15min).

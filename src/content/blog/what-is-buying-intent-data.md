@@ -102,6 +102,8 @@ A practical integration that works for most B2B sales teams:
 
 4. **Track which intent signals convert** over time. Not all signals are equal. In most categories, tool evaluation posts on LinkedIn convert at the highest rate, followed by competitor complaints, followed by job change announcements. Measure yours and allocate monitoring effort accordingly.
 
+For a practical guide on building outreach workflows around these signals, read our [signal-based outbound guide](/blog/signal-based-outreach-guide). You may also find our comparison of [social intent vs search intent](/blog/social-intent-vs-search-intent) useful for understanding which signal layer drives faster pipeline.
+
 ## Frequently Asked Questions
 
 ### How is intent data different from lead scoring?
