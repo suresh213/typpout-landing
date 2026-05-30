@@ -1,95 +1,40 @@
+---
+---
+
 <div
   id="cookie-consent"
-  class="fixed bottom-4 left-4 right-4 z-[999] translate-y-[calc(100%+2rem)] transition-transform duration-500 ease-out sm:left-auto sm:right-5 sm:max-w-md w-auto"
+  class="fixed bottom-4 left-4 right-4 z-[999] translate-y-[calc(100%+2rem)] transition-transform duration-500 ease-out sm:left-auto sm:right-5 sm:max-w-md"
   role="dialog"
-  aria-label="Cookie consent and settings"
+  aria-label="Cookie consent"
   aria-hidden="true"
 >
-  <div class="rounded-2xl border border-[color:var(--color-border)] bg-white p-5 shadow-[0_12px_40px_-12px_rgba(0,0,0,0.15)] flex flex-col gap-4">
-    <!-- Header -->
-    <div class="flex items-start gap-3">
-      <div class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[color:var(--color-brand-50)] border border-[color:var(--color-brand-100)] text-[color:var(--color-brand)]">
-        <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5" />
-          <path d="M8.5 8.5v.01" />
-          <path d="M16 15.5v.01" />
-          <path d="M12 12v.01" />
-          <path d="M11 17v.01" />
-          <path d="M7 13v.01" />
-        </svg>
-      </div>
-      <div>
-        <h3 class="font-display text-sm font-semibold text-[color:var(--color-ink-strong)]">Cookie & Privacy Settings</h3>
-        <p class="mt-1 text-[12px] leading-relaxed text-[color:var(--color-ink-secondary)]">
-          We use cookies to optimize site features, analyze traffic, and tailor your personalized GTM experience on Typpout.
-        </p>
-      </div>
-    </div>
-
-    <!-- Collapsible details or breakdown -->
-    <div id="cookie-details" class="border-t border-[color:var(--color-border)]/50 pt-3 flex flex-col gap-2.5">
-      <div class="flex items-start justify-between gap-4">
-        <div>
-          <div class="text-[12px] font-semibold text-[color:var(--color-ink-strong)] flex items-center gap-1.5">
-            Essential Cookies
-            <span class="rounded bg-gray-100 px-1 py-0.5 text-[9px] text-gray-500 font-medium uppercase tracking-wider">Required</span>
-          </div>
-          <p class="text-[10.5px] text-[color:var(--color-ink-muted)] mt-0.5">Enables secure login, session state, and core website functionality.</p>
-        </div>
-      </div>
-      
-      <div class="flex items-start justify-between gap-4 border-t border-[color:var(--color-border)]/30 pt-2.5">
-        <div class="flex-1">
-          <div class="text-[12px] font-semibold text-[color:var(--color-ink-strong)] flex items-center gap-1.5">
-            Analytics & Performance
-            <input type="checkbox" id="cookie-opt-analytics" checked class="accent-[color:var(--color-brand)] h-3.5 w-3.5 rounded cursor-pointer ml-auto" />
-          </div>
-          <p class="text-[10.5px] text-[color:var(--color-ink-muted)] mt-0.5">Helps us monitor site performance, page load times, and visitor behavior patterns.</p>
-        </div>
-      </div>
-
-      <div class="flex items-start justify-between gap-4 border-t border-[color:var(--color-border)]/30 pt-2.5">
-        <div class="flex-1">
-          <div class="text-[12px] font-semibold text-[color:var(--color-ink-strong)] flex items-center gap-1.5">
-            Personalized GTM & Signals
-            <input type="checkbox" id="cookie-opt-marketing" checked class="accent-[color:var(--color-brand)] h-3.5 w-3.5 rounded cursor-pointer ml-auto" />
-          </div>
-          <p class="text-[10.5px] text-[color:var(--color-ink-muted)] mt-0.5">Used to customize your demo workflows and match outreach insights on LinkedIn or X.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Actions -->
-    <div class="border-t border-[color:var(--color-border)]/50 pt-3 flex flex-col gap-2">
-      <div class="flex items-center gap-2">
-        <button
-          id="cookie-accept"
-          type="button"
-          class="h-9 flex-1 rounded-xl bg-[color:var(--color-ink)] text-[12.5px] font-medium text-white transition-colors hover:bg-[#2d2c2c] cursor-pointer shadow-2xs"
-        >
-          Accept All
-        </button>
-        <button
-          id="cookie-accept-selected"
-          type="button"
-          class="h-9 flex-1 rounded-xl border border-[color:var(--color-border)] text-[12.5px] font-medium text-[color:var(--color-ink-secondary)] transition-colors hover:bg-[color:var(--color-surface-soft)] cursor-pointer"
-        >
-          Save Selection
-        </button>
-      </div>
-      <div class="flex items-center justify-between text-[11px] text-[color:var(--color-ink-muted)] px-1 mt-0.5">
-        <a href="/privacy" class="hover:text-[color:var(--color-brand)] hover:underline">Privacy Policy</a>
-        <button id="cookie-reject-all" class="hover:text-red-500 hover:underline cursor-pointer">Decline All</button>
-      </div>
+  <div class="rounded-xl border border-[color:var(--color-border)] bg-white px-5 py-4 shadow-[0_8px_30px_-8px_rgba(0,0,0,0.15)]">
+    <p class="text-[13px] leading-relaxed text-[color:var(--color-ink-secondary)]">
+      We use cookies to improve your experience and analyse traffic.
+      <a href="/privacy" class="underline text-[color:var(--color-ink-strong)] hover:text-[color:var(--color-brand)]">Privacy Policy</a>
+    </p>
+    <div class="mt-3 flex items-center gap-2">
+      <button
+        id="cookie-reject"
+        type="button"
+        class="h-8 flex-1 rounded-lg border border-[color:var(--color-border)] text-[13px] font-medium text-[color:var(--color-ink-secondary)] transition-colors hover:bg-[color:var(--color-surface-soft)] cursor-pointer"
+      >
+        Decline
+      </button>
+      <button
+        id="cookie-accept"
+        type="button"
+        class="h-8 flex-1 rounded-lg bg-[color:var(--color-ink)] text-[13px] font-medium text-white transition-colors hover:bg-[#2d2c2c] cursor-pointer"
+      >
+        Accept
+      </button>
     </div>
   </div>
 </div>
 
 <script>
-  const COOKIE_KEY = "typpout_cookie_consent_v2";
+  const COOKIE_KEY = "typpout_cookie_consent";
   const banner = document.getElementById("cookie-consent");
-  const cbAnalytics = document.getElementById("cookie-opt-analytics") as HTMLInputElement | null;
-  const cbMarketing = document.getElementById("cookie-opt-marketing") as HTMLInputElement | null;
 
   const hide = () => {
     if (!banner) return;
@@ -98,14 +43,8 @@
     setTimeout(() => { banner.style.display = "none"; }, 500);
   };
 
-  const save = (acceptedAll: boolean, acceptedSelected: boolean = false) => {
-    const consent = {
-      necessary: true,
-      analytics: acceptedAll ? true : (acceptedSelected ? (cbAnalytics?.checked ?? false) : false),
-      marketing: acceptedAll ? true : (acceptedSelected ? (cbMarketing?.checked ?? false) : false),
-      ts: Date.now()
-    };
-    localStorage.setItem(COOKIE_KEY, JSON.stringify(consent));
+  const save = (accepted: boolean) => {
+    localStorage.setItem(COOKIE_KEY, JSON.stringify({ accepted, ts: Date.now() }));
     hide();
   };
 
@@ -121,6 +60,5 @@
   }
 
   document.getElementById("cookie-accept")?.addEventListener("click", () => save(true));
-  document.getElementById("cookie-accept-selected")?.addEventListener("click", () => save(false, true));
-  document.getElementById("cookie-reject-all")?.addEventListener("click", () => save(false, false));
+  document.getElementById("cookie-reject")?.addEventListener("click", () => save(false));
 </script>
