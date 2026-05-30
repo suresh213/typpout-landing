@@ -9,7 +9,7 @@ export const SITE = {
   twitter: "@typpout",
   email: "founders@typpout.com",
   appUrl: "https://dashboard.typpout.com",
-  demoUrl: "https://cal.com/typpout/demo",
+  demoUrl: "https://calendly.com/arjitsinghrajput24/15min",
   founder: {
     name: "Suresh, Founder, Typpout",
     handle: "@typpout",
@@ -32,7 +32,7 @@ export const FOOTER_NAV = {
   ],
   Resources: [
     { label: "Blog", href: "/blog" },
-    { label: "Book a demo", href: "https://cal.com/typpout/demo" },
+    { label: "Book a demo", href: "https://calendly.com/arjitsinghrajput24/15min" },
     { label: "Contact us", href: "mailto:founders@typpout.com" },
   ],
   Compare: [
