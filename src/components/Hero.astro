@@ -15,10 +15,17 @@ const examples = [
 ---
 
 <section class="mx-auto w-full max-w-[1280px] border-x border-[color:var(--color-border)] relative isolate">
-  <!-- Animated mesh background -->
+  <!-- Animated mesh background with blurred cloud user image -->
   <div class="hero-bg pointer-events-none absolute inset-x-0 top-0 -z-10 overflow-hidden" aria-hidden="true">
-    <div class="hero-bg__mesh hero-bg__mesh--a"></div>
-    <div class="hero-bg__mesh hero-bg__mesh--b"></div>
+    <img 
+      src="/hero-bg.png" 
+      alt="" 
+      class="absolute inset-0 w-full h-full object-cover opacity-60 scale-110 pointer-events-none"
+      style="filter: blur(40px);"
+      loading="eager"
+    />
+    <div class="hero-bg__mesh hero-bg__mesh--a" style="opacity: 0.35;"></div>
+    <div class="hero-bg__mesh hero-bg__mesh--b" style="opacity: 0.25;"></div>
     <div class="hero-bg__dots hero-bg__dots--fine"></div>
     <div class="hero-bg__dots hero-bg__dots--coarse"></div>
   </div>
