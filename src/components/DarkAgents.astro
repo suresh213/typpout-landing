@@ -12,16 +12,16 @@ import { SITE } from "../data/site";
       <div class="flex-1" data-reveal>
         <p class="font-display text-2xl font-bold text-[color:var(--color-brand)]">AI Agents</p>
         <h2 class="font-display mt-4 text-2xl font-light text-white sm:text-3xl lg:text-[40px] leading-tight tracking-tight">
-          Four agents.<br class="hidden md:block" /> One unstoppable pipeline.
+          Four agents.<br class="hidden md:block" /> The growth team you couldn't afford.
         </h2>
         <p class="mt-4 max-w-xl text-base font-light leading-relaxed text-white/60">
-          Typpout's four AI agents work around the clock - listening, matching, reaching out, and replying - so your team shows up to qualified meetings, not cold comment threads.
+          You shipped solo. No head of growth, no SDR, no GTM budget — and with Typpout, you don't need them.
         </p>
         <a
           href={SITE.appUrl}
-          class="mt-8 inline-flex items-center gap-2 rounded-md bg-[color:var(--color-brand)] px-5 py-2 text-[13px] font-medium text-[color:var(--color-brand-fg)] transition-colors hover:bg-[color:var(--color-brand-strong)]"
+          class="mt-8 inline-flex items-center gap-2 rounded-xl bg-[color:var(--color-brand)] px-5 py-2.5 text-[13px] font-semibold text-white transition-colors hover:bg-[color:var(--color-brand-strong)]"
         >
-          Get started free
+          Get my first users free →
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -32,10 +32,10 @@ import { SITE } from "../data/site";
       <div class="w-full pr-4 lg:w-[42%] lg:translate-x-[50px] lg:pr-12" data-reveal-stats data-reveal>
         <div class="grid grid-cols-2 gap-3">
           {[
-            { stat: "1.2k",  label: "Signals processed / day",    color: "text-[color:var(--color-brand)]" },
-            { stat: "8s",    label: "Avg AI reply time",           color: "text-blue-400"  },
-            { stat: "94%",   label: "Reply rate on warm signals",  color: "text-pink-400"  },
-            { stat: "3-5x",  label: "Meeting lift vs cold email",  color: "text-orange-400" },
+            { stat: "1.2k",  label: "posts scanned/day",          color: "text-[color:var(--color-brand)]" },
+            { stat: "8s",    label: "avg reply time",             color: "text-blue-400"  },
+            { stat: "94%",   label: "reply rate",                 color: "text-pink-400"  },
+            { stat: "3-5x",  label: "signups vs. manual",         color: "text-orange-400" },
           ].map((s) => (
             <div class="rounded-xl border border-white/10 bg-white/5 p-4 hover:bg-white/10 transition-colors duration-250">
               <div class:list={["font-display text-3xl font-medium", s.color]}>
@@ -53,10 +53,10 @@ import { SITE } from "../data/site";
   <div class="bg-[color:var(--color-surface-dark)] px-4 pb-20 md:px-12 md:pb-28">
     <div class="mx-auto max-w-xl space-y-4 pb-16 text-center" data-reveal>
       <h2 class="font-display text-2xl font-light text-white sm:text-3xl lg:text-[40px] tracking-tight">
-        Meet the Four Agents
+        Four agents. The growth team you couldn't afford to hire.
       </h2>
       <p class="text-base font-light text-white/50">
-        Each agent is purpose-built. Together they replace your entire outbound motion.
+        You shipped solo. No head of growth, no SDR, no budget — and you don't need them.
       </p>
     </div>
 
@@ -66,37 +66,37 @@ import { SITE } from "../data/site";
           icon: "radar",
           iconColor: "text-green-400",
           iconBg: "border-green-900 bg-green-600/10",
-          name: "Social Listener",
-          desc: "Monitors LinkedIn, X, and Instagram 24/7 for buying intent, competitor mentions, and hiring signals matching your ICP definition.",
+          name: "The Scout",
+          desc: "Scans LinkedIn, X, and Reddit 24/7 for people asking for what you built.",
           link: "/#features",
-          linkLabel: "Learn more about Social Listener",
+          linkLabel: "Learn more about The Scout",
         },
         {
           icon: "users",
           iconColor: "text-blue-400",
           iconBg: "border-blue-900 bg-blue-600/10",
-          name: "ICP Finder",
-          desc: "Scores every signal against your ICP criteria, enriches contact data, and surfaces the highest-fit prospects first - automatically.",
+          name: "The Matcher",
+          desc: "Learns your product and surfaces only the right-fit prospects.",
           link: "/#features",
-          linkLabel: "Learn more about ICP Finder",
+          linkLabel: "Learn more about The Matcher",
         },
         {
           icon: "message",
           iconColor: "text-purple-400",
           iconBg: "border-purple-900 bg-purple-600/10",
-          name: "Outreach Agent",
-          desc: "Writes and sends personalised first messages grounded in the exact signal that triggered the match - not generic templates.",
+          name: "The Outreach Agent",
+          desc: "Writes replies grounded in what the person posted, in your voice.",
           link: "/#features",
-          linkLabel: "Learn more about Outreach Agent",
+          linkLabel: "Learn more about The Outreach Agent",
         },
         {
           icon: "bolt",
           iconColor: "text-orange-400",
           iconBg: "border-orange-900 bg-orange-600/10",
-          name: "AI Reply Agent",
-          desc: "Replies in under 8 seconds, handles objections, nurtures conversations, and books meetings directly on your calendar.",
+          name: "The Closer",
+          desc: "Replies in 8 seconds and turns conversations into signups and calls.",
           link: "/#features",
-          linkLabel: "Learn more about AI Reply Agent",
+          linkLabel: "Learn more about The Closer",
         },
       ].map((a, i) => {
         const delays = ["", "delay-100", "delay-200", "delay-300"];
