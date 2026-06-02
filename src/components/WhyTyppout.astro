@@ -7,13 +7,13 @@
   <div class="overflow-x-clip bg-secondary flex flex-col items-start justify-between border-b border-[color:var(--color-border)] py-20 md:py-28 lg:flex-row lg:items-center">
     <div class="p-4 md:p-12" data-reveal>
       <h2 class="font-display text-2xl font-medium sm:text-3xl lg:text-[40px] leading-tight tracking-tight text-[color:var(--color-ink)]">
-        You can build anything now.
+        You're running a go-to-market team.
       </h2>
-      <h2 class="font-display mt-2 max-w-xl text-2xl font-medium sm:text-3xl lg:text-[40px] leading-tight tracking-tight text-[color:var(--color-ink-secondary)] opacity-50">
-        Getting users is the part nobody automated — until now.
+      <h2 class="font-display mt-2 max-w-lg text-2xl font-medium sm:text-3xl lg:text-[40px] leading-tight tracking-tight text-[color:var(--color-ink-secondary)] opacity-50">
+        Why are you still prospecting manually?
       </h2>
-      <p class="mt-6 max-w-xl text-base font-light leading-relaxed text-[color:var(--color-ink-secondary)]">
-        Building used to be the hard part. Now you ship by Friday and hit a wall of silence. The advice — post on Product Hunt, lurk Reddit, DM 50 people without being salesy, do it for weeks — is a full-time job, and the opposite of why you vibe code. Typpout takes the whole grind off your plate while you stay heads-down on the product.
+      <p class="mt-6 max-w-lg text-base font-light leading-relaxed text-[color:var(--color-ink-secondary)]">
+        List-building, signal monitoring, personalised messaging, follow-ups, none of this should eat your team's time. Typpout gives you four AI agents that handle every step of outbound, from first signal to booked meeting.
       </p>
     </div>
 
@@ -41,52 +41,52 @@
 
   <!-- Everything You Need - 2×2 feature grid (matches template "Everything You Need to Monetise") -->
   <div class="flex flex-col gap-20 px-4 py-20 md:px-10 md:py-28">
-    <div class="mx-auto max-w-2xl space-y-4 text-center" data-reveal>
+    <div class="mx-auto max-w-xl space-y-4 text-center" data-reveal>
       <h2 class="font-display text-2xl font-medium sm:text-3xl lg:text-[40px] tracking-tight">
-        The whole GTM motion, run by agents,<br class="hidden md:block" /> while you keep shipping
+        Everything You Need to Turn<br class="hidden md:block" /> Social Conversations into Revenue
       </h2>
       <p class="text-base font-light text-[color:var(--color-ink-secondary)]">
-        The automated distribution engine built for solo founders. You build. The agents handle the rest.
+        The all-in-one engine to find, engage, and convert social conversations into pipeline. Designed for the new generation of GTM teams.
       </p>
     </div>
 
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
       {[
         {
-          title: "Find Your Users",
-          desc: "Scans LinkedIn, X, and Reddit 24/7 for the posts that mean someone needs what you built. The threads founders hunt for by hand, surfaced automatically.",
+          title: "Social Signal Detection",
+          desc: "Monitor LinkedIn, X and Instagram for buying intent keywords, competitor mentions, job postings, and funding announcements, all matched to your ICP in real time.",
           previewType: "signals",
           preview: [
-            { platform: "linkedin", text: "is there any simple postgres GUI for macOS?", iconBg: "bg-[#0A66C2]", label: "in" },
-            { platform: "x", text: "Notion database is just too slow. Lightweight alternatives?", iconBg: "bg-black", label: "𝕏" },
-            { platform: "reddit", text: "unmet need: a simple screencast tool that uploads immediately", iconBg: "bg-[#FF4500]", label: "r/" }
+            { platform: "linkedin", text: "anyone using social listening for B2B? cold email is dead", iconBg: "bg-[#0A66C2]", label: "in" },
+            { platform: "x", text: "moving off Apollo, looking for something signal-first", iconBg: "bg-black", label: "𝕏" },
+            { platform: "reddit", text: "evaluating AI SDR tools this week", iconBg: "bg-[#FF4500]", label: "r/" }
           ]
         },
         {
-          title: "Match to Your Product",
-          desc: "Connect your product once. Typpout learns who it's for and scores every prospect, so you only see people worth reaching out to.",
+          title: "ICP Finder & Enrichment",
+          desc: "Every signal is automatically matched against your ideal customer profile. Get enriched contact data, firmographics, and a fit score so you always know who to reach first.",
           previewType: "icp",
           preview: [
-            { name: "Sarah Kim", title: "Lovable Builder · PostHacker", score: "97%", init: "SK", scoreColor: "text-emerald-600 bg-emerald-50 border-emerald-100/50" },
-            { name: "Marcus Webb", title: "Bolt Developer · SwiftSaaS", score: "93%", init: "MW", scoreColor: "text-blue-600 bg-blue-50 border-blue-100/50" },
-            { name: "Priya Shah", title: "Solo Founder · LaunchPad", score: "91%", init: "PS", scoreColor: "text-purple-600 bg-purple-50 border-purple-100/50" }
+            { name: "Sarah Kim", title: "VP Sales · Growthbase", score: "97%", init: "SK", scoreColor: "text-emerald-600 bg-emerald-50 border-emerald-100/50" },
+            { name: "Marcus Webb", title: "Head of Revenue · Synthos", score: "93%", init: "MW", scoreColor: "text-blue-600 bg-blue-50 border-blue-100/50" },
+            { name: "Priya Shah", title: "PMM · Northbeam", score: "91%", init: "PS", scoreColor: "text-purple-600 bg-purple-50 border-purple-100/50" }
           ]
         },
         {
-          title: "Outreach in Your Voice",
-          desc: "Every message is written from exactly what the person posted. Helpful founder, not sales bot. You set the voice.",
+          title: "Personalised AI Outreach",
+          desc: "Stop sending templates. Typpout drafts personalised first messages grounded in the exact social signal that triggered the match, sent at the right moment, automatically.",
           previewType: "outreach",
           preview: [
-            { sender: "prospect", text: "anyone using a simple postgres GUI?" },
-            { sender: "ai", text: "Hey! Built PostgresSwift for this. Free to try. Let me know what you think!" }
+            { sender: "prospect", text: "outbound email is dead in 2026..." },
+            { sender: "ai", text: "Saw your post Maya, built Typpout for this. 5-min call?" }
           ]
         },
         {
-          title: "Reply & Book Agent",
-          desc: "Replies in 8 seconds, handles objections, and turns the conversation into a signup or a booked call — without pulling you out of your editor.",
+          title: "AI Reply Agent",
+          desc: "Typpout replies to responses in under 8 seconds, handles objections, nurtures the conversation, and books a meeting on your calendar, without your team lifting a finger.",
           previewType: "reply",
           preview: [
-            { status: "success", text: "Signup converted ✓ 1 min ago", desc: "replied in 8s" },
+            { status: "success", text: "Meeting booked ✓ Wed 3:30 PM", desc: "replied in 8s" },
             { status: "info", text: "Handled objection · Follow-up sent", desc: "objection: pricing" }
           ]
         }
