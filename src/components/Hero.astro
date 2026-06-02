@@ -87,7 +87,7 @@ const examples = [
                 <button
                   type="button"
                   id="deep-search-btn"
-                  class="h-7 gap-1.5 rounded-full border border-[color:var(--color-border)] bg-white px-3 hover:bg-[color:var(--color-surface-soft)] flex items-center transition-colors shadow-2xs cursor-pointer"
+                  class="h-7 gap-1.5 rounded-full border border-[color:var(--color-border)] bg-white px-2 sm:px-3 hover:bg-[color:var(--color-surface-soft)] flex items-center justify-center transition-colors shadow-2xs cursor-pointer"
                 >
                   <svg class="size-4 text-[color:var(--color-ink-secondary)] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10" />
@@ -103,7 +103,7 @@ const examples = [
                 <button
                   type="button"
                   id="think-btn"
-                  class="h-7 gap-1.5 rounded-full border border-[color:var(--color-border)] bg-white px-3 hover:bg-[color:var(--color-surface-soft)] flex items-center transition-colors shadow-2xs cursor-pointer"
+                  class="h-7 gap-1.5 rounded-full border border-[color:var(--color-border)] bg-white px-2 sm:px-3 hover:bg-[color:var(--color-surface-soft)] flex items-center justify-center transition-colors shadow-2xs cursor-pointer"
                 >
                   <svg class="size-4 text-[color:var(--color-ink-secondary)] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
@@ -133,7 +133,7 @@ const examples = [
                 <button
                   type="button"
                   id="send-message-btn"
-                  class="h-8 rounded-full bg-[color:var(--color-ink)] hover:bg-[#2d2c2c] text-white px-4 flex items-center gap-1.5 text-sm font-medium transition-colors cursor-pointer shadow-xs"
+                  class="h-8 rounded-full bg-[color:var(--color-ink)] hover:bg-[#2d2c2c] text-white px-3.5 sm:px-4 flex items-center gap-1.5 text-sm font-medium transition-colors cursor-pointer shadow-xs"
                 >
                   <svg class="size-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="22" y1="2" x2="11" y2="13"></line>
@@ -148,10 +148,10 @@ const examples = [
         </div>
 
         <!-- Example chips -->
-        <div class="mt-4 flex flex-wrap justify-center gap-1.5">
+        <div class="mt-4 w-full overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden flex flex-row sm:flex-wrap justify-start sm:justify-center gap-1.5 px-4 sm:px-0">
           {examples.map((ex) => (
             <button
-              class="example-chip rounded-full border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 text-[11px] text-[color:var(--color-ink-muted)] transition-colors hover:border-[color:var(--color-brand)]/40 hover:bg-[color:var(--color-brand-50)] hover:text-[color:var(--color-brand-on-light)] cursor-pointer"
+              class="example-chip whitespace-nowrap shrink-0 rounded-full border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-2.5 py-1 text-[10px] sm:text-[11px] text-[color:var(--color-ink-muted)] transition-colors hover:border-[color:var(--color-brand)]/40 hover:bg-[color:var(--color-brand-50)] hover:text-[color:var(--color-brand-on-light)] cursor-pointer"
               data-example={ex}
             >
               {ex}
@@ -163,7 +163,7 @@ const examples = [
 
     <!-- Tab bar + panels -->
     <div class="w-full" data-tabs>
-      <div class="flex flex-row flex-wrap justify-center gap-2 px-4 sm:gap-3" role="tablist" aria-label="Product capabilities">
+      <div class="grid grid-cols-3 sm:flex sm:flex-row sm:justify-center gap-1 sm:gap-3 px-2 sm:px-4" role="tablist" aria-label="Product capabilities">
         {tabs.map((tab, i) => (
           <button
             id={`tab-${tab.id}`}
@@ -174,25 +174,25 @@ const examples = [
             data-grid-bg={tab.gridBg}
             data-grid-line={tab.gridLine}
             class:list={[
-              "group relative flex w-auto cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-t-xl border-x border-t px-3 py-1.5 sm:px-5 sm:py-2 transition-colors",
+              "group relative flex w-full sm:w-auto cursor-pointer items-center justify-center gap-1.5 overflow-hidden rounded-t-xl border-x border-t px-1 py-2 sm:px-5 sm:py-2 transition-colors",
               i === 0
                 ? "bg-white text-[color:var(--color-ink-strong)] border-[color:var(--color-border)]"
                 : "bg-[color:var(--color-surface-soft)] text-[color:var(--color-ink)] border-[color:var(--color-border)] opacity-50"
             ]}
           >
-            <span class:list={["flex h-5 w-5 items-center justify-center rounded-md border text-white", tab.iconColor]}>
-              {tab.id === "signal" && <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h.01"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M5 13a10 10 0 0 1 14 0"/><path d="M1.5 9.5a15 15 0 0 1 21 0"/></svg>}
-              {tab.id === "icp"   && <svg width="10" height="10" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="2"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M16 11a3 3 0 100-6M21 20c0-2.5-2-4-4.5-4.5" stroke="currentColor" stroke-width="2"/></svg>}
-              {tab.id === "reply" && <svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-2 8 10-12h-7l1-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>}
+            <span class:list={["flex h-4 w-4 sm:h-5 sm:w-5 shrink-0 items-center justify-center rounded-md border text-white", tab.iconColor]}>
+              {tab.id === "signal" && <svg class="size-2 sm:size-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h.01"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M5 13a10 10 0 0 1 14 0"/><path d="M1.5 9.5a15 15 0 0 1 21 0"/></svg>}
+              {tab.id === "icp"   && <svg class="size-2 sm:size-2.5" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="2.5"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M16 11a3 3 0 100-6M21 20c0-2.5-2-4-4.5-4.5" stroke="currentColor" stroke-width="2.5"/></svg>}
+              {tab.id === "reply" && <svg class="size-2 sm:size-2.5" viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-2 8 10-12h-7l1-8z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg>}
             </span>
-            <span class="font-display text-sm sm:text-base font-medium">{tab.label}</span>
+            <span class="font-display text-[10px] xs:text-xs sm:text-base font-medium truncate">{tab.label}</span>
           </button>
         ))}
       </div>
 
       <div
         id="tab-panels-container"
-        class="grid-bg border-y border-[color:var(--color-border)] p-6 sm:p-12"
+        class="grid-bg border-y border-[color:var(--color-border)] p-4 xs:p-6 sm:p-12"
         style="--grid-color:#EBF5FF;--grid-line-color:#B9DDFF;--grid-bg-opacity:100%;--grid-line-opacity:100%;--grid-size:14px"
       >
         <!-- Panel: Signal Detection -->
@@ -267,8 +267,8 @@ const examples = [
                     logoKey: "google"
                   },
                 ].map((m) => (
-                  <div class="group flex items-center gap-3 rounded-xl border border-[color:var(--color-border)] bg-white p-3.5 transition-all hover:border-[color:var(--color-brand)]/30 hover:shadow-[0_2px_12px_-4px_rgba(124,90,197,0.15)]">
-                    <div class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[color:var(--color-surface-soft)] overflow-hidden p-1.5 border border-[color:var(--color-border)]/50">
+                  <div class="group flex items-start sm:items-center gap-2.5 sm:gap-3 rounded-xl border border-[color:var(--color-border)] bg-white p-3 sm:p-3.5 transition-all hover:border-[color:var(--color-brand)]/30 hover:shadow-[0_2px_12px_-4px_rgba(124,90,197,0.15)]">
+                    <div class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[color:var(--color-surface-soft)] overflow-hidden p-1.5 border border-[color:var(--color-border)]/50 mt-0.5 sm:mt-0">
                       <img
                         src={`/logos/${m.logoKey}.webp`}
                         alt={`${m.platform} Logo`}
@@ -325,8 +325,8 @@ const examples = [
                   { who: "Priya Shah",  role: "PMM",              company: "Northbeam",   score: 91, tags: ["Hiring SDRs", "Series A"],   signal: "Asked for outbound tool recs on LinkedIn" },
                   { who: "Jake Torres", role: "CEO",               company: "SignalFlow",  score: 88, tags: ["Outbound pain", "Funded"],   signal: "Shared article about AI SDRs on LinkedIn" },
                 ].map((m) => (
-                  <div class="group flex items-center gap-3 rounded-xl border border-[color:var(--color-border)] bg-white p-3.5 transition-all hover:border-[color:var(--color-brand)]/30 hover:shadow-[0_2px_12px_-4px_rgba(124,90,197,0.15)]">
-                    <div class="grid h-10 w-10 shrink-0 place-items-center rounded-full text-[13px] font-semibold text-white" style="background: linear-gradient(135deg, #7C5AC5, #5a3fa8)">
+                  <div class="group flex items-start sm:items-center gap-2.5 sm:gap-3 rounded-xl border border-[color:var(--color-border)] bg-white p-3 sm:p-3.5 transition-all hover:border-[color:var(--color-brand)]/30 hover:shadow-[0_2px_12px_-4px_rgba(124,90,197,0.15)]">
+                    <div class="grid h-10 w-10 shrink-0 place-items-center rounded-full text-[13px] font-semibold text-white mt-0.5 sm:mt-0" style="background: linear-gradient(135deg, #7C5AC5, #5a3fa8)">
                       {m.who.charAt(0)}
                     </div>
                     <div class="min-w-0 flex-1">
@@ -364,7 +364,7 @@ const examples = [
               <span class="mx-auto font-mono text-[11px] text-[color:var(--color-ink-muted)]">app.typpout.com / reply-agent</span>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-[1fr_260px]">
-              <div class="border-r border-[color:var(--color-border)] p-4 sm:p-6">
+              <div class="border-b lg:border-b-0 lg:border-r border-[color:var(--color-border)] p-4 sm:p-6">
                 <div class="mb-4 flex items-center gap-2">
                   <span class="font-display text-base font-medium">AI Reply Agent</span>
                   <span class="inline-flex items-center gap-1 rounded-full bg-green-100 px-2 py-0.5 text-[10px] font-medium text-green-700">
@@ -401,7 +401,7 @@ const examples = [
               </div>
               <div class="p-4">
                 <div class="font-display text-sm font-medium text-[color:var(--color-ink-strong)]">Today</div>
-                <div class="mt-3 space-y-2">
+                <div class="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-1 lg:space-y-2">
                   {[
                     { label: "Signals processed", value: "1,284" },
                     { label: "Replies sent",       value: "47"    },
