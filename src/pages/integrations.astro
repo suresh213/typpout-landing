@@ -338,10 +338,17 @@ const integrationsLd = {
                     <span class="h-1.5 w-1.5 rounded-full bg-[color:var(--color-brand)]"></span>
                     Native Sync
                   </span>
-                  <span class="hover:text-[color:var(--color-brand)] font-medium inline-flex items-center gap-1 transition-colors cursor-pointer">
+                  <button
+                    data-docs-trigger
+                    data-vendor-name={i.name}
+                    data-vendor-logo={i.logoKey}
+                    data-vendor-category={i.category}
+                    data-vendor-key={i.logoKey}
+                    class="hover:text-[color:var(--color-brand)] font-medium inline-flex items-center gap-1 transition-colors cursor-pointer bg-transparent border-0 p-0 text-xs text-[color:var(--color-ink-secondary)]"
+                  >
                     Setup docs
                     <svg class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-                  </span>
+                  </button>
                 </div>
               </div>
             ))}
@@ -371,6 +378,60 @@ const integrationsLd = {
         </div>
       </div>
     </section>
+
+    <!-- Setup Docs Modal -->
+    <div
+      id="docs-modal"
+      class="fixed inset-0 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300 bg-black/50 backdrop-blur-xs"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
+      <div class="relative w-full max-w-lg transform rounded-2xl bg-white p-6 shadow-xl transition-all duration-300 translate-y-4 border border-[color:var(--color-border)]">
+        <!-- Close Button -->
+        <button
+          id="close-modal-btn"
+          class="absolute top-4 right-4 text-[color:var(--color-ink-muted)] hover:text-[color:var(--color-ink-strong)] transition-colors cursor-pointer"
+          aria-label="Close modal"
+        >
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <!-- Modal Header -->
+        <div class="flex items-center gap-3.5 border-b border-[color:var(--color-divider)] pb-4">
+          <div class="grid h-12 w-12 place-items-center rounded-xl bg-[color:var(--color-surface-soft)] overflow-hidden p-2 border border-[color:var(--color-border)]/50">
+            <img
+              id="modal-logo"
+              src="/logos/clay.webp"
+              alt="Vendor Logo"
+              width="48"
+              height="48"
+              class="h-full w-full object-contain rounded-md"
+            />
+          </div>
+          <div>
+            <h3 id="modal-title" class="font-display text-lg font-bold text-[color:var(--color-ink-strong)]">Clay Setup</h3>
+            <span id="modal-category" class="text-[10px] uppercase tracking-wider font-semibold text-[color:var(--color-brand-on-light)]">Data & Enrichment</span>
+          </div>
+        </div>
+
+        <!-- Modal Content -->
+        <div class="mt-6">
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-[color:var(--color-ink-muted)]">Step-by-step instructions</h4>
+          <ol id="modal-steps" class="mt-3 space-y-4 text-sm text-[color:var(--color-ink-secondary)] leading-relaxed list-none">
+            <!-- Dynamic steps go here -->
+          </ol>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="mt-8 flex justify-end gap-3 border-t border-[color:var(--color-divider)] pt-4">
+          <button id="modal-secondary-btn" class="btn btn-sm btn-ghost cursor-pointer">Close</button>
+          <a id="modal-primary-btn" href="https://dashboard.typpout.com" target="_blank" rel="noopener" class="btn btn-sm btn-brand cursor-pointer font-semibold">Go to dashboard</a>
+        </div>
+      </div>
+    </div>
   </div>
   
   <FinalCTA />
@@ -384,6 +445,207 @@ const integrationsLd = {
 
   let currentCategory = "all";
   let currentSearch = "";
+
+  const docData = {
+    clay: {
+      steps: [
+        "Log into your **Typpout dashboard**, head to **Settings > API**, and generate a new API token.",
+        "Open your workspace in **Clay** and create or select a table.",
+        "Add a new enrichment column and search for **Typpout**.",
+        "Paste your Typpout API token to authenticate the block.",
+        "Map your B2B prospect profiles to trigger automated intent scoring and research sync."
+      ]
+    },
+    hubspot: {
+      steps: [
+        "In Typpout, navigate to **Settings > Integrations** and click **Connect HubSpot**.",
+        "Log in to your HubSpot account when prompted by the secure OAuth screen.",
+        "Select your HubSpot account/portal and grant the required permissions.",
+        "Map Typpout lead data fields (e.g., social handle, match score) to your HubSpot Contact properties.",
+        "Toggle **Automatic Sync** to push high-intent social prospects directly to your CRM contacts list."
+      ]
+    },
+    n8n: {
+      steps: [
+        "In your n8n workflow editor, add a new **Webhook node** set to `POST`.",
+        "Copy the production Webhook URL generated by n8n.",
+        "In Typpout, go to **Settings > Webhooks** and click **Add Webhook**.",
+        "Paste the n8n webhook URL and select the event triggers (e.g., *Signal Detected*, *Lead Matched*).",
+        "Save settings and run a test payload to confirm the webhook connection in n8n."
+      ]
+    },
+    salesforce: {
+      steps: [
+        "Go to **Settings > Integrations** in the Typpout dashboard and click **Salesforce**.",
+        "Select either your **Sandbox** or **Production** environment.",
+        "Authenticate using your Salesforce admin credentials and authorize access.",
+        "Map standard fields such as Name, Title, and Company, and set custom attributes like *Social Signal* and *Match Score*.",
+        "Save and enable the integration to start pushing intent leads directly into Salesforce."
+      ]
+    },
+    slack: {
+      steps: [
+        "In your Typpout settings under **Integrations**, select **Slack** and click **Add to Slack**.",
+        "Authorize the Typpout Slack Bot to access your Slack workspace.",
+        "Select the target Slack channel (e.g., `#sales-alerts` or `#gtm-intent`).",
+        "Set matching thresholds (e.g., only alert for scores above 90% or competitor keywords).",
+        "Click **Send Test Alert** to verify the channel notifications are active."
+      ]
+    },
+    notion: {
+      steps: [
+        "In Typpout, navigate to **Integrations > Notion** and click **Connect Notion**.",
+        "Select the Notion workspace and pages you want to share with the integration.",
+        "Click **Allow Access** to authorize and complete the Notion sync.",
+        "Select the specific Notion database where you want social leads to be routed.",
+        "Map Typpout properties to your Notion database properties and click **Enable notion sync**."
+      ]
+    },
+    airtable: {
+      steps: [
+        "Go to your Airtable Developer Hub and create a **Personal Access Token** with `data.records:write` permissions.",
+        "Under **Integrations > Airtable** in Typpout, enter your Access Token.",
+        "Select the Target Base and Table where you want to add prospect leads.",
+        "Map the Airtable table columns to the matching Typpout lead data variables.",
+        "Click **Save Configuration** to start sending real-time social leads directly into your database."
+      ]
+    },
+    zapier: {
+      steps: [
+        "Search for **Typpout** in the Zapier App Directory and select it.",
+        "Create a new Zap, choosing **Typpout** as the Trigger app.",
+        "Select the trigger event (e.g., *New High-Intent Signal* or *New Booked Meeting*).",
+        "Connect your Typpout account by entering the API Key found in your Developer Settings.",
+        "Configure your Action steps in Zapier to route the incoming GTM data to 5,000+ apps."
+      ]
+    },
+    apollo: {
+      steps: [
+        "Log into Apollo.io, go to **Settings > API**, and copy your Apollo API Key.",
+        "In Typpout, go to **Integrations > Apollo** and paste your API Key.",
+        "Define enrichment rules (e.g., automatically enrich matching prospects with B2B emails and phone numbers).",
+        "Specify contact list names in Apollo where enriched leads should be exported.",
+        "Save settings. Typpout will now automatically query Apollo when new social intent is detected."
+      ]
+    },
+    intercom: {
+      steps: [
+        "In your Typpout dashboard, click on **Integrations > Intercom**.",
+        "Click **Connect Intercom** to open the Intercom App Store authorization screen.",
+        "Approve Typpout's request to read/write conversations and contact profiles.",
+        "Select which SDR agent in Intercom should receive routing assignments.",
+        "Configure live intent signals to automatically trigger custom inbound messenger cards."
+      ]
+    },
+    stripe: {
+      steps: [
+        "In your Stripe Dashboard, go to **Developers > API keys** and copy a restricted key with write access to Webhooks.",
+        "In Typpout, paste the key inside the **Stripe Integration Settings** page.",
+        "Select the Stripe checkout events you want to listen to (e.g., `checkout.session.completed`).",
+        "Configure Typpout GTM agents to trigger targeted post-checkout onboarding sequences.",
+        "Click **Enable Webhook Sync** to start tracking customer payment signals."
+      ]
+    },
+    mailchimp: {
+      steps: [
+        "Log into Mailchimp, navigate to **Account > Extras > API Keys**, and generate a new key.",
+        "In Typpout, enter your Mailchimp API Key and Audience ID under **Integrations > Mailchimp**.",
+        "Choose whether to add matching social prospects to your audience as *Subscribed* or *Pending*.",
+        "Select tags (e.g., `Typpout-Lead`, `Social-Intent`) to apply to synced contacts.",
+        "Click **Verify & Connect** to start syncing leads into your marketing funnels."
+      ]
+    },
+    zoominfo: {
+      steps: [
+        "Navigate to **Settings > Integrations** in your Typpout dashboard and select **ZoomInfo**.",
+        "Enter your ZoomInfo enterprise API Username, Password, and Client Key.",
+        "Set enrichment parameters (e.g., trigger ZoomInfo lookup only when match score > 90%).",
+        "Select default fallback fields for missing data.",
+        "Click **Test Connection & Save** to start pulling verified phone numbers and corporate emails."
+      ]
+    },
+    outreach: {
+      steps: [
+        "In Typpout, navigate to **Settings > Integrations** and click **Outreach**.",
+        "Click **Authorize Outreach** and sign in with your Outreach admin credentials.",
+        "Map your prospects' social handles and signals to Outreach custom prospect fields.",
+        "Select the Outreach Sequence (e.g., *Social Intent Sequence*) to trigger when a high-intent signal matches.",
+        "Click **Save Sequence Configuration** to enable automated outbound execution."
+      ]
+    },
+    salesloft: {
+      steps: [
+        "Navigate to **Settings > Integrations > Salesloft** in the Typpout dashboard.",
+        "Click **Connect Salesloft** and authorize the application access.",
+        "Map Typpout variables (prospect name, title, company, intent signal) to Salesloft fields.",
+        "Assign default sales cadences for newly synced prospects.",
+        "Activate the integration to dynamically route social leads into live SDR phone and email cadences."
+      ]
+    },
+    gong: {
+      steps: [
+        "Go to **Settings > Integrations** in Typpout and select **Gong**.",
+        "Log in to the Gong developer console, create an API Key, and paste it into Typpout.",
+        "Choose which conversation trackers and keywords you want to sync.",
+        "Sync call transcripts and metadata automatically to the corresponding lead records in Typpout.",
+        "Click **Validate & Enable Sync** to begin parsing meeting conversations for intent signals."
+      ]
+    },
+    sixsense: {
+      steps: [
+        "Go to **Settings > Integrations > 6sense** in the Typpout dashboard.",
+        "Input your 6sense API endpoint and workspace Token.",
+        "Configure your account mapping rules to align 6sense intent segments with Typpout GTM agents.",
+        "Map account intent scores to alert thresholds inside Typpout.",
+        "Toggle **Active Sync** to begin merging anonymous account intent data with social signals."
+      ]
+    },
+    seamless: {
+      steps: [
+        "Open your Seamless.ai dashboard, go to **Settings > API keys**, and copy your API key.",
+        "Paste your API key under **Integrations > Seamless AI** in Typpout.",
+        "Define lookup limits (e.g. max 500 email/phone enrichments per day).",
+        "Choose default data mapping rules for enriched B2B contacts.",
+        "Save settings. Typpout will now automatically query Seamless AI for cell phone numbers when leads are matched."
+      ]
+    },
+    lusha: {
+      steps: [
+        "Navigate to Lusha Dashboard > Account > API and copy your Lusha API Key.",
+        "In Typpout, navigate to **Integrations > Lusha** and enter your API Key.",
+        "Set Lusha usage limits and alert thresholds for your API credit usage.",
+        "Map the phone and email response fields from Lusha to Typpout contact records.",
+        "Click **Save settings** to enable background data enrichment."
+      ]
+    },
+    leadiq: {
+      steps: [
+        "Log into your LeadIQ dashboard, go to **Developer Settings**, and copy your API access token.",
+        "In Typpout, go to **Integrations > LeadIQ** and input the token.",
+        "Configure LeadIQ to automatically export contacts to your connected CRM when social intent triggers.",
+        "Map LeadIQ target fields to Typpout standard attributes.",
+        "Click **Enable LeadIQ Sync** to activate real-time contact creation."
+      ]
+    },
+    kaspr: {
+      steps: [
+        "Go to Kaspr Dashboard > Settings > API and copy your API Token.",
+        "In Typpout, open the **Kaspr Integration Settings** and paste the token.",
+        "Map Kaspr's email and phone data fields to Typpout contact attributes.",
+        "Configure background lookup rules (e.g. query Kaspr only for LinkedIn signals).",
+        "Click **Save** to start fetching direct phone numbers and corporate emails."
+      ]
+    },
+    cognism: {
+      steps: [
+        "In the Typpout dashboard, click on **Settings > Integrations** and select **Cognism**.",
+        "Enter your Cognism API user credentials and corporate token.",
+        "Map Cognism contact data objects to Typpout leads.",
+        "Select preferred geo-regions (e.g. EU, NA, APAC) for compliant B2B mobile number lookups.",
+        "Click **Enable Connection** to begin background enrichment."
+      ]
+    }
+  };
 
   const filterIntegrations = () => {
     let visibleCount = 0;
@@ -443,6 +705,88 @@ const integrationsLd = {
         filterIntegrations();
       }
     });
+  });
+
+  // Modal logic
+  const modal = document.getElementById("docs-modal");
+  const modalTitle = document.getElementById("modal-title");
+  const modalLogo = document.getElementById("modal-logo") as HTMLImageElement | null;
+  const modalCategory = document.getElementById("modal-category");
+  const modalSteps = document.getElementById("modal-steps");
+  const closeModalBtn = document.getElementById("close-modal-btn");
+  const modalSecondaryBtn = document.getElementById("modal-secondary-btn");
+  const docsTriggers = document.querySelectorAll("[data-docs-trigger]");
+
+  docsTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const el = trigger as HTMLElement;
+      const key = el.dataset.vendorKey || "";
+      const name = el.dataset.vendorName || "";
+      const logo = el.dataset.vendorLogo || "";
+      const category = el.dataset.vendorCategory || "";
+
+      if (modalTitle) modalTitle.textContent = `${name} Setup`;
+      if (modalCategory) modalCategory.textContent = category;
+      if (modalLogo) {
+        modalLogo.src = `/logos/${logo}.webp`;
+        modalLogo.alt = `${name} Logo`;
+      }
+
+      if (modalSteps) {
+        modalSteps.innerHTML = "";
+        const data = docData[key as keyof typeof docData];
+        if (data && data.steps) {
+          data.steps.forEach((step, idx) => {
+            const li = document.createElement("li");
+            li.className = "flex gap-3 items-start text-sm text-[color:var(--color-ink-secondary)] leading-relaxed";
+            const formattedStep = step.replace(/\*\*(.*?)\*\//g, "<strong>$1</strong>").replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+            li.innerHTML = `
+              <span class="flex h-5 w-5 shrink-0 select-none items-center justify-center rounded-full bg-[color:var(--color-brand-50)] text-[10px] font-bold text-[color:var(--color-brand-on-light)] border border-[color:var(--color-brand-100)] mt-0.5">
+                ${idx + 1}
+              </span>
+              <p class="flex-1">${formattedStep}</p>
+            `;
+            modalSteps.appendChild(li);
+          });
+        } else {
+          modalSteps.innerHTML = `<li class="text-xs text-[color:var(--color-ink-muted)]">Setup documentation for this integration is coming soon.</li>`;
+        }
+      }
+
+      if (modal) {
+        modal.classList.remove("opacity-0", "pointer-events-none");
+        const modalContainer = modal.firstElementChild as HTMLElement;
+        if (modalContainer) {
+          modalContainer.classList.remove("translate-y-4");
+          modalContainer.classList.add("translate-y-0");
+        }
+      }
+    });
+  });
+
+  const closeModal = () => {
+    if (modal) {
+      modal.classList.add("opacity-0", "pointer-events-none");
+      const modalContainer = modal.firstElementChild as HTMLElement;
+      if (modalContainer) {
+        modalContainer.classList.remove("translate-y-0");
+        modalContainer.classList.add("translate-y-4");
+      }
+    }
+  };
+
+  closeModalBtn?.addEventListener("click", closeModal);
+  modalSecondaryBtn?.addEventListener("click", closeModal);
+  modal?.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeModal();
+    }
   });
 
   updateActiveButton();
