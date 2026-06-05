@@ -30,6 +30,14 @@ To solve these pipeline problems, sales operations and RevOps leaders need to mo
 * **Contextual Personalization:** Using language models to draft custom messages that reference the specific query or trigger event.
 * **Reply Handling Agents:** Qualifying inbound leads, handling objections, and booking meetings automatically inside the chat interface.
 
+## The Mechanics of Signal Sourcing and Real-Time Intent
+
+Traditional intent data providers offer account-level surge data, which only tells you that someone at a company is researching a topic. This lacks contact-level actionability. Typpout solves this by monitoring individual intent. Our GTM agents track public social posts and community discussions in real-time, identifying exact decision-makers. The system:
+* Captures the exact context and question from public forums or social networks.
+* Enriches the profile via multiple B2B data waterfalls to get verified emails and phone numbers.
+* Tailors an outreach draft addressing the precise problem statement.
+* Keeps domain reputation pristine by avoiding cold blasts and sending relevant, timely emails instead.
+
 ## Comparative Performance Analysis
 
 Evaluating outbound workflows reveals a major performance difference between traditional cold emailing and signal-first social selling:
@@ -40,6 +48,14 @@ Evaluating outbound workflows reveals a major performance difference between tra
 | **Sourcing Effort** | High Manual Exports | Manual Sourcing | Automated Background Sourcing |
 | **Outreach Hook** | Product Pitch | Personal Hook | Specific Social Context |
 | **Conversion Rate** | 1% to 2% | 2% to 4% | 15% to 25% |
+
+## Best Practices for Scale and Deliverability
+
+When scaling signal-led prospecting, following deliverability and compliance best practices is crucial:
+* **Pacing and Account Safety**: Avoid sudden message spikes. Set natural daily limits on LinkedIn and email sending to protect your sender reputation.
+* **Dedicated Inboxes**: Use secondary domain inboxes instead of your primary domain to protect business operations from deliverability issues.
+* **Strict Verification**: Always scrub contact lists through verification APIs to maintain a bounce rate under 2% and protect domain health.
+* **Value-First Messaging**: Structure pitches as helpful recommendations rather than direct sales pitches. Ensure every touchpoint provides immediate value to the prospect.
 
 ## Why GTM Teams Choose Typpout
 
