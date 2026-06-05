@@ -60,6 +60,55 @@ const blogLd = {
     </div>
   </section>
 
+  <!-- Search & Filters Section -->
+  <section class="mx-auto w-full max-w-[1280px] border-x border-b border-[color:var(--color-border)] bg-white" data-nosnippet>
+    <div class="px-5 py-6 sm:px-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <!-- Search Input -->
+      <div class="relative w-full max-w-md">
+        <span class="absolute inset-y-0 left-3.5 flex items-center pointer-events-none text-[color:var(--color-foreground-secondary)]">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+        </span>
+        <input
+          type="text"
+          id="blog-search"
+          placeholder="Search 402+ blogs by title, keywords or tags..."
+          class="w-full h-11 pl-10 pr-4 rounded-xl border border-[color:var(--color-border)] bg-white text-sm focus:outline-hidden focus:border-[color:var(--color-brand)] focus:ring-1 focus:ring-[color:var(--color-brand)] transition-all"
+        />
+      </div>
+
+      <!-- Category Filters -->
+      <div class="flex flex-wrap gap-1.5" id="category-filters">
+        <button
+          data-filter="all"
+          class="px-4 py-2 text-xs font-semibold rounded-lg border border-[color:var(--color-brand-200)] bg-[color:var(--color-brand-50)] text-[color:var(--color-brand-on-light)] transition-all cursor-pointer"
+        >
+          All Posts
+        </button>
+        <button
+          data-filter="comparisons"
+          class="px-4 py-2 text-xs font-semibold rounded-lg border border-[color:var(--color-border)] bg-white text-[color:var(--color-foreground-secondary)] hover:bg-[color:var(--color-surface-soft)] transition-all cursor-pointer"
+        >
+          Comparisons
+        </button>
+        <button
+          data-filter="guides"
+          class="px-4 py-2 text-xs font-semibold rounded-lg border border-[color:var(--color-border)] bg-white text-[color:var(--color-foreground-secondary)] hover:bg-[color:var(--color-surface-soft)] transition-all cursor-pointer"
+        >
+          Guides
+        </button>
+        <button
+          data-filter="go-to-market"
+          class="px-4 py-2 text-xs font-semibold rounded-lg border border-[color:var(--color-border)] bg-white text-[color:var(--color-foreground-secondary)] hover:bg-[color:var(--color-surface-soft)] transition-all cursor-pointer"
+        >
+          Go-to-market
+        </button>
+      </div>
+    </div>
+  </section>
+
   <section class="mx-auto w-full max-w-[1280px] border-x border-[color:var(--color-border)]">
     <div class="px-5 py-16 sm:px-8 lg:py-20">
       {posts.length === 0 ? (
@@ -67,24 +116,127 @@ const blogLd = {
           No posts yet. Check back soon.
         </p>
       ) : (
-        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {posts.map((p, i) => (
-            <BlogCard
-              headingLevel="h2"
-              href={`/blog/${p.id}`}
-              title={p.data.title}
-              description={p.data.description}
-              pubDate={p.data.pubDate}
-              category={p.data.category}
-              readingTime={p.data.readingTime}
-              featured={i === 0 && p.data.featured}
-              accent={accents[i % accents.length]}
-            />
-          ))}
+        <div>
+          <!-- Empty State -->
+          <div id="blog-empty-state" class="hidden text-center py-16 border border-dashed border-[color:var(--color-border)] rounded-3xl bg-[color:var(--color-surface-muted)]/50">
+            <svg class="mx-auto h-10 w-10 text-[color:var(--color-foreground-secondary)] opacity-60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+              <path d="M8 11h6" />
+            </svg>
+            <p class="mt-4 text-[color:var(--color-foreground-secondary)] text-[15px] font-medium">No blog posts match your search or filter criteria.</p>
+            <button id="reset-filters" class="mt-4 px-4 py-2 text-xs font-semibold rounded-lg border border-[color:var(--color-border)] bg-white text-[color:var(--color-foreground)] hover:bg-[color:var(--color-surface-soft)] cursor-pointer">Reset search</button>
+          </div>
+
+          <!-- Cards Grid -->
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2" id="blog-grid">
+            {posts.map((p, i) => (
+              <BlogCard
+                headingLevel="h2"
+                href={`/blog/${p.id}`}
+                title={p.data.title}
+                description={p.data.description}
+                pubDate={p.data.pubDate}
+                category={p.data.category}
+                readingTime={p.data.readingTime}
+                featured={i === 0 && p.data.featured}
+                accent={accents[i % accents.length]}
+                data-blog-card=""
+                data-name={p.data.title.toLowerCase()}
+                data-desc={p.data.description.toLowerCase()}
+                data-category={p.data.category.toLowerCase()}
+                data-tags={p.data.tags.map(t => t.toLowerCase()).join(",")}
+              />
+            ))}
+          </div>
         </div>
       )}
     </div>
   </section>
 
   <FinalCTA />
+
+<script>
+  const searchInput = document.getElementById("blog-search") as HTMLInputElement | null;
+  const filterBtns = document.querySelectorAll("#category-filters button");
+  const cards = document.querySelectorAll("[data-blog-card]");
+  const emptyState = document.getElementById("blog-empty-state");
+  const blogGrid = document.getElementById("blog-grid");
+  const resetBtn = document.getElementById("reset-filters");
+
+  let currentSearch = "";
+  let currentCategory = "all";
+
+  const filterBlogs = () => {
+    let visibleCount = 0;
+
+    cards.forEach((card) => {
+      const cardName = card.getAttribute("data-name") || "";
+      const cardDesc = card.getAttribute("data-desc") || "";
+      const cardCat = card.getAttribute("data-category") || "";
+      const cardTags = card.getAttribute("data-tags") || "";
+
+      const matchesSearch = 
+        cardName.includes(currentSearch) || 
+        cardDesc.includes(currentSearch) ||
+        cardTags.includes(currentSearch);
+      
+      const matchesCategory = currentCategory === "all" || cardCat === currentCategory;
+
+      if (matchesSearch && matchesCategory) {
+        (card as HTMLElement).style.display = "flex";
+        visibleCount++;
+      } else {
+        (card as HTMLElement).style.display = "none";
+      }
+    });
+
+    if (emptyState && blogGrid) {
+      if (visibleCount === 0) {
+        emptyState.classList.remove("hidden");
+        blogGrid.classList.add("hidden");
+      } else {
+        emptyState.classList.add("hidden");
+        blogGrid.classList.remove("hidden");
+      }
+    }
+  };
+
+  const updateActiveButton = () => {
+    filterBtns.forEach((btn) => {
+      const cat = btn.getAttribute("data-filter");
+      if (cat === currentCategory) {
+        btn.classList.add("bg-[color:var(--color-brand-50)]", "text-[color:var(--color-brand-on-light)]", "border-[color:var(--color-brand-200)]");
+        btn.classList.remove("text-[color:var(--color-ink-secondary)]", "border-[color:var(--color-border)]", "bg-white");
+      } else {
+        btn.classList.remove("bg-[color:var(--color-brand-50)]", "text-[color:var(--color-brand-on-light)]", "border-[color:var(--color-brand-200)]");
+        btn.classList.add("text-[color:var(--color-ink-secondary)]", "border-[color:var(--color-border)]", "bg-white");
+      }
+    });
+  };
+
+  searchInput?.addEventListener("input", (e) => {
+    currentSearch = (e.target as HTMLInputElement).value.toLowerCase().trim();
+    filterBlogs();
+  });
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const filter = btn.getAttribute("data-filter");
+      if (filter) {
+        currentCategory = filter;
+        updateActiveButton();
+        filterBlogs();
+      }
+    });
+  });
+
+  resetBtn?.addEventListener("click", () => {
+    currentCategory = "all";
+    currentSearch = "";
+    if (searchInput) searchInput.value = "";
+    updateActiveButton();
+    filterBlogs();
+  });
+</script>
 </Layout>

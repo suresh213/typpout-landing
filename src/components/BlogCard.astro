@@ -11,7 +11,7 @@ interface Props {
   headingLevel?: "h2" | "h3";
 }
 
-const { href, title, description, pubDate, category, readingTime, featured = false, accent = "green", headingLevel = "h3" } = Astro.props;
+const { href, title, description, pubDate, category, readingTime, featured = false, accent = "green", headingLevel = "h3", ...rest } = Astro.props;
 const Heading = headingLevel;
 
 const accentMap = {
@@ -30,6 +30,7 @@ const dateStr = pubDate.toLocaleDateString("en-US", { month: "short", day: "nume
     "group relative flex flex-col overflow-hidden rounded-3xl border border-[color:var(--color-border)] bg-white transition hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-25px_rgba(0,0,0,0.18)]",
     featured && "md:col-span-2 md:flex-row",
   ]}
+  {...rest}
 >
   <div
     class:list={[
