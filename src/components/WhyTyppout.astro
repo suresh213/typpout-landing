@@ -1,4 +1,5 @@
 ---
+import { SITE } from "../data/site";
 ---
 
 <section class="mx-auto w-full max-w-[1280px] border-x border-[color:var(--color-border)]">
@@ -39,145 +40,259 @@
     </div>
   </div>
 
-  <!-- Everything You Need - 2×2 feature grid (matches template "Everything You Need to Monetise") -->
-  <div class="flex flex-col gap-20 px-4 py-20 md:px-10 md:py-28">
-    <div class="mx-auto max-w-xl space-y-4 text-center" data-reveal>
+  <!-- Clay-style full-width feature cards with testimonials -->
+  <div class="flex flex-col gap-4 px-4 py-20 md:px-8 md:py-28">
+    <div class="mx-auto max-w-xl space-y-4 text-center mb-12" data-reveal>
       <h2 class="font-display text-2xl font-medium sm:text-3xl lg:text-[40px] tracking-tight">
-        Turn social conversations<br class="hidden md:block" /> into the real revenue
+        Turn the social conversations<br class="hidden md:block" /> into real revenue
       </h2>
       <p class="text-base font-light text-[color:var(--color-ink-secondary)]">
         Ditch static databases. Leverage self-learning models that make your GTM Brain sharper and more conversion-focused with every touchpoint.
       </p>
     </div>
 
-    <div class="flex flex-col gap-12 md:gap-16">
-      {[
-        {
-          title: "AI Social Listening (Intent Parsing)",
-          desc: "Deep NLP models scan public networks for intent signals, competitor keywords, and technology shifts, parsing conversation context in real time.",
-          previewType: "signals",
-          preview: [
-            { platform: "linkedin", text: "anyone using social listening for B2B? cold email is dead", iconBg: "bg-[#0A66C2]", label: "in" },
-            { platform: "x", text: "moving off Apollo, looking for something signal-first", iconBg: "bg-black", label: "𝕏" },
-            { platform: "reddit", text: "evaluating AI SDR tools this week", iconBg: "bg-[#FF4500]", label: "r/" }
-          ]
+    {[
+      {
+        step: "01",
+        label: "LISTENING",
+        title: "Catch buyers",
+        titleAccent: "the moment they signal",
+        desc: "Deep NLP models scan LinkedIn, X, and Instagram 24/7 for buying intent, competitor mentions, and hiring signals — parsing conversation context in real time so you never miss an in-market moment.",
+        accent: "#1a6cf6",
+        bg: "#eef4ff",
+        pillBg: "#c7dbff",
+        pillText: "#1a4fa0",
+        testimonial: {
+          quote: "Typpout surfaced a prospect who posted about switching tools. We replied within minutes and booked a call that same day.",
+          name: "James R.",
+          role: "Head of Growth · Synthos",
+          initials: "JR",
+          avatarBg: "#1a6cf6",
         },
-        {
-          title: "Heuristic ICP Finder & Waterfalls",
-          desc: "Matches signals to your ICP using semantic vector comparison, automatically triggering data enrichment waterfalls across 50+ data sources in milliseconds.",
-          previewType: "icp",
-          preview: [
-            { name: "Sarah Kim", title: "VP Sales · Growthbase", score: "97%", init: "SK", scoreColor: "text-emerald-600 bg-emerald-50 border-emerald-100/50" },
-            { name: "Marcus Webb", title: "Head of Revenue · Synthos", score: "93%", init: "MW", scoreColor: "text-blue-600 bg-blue-50 border-blue-100/50" },
-            { name: "Priya Shah", title: "PMM · Northbeam", score: "91%", init: "PS", scoreColor: "text-purple-600 bg-purple-50 border-purple-100/50" }
-          ]
+        preview: [
+          { label: "in", text: "anyone using social listening for B2B? cold email is dead", bg: "#0A66C2" },
+          { label: "𝕏", text: "moving off Apollo, looking for something signal-first", bg: "#000000" },
+          { label: "r/", text: "evaluating AI SDR tools this week — any recs?", bg: "#FF4500" },
+        ],
+        previewType: "signals",
+      },
+      {
+        step: "02",
+        label: "ICP MATCHING",
+        title: "Find the exact right",
+        titleAccent: "buyer every time",
+        desc: "Semantic vector scoring compares every signal against your ICP criteria. Data enrichment waterfalls hit 50+ providers in milliseconds so you act on fully-enriched, accurate contact profiles — not stale CSVs.",
+        accent: "#7c3aed",
+        bg: "#f3eeff",
+        pillBg: "#ddd6fe",
+        pillText: "#5b21b6",
+        testimonial: {
+          quote: "Our ICP match accuracy jumped from 60% to 94% in the first two weeks. The waterfall enrichment alone saved us 20 hours a week.",
+          name: "Priya S.",
+          role: "VP Sales · Northbeam",
+          initials: "PS",
+          avatarBg: "#7c3aed",
         },
-        {
-          title: "Grounded AI Outreach",
-          desc: "Proprietary generative models synthesize live signal context, technographics, and value props into bespoke first touches. Zero stale templates.",
-          previewType: "outreach",
-          preview: [
-            { sender: "prospect", text: "outbound email is dead in 2026..." },
-            { sender: "ai", text: "Saw your post Maya, built Typpout for this. 5-min call?" }
-          ]
+        preview: [
+          { name: "Sarah Kim", title: "VP Sales · Growthbase", score: "97%", init: "SK", scoreColor: "color:#059669" },
+          { name: "Marcus Webb", title: "Head of Revenue · Synthos", score: "93%", init: "MW", scoreColor: "color:#2563eb" },
+          { name: "Priya Shah", title: "PMM · Northbeam", score: "91%", init: "PS", scoreColor: "color:#7c3aed" },
+        ],
+        previewType: "icp",
+      },
+      {
+        step: "03",
+        label: "AI OUTREACH",
+        title: "Messages that feel",
+        titleAccent: "genuinely personal",
+        desc: "Generative AI synthesizes live signal context, prospect technographics, and your value proposition into a bespoke first touch grounded in exactly what triggered the match. Zero templates. Zero cringe.",
+        accent: "#059669",
+        bg: "#ecfdf5",
+        pillBg: "#a7f3d0",
+        pillText: "#065f46",
+        testimonial: {
+          quote: "I couldn't believe an AI wrote those messages. Our reply rate went from 4% to 41% in 3 weeks.",
+          name: "Maya T.",
+          role: "Founder · Growthbase",
+          initials: "MT",
+          avatarBg: "#059669",
         },
-        {
-          title: "Semantic AI Booking Agent",
-          desc: "Multi-turn dialogue models handle objections, clarify pricing, and schedule calendar events in under 8 seconds, feeding feedback back into the GTM Brain.",
-          previewType: "reply",
-          preview: [
-            { status: "success", text: "Meeting booked ✓ Wed 3:30 PM", desc: "replied in 8s" },
-            { status: "info", text: "Handled objection · Follow-up sent", desc: "objection: pricing" }
-          ]
-        }
-      ].map((f, i) => {
-        const delays = ["", "delay-100", "delay-200", "delay-300"];
-        return (
-          <div
-            class:list={[
-              "bg-white flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-16 overflow-hidden rounded-3xl p-8 md:p-12 border border-stone-200/85 shadow-[0_8px_30px_rgb(0,0,0,0.03)] transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)]",
-              delays[i]
-            ]}
-            style={`position: sticky; top: ${100 + i * 36}px; z-index: ${(i + 1) * 10};`}
-            data-reveal
-          >
-            <!-- Left Panel: Text -->
-            <div class="flex-1 space-y-4">
-              <div class="inline-flex items-center gap-2 rounded-full bg-stone-100 px-3 py-1 text-[11px] font-semibold text-stone-600 border border-stone-200/60">
-                Step {i + 1}
+        preview: [
+          { sender: "prospect", text: "outbound email is dead in 2026, nothing gets a reply anymore..." },
+          { sender: "ai", text: "Saw your post Maya — we built Typpout exactly for this. Worth a 5-min call?" },
+        ],
+        previewType: "outreach",
+      },
+      {
+        step: "04",
+        label: "AI BOOKING",
+        title: "Replies in 8s.",
+        titleAccent: "Meetings in minutes.",
+        desc: "Multi-turn dialogue models handle pricing objections, answer product questions, and schedule calendar events without human intervention. Every conversation feeds back into the GTM Brain.",
+        accent: "#d97706",
+        bg: "#fffbeb",
+        pillBg: "#fde68a",
+        pillText: "#92400e",
+        testimonial: {
+          quote: "The AI replied to a prospect at 2am, handled their pricing question, and booked a demo for the next morning. I woke up to a confirmed meeting.",
+          name: "Carlos M.",
+          role: "CEO · PipelineOS",
+          initials: "CM",
+          avatarBg: "#d97706",
+        },
+        preview: [
+          { status: "success", text: "Meeting booked ✓ Wed 3:30 PM", desc: "replied in 8s" },
+          { status: "info", text: "Handled objection · Follow-up sent", desc: "objection: pricing" },
+          { status: "success", text: "Demo confirmed · Calendar invite sent", desc: "auto-booked" },
+        ],
+        previewType: "reply",
+      },
+    ].map((f, i) => (
+      <div
+        class="overflow-hidden rounded-3xl"
+        style={`background:${f.bg}; position: sticky; top: ${80 + i * 40}px; z-index: ${(i + 1) * 10};`}
+        data-reveal
+      >
+        <div class="flex flex-col lg:flex-row lg:min-h-[440px]">
+
+          <!-- Left: Text Panel -->
+          <div class="flex flex-1 flex-col justify-between gap-8 p-8 md:p-12 lg:max-w-[52%]">
+            <div class="space-y-5">
+              <!-- Label pill -->
+              <div
+                class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] font-bold tracking-widest uppercase"
+                style={`background:${f.pillBg}; color:${f.pillText};`}
+              >
+                {f.label}
               </div>
-              <h3 class="font-display text-lg font-semibold sm:text-xl lg:text-2xl tracking-tight text-stone-850">{f.title}</h3>
-              <p class="text-sm md:text-base font-light text-[color:var(--color-ink-secondary)] leading-relaxed">{f.desc}</p>
+
+              <!-- Heading -->
+              <h3 class="font-display text-2xl font-semibold leading-tight tracking-tight text-stone-900 sm:text-3xl lg:text-[36px]">
+                {f.title}<br />
+                <span style={`color:${f.accent}`}>{f.titleAccent}</span>
+              </h3>
+
+              <!-- Description -->
+              <p class="max-w-sm text-base font-light leading-relaxed text-stone-600">
+                {f.desc}
+              </p>
             </div>
-            
-            <!-- Right Panel: Visual -->
-            <div class="flex-1 w-full max-w-xl">
-              <div class="grid-bg rounded-2xl p-5 border border-stone-200/40" style="--grid-color:#f6f5f3;--grid-line-color:#e7e5e4;--grid-bg-opacity:100%;--grid-line-opacity:100%;--grid-size:14px">
-                <div class="rounded-xl border border-stone-200/85 bg-white p-4 shadow-sm space-y-2.5">
-                  
-                  {f.previewType === "signals" && f.preview.map((row) => (
-                    <div class="flex items-center gap-2.5 rounded-lg border border-stone-100 bg-stone-50/50 px-3 py-2 text-[12px] text-stone-700">
-                      <span class="grid h-5 w-5 shrink-0 place-items-center rounded-full text-[9px] font-semibold text-white" style={`background:${row.iconBg}`}>{row.label}</span>
-                      <span class="truncate font-medium text-stone-800">{row.text}</span>
-                    </div>
-                  ))}
 
-                  {f.previewType === "icp" && f.preview.map((row) => (
-                    <div class="flex items-center justify-between gap-3 rounded-lg border border-stone-100 bg-stone-50/50 px-3 py-2 text-[12px] text-stone-750">
-                      <div class="flex items-center gap-2">
-                        <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-stone-100 text-[10px] font-semibold text-stone-600 border border-stone-200/60">{row.init}</span>
-                        <div class="min-w-0">
-                          <div class="font-semibold text-stone-800 leading-none">{row.name}</div>
-                          <div class="text-[10px] text-stone-500 mt-1 leading-none">{row.title}</div>
-                        </div>
-                      </div>
-                      <span class:list={["font-mono text-[11px] font-bold px-1.5 py-0.5 rounded border border-stone-200 bg-white shrink-0", row.scoreColor]}>{row.score}</span>
-                    </div>
-                  ))}
-
-                  {f.previewType === "outreach" && f.preview.map((row) => (
-                    row.sender === "prospect" ? (
-                      <div class="flex items-start gap-2 max-w-[90%]">
-                        <span class="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-stone-100 text-[10px] font-semibold text-stone-600 border border-stone-200">P</span>
-                        <div class="rounded-xl rounded-tl-none border border-stone-200 bg-stone-50/50 px-3 py-2 text-[11px] text-stone-700 leading-relaxed">
-                          {row.text}
-                        </div>
-                      </div>
-                    ) : (
-                      <div class="flex items-start gap-2 justify-end">
-                        <div class="rounded-xl rounded-tr-none bg-[color:var(--color-brand)] px-3 py-2 text-[11px] text-white leading-relaxed max-w-[90%] shadow-2xs">
-                          {row.text}
-                        </div>
-                        <span class="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[color:var(--color-brand-100)] text-[9px] font-semibold text-[color:var(--color-brand-on-light)] border border-[color:var(--color-brand-200)]">AI</span>
-                      </div>
-                    )
-                  ))}
-
-                  {f.previewType === "reply" && f.preview.map((row) => (
-                    <div class:list={[
-                      "flex items-center justify-between gap-3 rounded-lg border px-3.5 py-2 text-[12px] shadow-3xs",
-                      row.status === "success" 
-                        ? "bg-emerald-50/40 border-emerald-250 text-emerald-800" 
-                        : "bg-white border-stone-200 text-stone-700"
-                    ]}>
-                      <div class="flex items-center gap-2">
-                        <span class:list={[
-                          "h-1.5 w-1.5 rounded-full",
-                          row.status === "success" ? "bg-emerald-500 animate-pulse" : "bg-blue-500"
-                        ]}></span>
-                        <span class="font-semibold">{row.text}</span>
-                      </div>
-                      <span class="font-mono text-[10px] opacity-75">{row.desc}</span>
-                    </div>
-                  ))}
-                  
+            <!-- Testimonial -->
+            <div class="space-y-3">
+              <div class="flex items-center gap-2">
+                <div
+                  class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[11px] font-bold text-white"
+                  style={`background:${f.testimonial.avatarBg}`}
+                >
+                  {f.testimonial.initials}
                 </div>
+                <p class="text-[13px] font-semibold text-stone-800">
+                  <strong>{f.testimonial.name}</strong>
+                  <span class="font-normal text-stone-500"> · {f.testimonial.role}</span>
+                </p>
+              </div>
+              <blockquote class="max-w-sm border-l-2 pl-4 text-[14px] font-light italic leading-relaxed text-stone-600" style={`border-color:${f.accent}`}>
+                "{f.testimonial.quote}"
+              </blockquote>
+            </div>
+
+            <!-- CTA -->
+            <div class="flex flex-wrap items-center gap-4">
+              <a
+                href={SITE.appUrl}
+                class="inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-[13px] font-semibold text-white transition-opacity hover:opacity-90"
+                style={`background:${f.accent}`}
+              >
+                Start free trial
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              <a href="/#features" class="text-[13px] font-medium text-stone-600 hover:text-stone-900 transition-colors">
+                Learn more →
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Visual Panel -->
+          <div class="flex flex-1 items-center justify-center p-6 lg:p-8">
+            <div class="w-full max-w-md rounded-2xl bg-white/70 p-5 shadow-[0_8px_40px_rgba(0,0,0,0.08)] backdrop-blur-sm border border-white/80">
+              <div class="space-y-2.5">
+
+                {f.previewType === "signals" && f.preview.map((row: any) => (
+                  <div class="flex items-center gap-3 rounded-xl border border-stone-100 bg-white px-4 py-3 text-[13px] shadow-xs">
+                    <span
+                      class="grid h-6 w-6 shrink-0 place-items-center rounded-full text-[10px] font-bold text-white"
+                      style={`background:${row.bg}`}
+                    >{row.label}</span>
+                    <span class="truncate font-medium text-stone-800">{row.text}</span>
+                    <span class="ml-auto shrink-0 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">intent</span>
+                  </div>
+                ))}
+
+                {f.previewType === "icp" && f.preview.map((row: any) => (
+                  <div class="flex items-center justify-between gap-3 rounded-xl border border-stone-100 bg-white px-4 py-3 shadow-xs">
+                    <div class="flex items-center gap-3">
+                      <div class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-stone-100 text-[11px] font-bold text-stone-600">
+                        {row.init}
+                      </div>
+                      <div>
+                        <div class="text-[13px] font-semibold text-stone-800 leading-tight">{row.name}</div>
+                        <div class="text-[11px] text-stone-500 leading-tight">{row.title}</div>
+                      </div>
+                    </div>
+                    <div class="shrink-0 rounded-full px-2.5 py-1 text-[11px] font-bold bg-white border border-stone-200" style={row.scoreColor}>
+                      {row.score}
+                    </div>
+                  </div>
+                ))}
+
+                {f.previewType === "outreach" && f.preview.map((row: any) => (
+                  row.sender === "prospect" ? (
+                    <div class="flex items-start gap-2">
+                      <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-stone-200 text-[10px] font-bold text-stone-600 mt-0.5">P</span>
+                      <div class="rounded-2xl rounded-tl-none bg-stone-100 px-4 py-2.5 text-[13px] text-stone-700 leading-relaxed">
+                        {row.text}
+                      </div>
+                    </div>
+                  ) : (
+                    <div class="flex items-start gap-2 justify-end">
+                      <div class="rounded-2xl rounded-tr-none px-4 py-2.5 text-[13px] text-white leading-relaxed shadow-sm" style={`background:${f.accent}`}>
+                        {row.text}
+                      </div>
+                      <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full text-[9px] font-bold text-white mt-0.5" style={`background:${f.accent}`}>AI</span>
+                    </div>
+                  )
+                ))}
+
+                {f.previewType === "reply" && f.preview.map((row: any) => (
+                  <div class:list={[
+                    "flex items-center justify-between gap-3 rounded-xl border px-4 py-3 text-[13px]",
+                    row.status === "success"
+                      ? "bg-emerald-50 border-emerald-200 text-emerald-800"
+                      : "bg-white border-stone-200 text-stone-700"
+                  ]}>
+                    <div class="flex items-center gap-2">
+                      <span class:list={[
+                        "h-2 w-2 rounded-full",
+                        row.status === "success" ? "bg-emerald-500 animate-pulse" : "bg-blue-400"
+                      ]}></span>
+                      <span class="font-semibold">{row.text}</span>
+                    </div>
+                    <span class="font-mono text-[11px] opacity-60">{row.desc}</span>
+                  </div>
+                ))}
+
               </div>
             </div>
           </div>
-        );
-      })}
-    </div>
+
+        </div>
+      </div>
+    ))}
+
   </div>
 
 </section>
+
