@@ -21,6 +21,7 @@ import { SITE } from "../data/site";
     <div class="ml-auto flex w-full flex-col gap-5 pl-6 sm:w-1/3 sm:max-w-xl sm:pl-0" data-reveal>
       {[
         { label: "AI Social Listening", iconBg: "bg-emerald-50 border-emerald-100/60 text-emerald-600 group-hover:bg-emerald-100 group-hover:border-emerald-200", icon: "radar" },
+        { label: "Agents to track LLM searches", iconBg: "bg-pink-50 border-pink-100/60 text-pink-600 group-hover:bg-pink-100 group-hover:border-pink-200", icon: "eye" },
         { label: "Heuristic ICP Matcher", iconBg: "bg-blue-50 border-blue-100/60 text-blue-600 group-hover:bg-blue-100 group-hover:border-blue-200",    icon: "users" },
         { label: "Grounded AI Outreach",  iconBg: "bg-purple-50 border-purple-100/60 text-purple-600 group-hover:bg-purple-100 group-hover:border-purple-200", icon: "message" },
         { label: "Semantic AI Booking",   iconBg: "bg-orange-50 border-orange-100/60 text-orange-600 group-hover:bg-orange-100 group-hover:border-orange-200", icon: "bolt" },
@@ -32,6 +33,7 @@ import { SITE } from "../data/site";
               {f.icon === "users"   && <><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="2"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M16 11a3 3 0 100-6M21 20c0-2.5-2-4-4.5-4.5" stroke="currentColor" stroke-width="2"/></>}
               {f.icon === "message" && <path d="M4 6a2 2 0 012-2h12a2 2 0 012 2v9a2 2 0 01-2 2H9l-5 4V6z" stroke="currentColor" stroke-width="2"/>}
               {f.icon === "bolt"    && <path d="M13 2L4 14h7l-2 8 10-12h-7l1-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>}
+              {f.icon === "eye"     && <><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/></>}
             </svg>
           </div>
           <span class="font-display text-[17px] font-semibold text-stone-700 tracking-tight transition-colors group-hover:text-stone-900">{f.label}</span>
@@ -78,6 +80,33 @@ import { SITE } from "../data/site";
       },
       {
         step: "02",
+        label: "AI VISIBILITY",
+        title: "Agents to track",
+        titleAccent: "LLM searches.",
+        desc: "Gain complete transparency into how AI engines perceive, reference, and score your product across every model, prompt, and competitor.",
+        accent: "#db2777",
+        bg: "#fdf2f8",
+        pillBg: "#fce7f3",
+        pillText: "#9d174d",
+        testimonial: {
+          quote: "We now know exactly which sources Claude and ChatGPT pull to recommend us. Our AI share of voice grew by 35% in a single month.",
+          name: "Helen K.",
+          role: "Head of Marketing · Voxel",
+          initials: "HK",
+          avatarBg: "#db2777",
+        },
+        preview: [
+          { text: "Agents to track LLM searches.", bold: true },
+          { text: "Track visibility across every prompt & model." },
+          { text: "Understand where AI gets its information." },
+          { text: "Search, tag, and organize your prompts." },
+          { text: "See how you stack up against the competition." },
+          { text: "Inspect every individual AI response." },
+        ],
+        previewType: "visibility",
+      },
+      {
+        step: "03",
         label: "ICP MATCHING",
         title: "Find the exact right",
         titleAccent: "buyer every time",
@@ -101,7 +130,7 @@ import { SITE } from "../data/site";
         previewType: "icp",
       },
       {
-        step: "03",
+        step: "04",
         label: "AI OUTREACH",
         title: "Messages that feel",
         titleAccent: "genuinely personal",
@@ -124,7 +153,7 @@ import { SITE } from "../data/site";
         previewType: "outreach",
       },
       {
-        step: "04",
+        step: "05",
         label: "AI BOOKING",
         title: "Replies in 8s.",
         titleAccent: "Meetings in minutes.",
@@ -167,7 +196,6 @@ import { SITE } from "../data/site";
               </div>
 
               <!-- Heading -->
-              <!-- Clay ref: ~48px on desktop, 800 weight, #0f172a near-black, -1.5px tracking -->
               <h3
                 class="font-display text-[34px] leading-[1.08] sm:text-[42px] lg:text-[48px]"
                 style="font-weight: 400; letter-spacing: -1.5px; color: #0f172a;"
@@ -176,13 +204,13 @@ import { SITE } from "../data/site";
                 <span style={`color:${f.accent}; font-weight: 400;`}>{f.titleAccent}</span>
               </h3>
 
-              <!-- Description: Clay ref ~14-15px, weight 400, color #374151 (gray-700) -->
+              <!-- Description -->
               <p style="max-width: 340px; font-size: 15px; font-weight: 400; line-height: 1.65; color: #374151;">
                 {f.desc}
               </p>
             </div>
 
-            <!-- Testimonial: Clay ref company logos row + bold name + small regular quote text -->
+            <!-- Testimonial -->
             <div class="space-y-2.5">
               <!-- Avatar row -->
               <div class="flex items-center gap-2">
@@ -193,7 +221,7 @@ import { SITE } from "../data/site";
                   {f.testimonial.initials}
                 </div>
               </div>
-              <!-- Quote: Clay ref bold brand name inline, then regular text, 13px, #111827 -->
+              <!-- Quote -->
               <p style="font-size: 13px; font-weight: 400; line-height: 1.55; color: #111827; max-width: 320px;">
                 <strong style="font-weight: 700;">{f.testimonial.name}</strong>{" "}{f.testimonial.quote}
               </p>
@@ -286,6 +314,34 @@ import { SITE } from "../data/site";
                   </div>
                 ))}
 
+                {f.previewType === "visibility" && (
+                  <div class="space-y-2">
+                    <div class="flex items-center justify-between border-b border-stone-150 pb-2 mb-2 text-xs font-bold text-stone-850">
+                      <span>Visibility Features</span>
+                      <span class="text-[9px] font-bold bg-pink-50 text-pink-600 px-1.5 py-0.5 rounded border border-pink-100">Live tracker</span>
+                    </div>
+                    {f.preview.map((row: any, rIdx: number) => (
+                      <div class:list={[
+                        "flex items-center gap-2.5 rounded-xl border px-3 py-2 text-[12px] transition-all duration-200",
+                        row.bold 
+                          ? "bg-pink-50/50 border-pink-150 text-pink-900 font-semibold" 
+                          : "bg-white border-stone-100 text-stone-600 hover:bg-stone-50"
+                      ]}>
+                        <span class:list={[
+                          "flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded-full text-[9px] font-bold",
+                          row.bold ? "bg-pink-600 text-white" : "bg-stone-100 text-stone-500"
+                        ]}>
+                          {rIdx + 1}
+                        </span>
+                        <span class="truncate">{row.text}</span>
+                        {row.bold && (
+                          <span class="ml-auto h-1.5 w-1.5 rounded-full bg-pink-500 animate-ping"></span>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+
               </div>
             </div>
           </div>
@@ -297,4 +353,3 @@ import { SITE } from "../data/site";
   </div>
 
 </section>
-
