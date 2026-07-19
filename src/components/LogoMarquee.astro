@@ -1,22 +1,12 @@
 ---
 const logos = [
-  { name: "Clay", logoKey: "clay" },
-  { name: "Apollo", logoKey: "apollo" },
-  { name: "Attio", logoKey: "attio" },
-  { name: "Loom", logoKey: "loom" },
-  { name: "Retool", logoKey: "retool" },
-  { name: "Vanta", logoKey: "vanta" },
-  { name: "Linear", logoKey: "linear" },
-  { name: "Ramp", logoKey: "ramp" },
-  { name: "Deel", logoKey: "deel" },
-  { name: "Gong", logoKey: "gong" },
-  { name: "n8n", logoKey: "n8n" },
-  { name: "Lusha", logoKey: "lusha" },
-  { name: "Cognism", logoKey: "cognism" },
-  { name: "PostHog", logoKey: "posthog" },
-  { name: "Cal.com", logoKey: "cal" },
+  { name: "Nemetschek Group", logoKey: "nemetschek", ext: "png", heightClass: "h-6 sm:h-7" },
+  { name: "CARPL", logoKey: "carpl", ext: "png", heightClass: "h-7 sm:h-8" },
+  { name: "Salesforge", logoKey: "salesforge", ext: "png", heightClass: "h-5 sm:h-6" },
+  { name: "Continue", logoKey: "continue", ext: "png", heightClass: "h-6 sm:h-7" },
+  { name: "Ulai", logoKey: "ulai", ext: "png", heightClass: "h-7 sm:h-8" },
 ];
-const doubleLogos = [...logos, ...logos];
+const doubleLogos = [...logos, ...logos, ...logos, ...logos];
 ---
 
 <section aria-label="Trusted by" class="border-y border-[color:var(--color-border)] bg-white py-8 sm:py-10">
@@ -25,20 +15,15 @@ const doubleLogos = [...logos, ...logos];
       Trusted by GTM teams shipping pipeline, not busywork
     </p>
     <div class="marquee mt-8">
-      <div class="marquee__track gap-12 sm:gap-16">
+      <div class="marquee__track gap-16 sm:gap-20">
         {doubleLogos.map((logo) => (
-          <div class="flex items-center gap-2.5 whitespace-nowrap opacity-65 hover:opacity-100 transition-opacity duration-200">
+          <div class="flex items-center justify-center whitespace-nowrap opacity-65 hover:opacity-100 transition-opacity duration-200">
             <img
-              src={`/logos/${logo.logoKey}.webp`}
+              src={`/logos/${logo.logoKey}.${logo.ext}`}
               alt={`${logo.name} Logo`}
-              width="20"
-              height="20"
-              class="h-5 w-5 object-contain"
+              class:list={["w-auto object-contain filter grayscale contrast-125 hover:grayscale-0 transition-all duration-300", logo.heightClass]}
               loading="lazy"
             />
-            <span class="font-display text-[19px] font-semibold text-[color:var(--color-ink-strong)] tracking-tight">
-              {logo.name}
-            </span>
           </div>
         ))}
       </div>
