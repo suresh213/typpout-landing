@@ -98,71 +98,58 @@ const cardThemes = [
       </p>
     </div>
 
-    <div class="columns-1 gap-5 sm:columns-2 lg:columns-3">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 items-stretch">
       {testimonials.map((t, i) => {
         const delays = ["", "delay-75", "delay-150", "delay-200", "delay-250", "delay-300", "delay-450", "delay-600"];
         const theme = cardThemes[i % cardThemes.length];
-        const isLarge = t.size === "large";
-        const isSmall = t.size === "small";
 
         return (
           <div
             class:list={[
-              "mb-5 break-inside-avoid shadow-xs hover:-translate-y-1 hover:shadow-md transition-all duration-300",
-              isLarge ? "rounded-3xl p-7 sm:p-8" : isSmall ? "rounded-2xl p-4 sm:p-5" : "rounded-3xl p-6 sm:p-7",
+              "flex flex-col justify-between h-full rounded-3xl p-6 sm:p-7 shadow-xs hover:-translate-y-1 hover:shadow-md transition-all duration-300",
               delays[i % delays.length]
             ]}
             style={`background-color: ${theme.bg};`}
             data-reveal
           >
-            <!-- Top Row: Avatar info + Badge/Twitter -->
-            <div class="mb-4 flex items-center justify-between">
-              <div class="flex items-center gap-3">
-                <span
-                  class:list={[
-                    "grid shrink-0 place-items-center rounded-full font-bold",
-                    isLarge ? "h-10 w-10 text-xs" : isSmall ? "h-7 w-7 text-[10px]" : "h-8.5 w-8.5 text-[11px]"
-                  ]}
-                  style={`background-color: ${theme.initBg}; color: ${theme.initText};`}
-                >
-                  {t.init}
-                </span>
-                <div>
-                  <div class:list={["font-semibold text-[color:var(--color-ink-strong)]", isLarge ? "text-[14px]" : "text-[13px]"]}>
-                    {t.name}
+            <div>
+              <!-- Top Row: Avatar info + Badge/Twitter -->
+              <div class="mb-4 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <span
+                    class="grid h-9 w-9 shrink-0 place-items-center rounded-full text-[11px] font-bold"
+                    style={`background-color: ${theme.initBg}; color: ${theme.initText};`}
+                  >
+                    {t.init}
+                  </span>
+                  <div>
+                    <div class="text-[13.5px] font-semibold text-[color:var(--color-ink-strong)]">
+                      {t.name}
+                    </div>
+                    <div class="text-[11px] text-[color:var(--color-ink-muted)]">{t.handle} · {t.role}</div>
                   </div>
-                  <div class="text-[11px] text-[color:var(--color-ink-muted)]">{t.handle} · {t.role}</div>
+                </div>
+
+                <div class="flex items-center gap-2">
+                  {t.badge && (
+                    <span
+                      class="hidden xs:inline-flex rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider"
+                      style={`background-color: ${theme.badgeBg}; color: ${theme.badgeText};`}
+                    >
+                      {t.badge}
+                    </span>
+                  )}
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-[color:var(--color-ink-subtle)] opacity-70" aria-hidden="true">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.738l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
                 </div>
               </div>
 
-              <div class="flex items-center gap-2">
-                {t.badge && (
-                  <span
-                    class="hidden xs:inline-flex rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider"
-                    style={`background-color: ${theme.badgeBg}; color: ${theme.badgeText};`}
-                  >
-                    {t.badge}
-                  </span>
-                )}
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-[color:var(--color-ink-subtle)] opacity-70" aria-hidden="true">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.738l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
-              </div>
+              <!-- Quote Text -->
+              <p class="text-[13.5px] sm:text-[14px] leading-relaxed text-[color:var(--color-ink-strong)]">
+                "{t.text}"
+              </p>
             </div>
-
-            <!-- Quote Text -->
-            <p
-              class:list={[
-                "leading-relaxed text-[color:var(--color-ink-strong)]",
-                isLarge
-                  ? "text-[15px] sm:text-[16px] font-medium tracking-tight"
-                  : isSmall
-                    ? "text-[12.5px] font-normal"
-                    : "text-[13.5px] font-normal"
-              ]}
-            >
-              "{t.text}"
-            </p>
           </div>
         );
       })}
