@@ -6,6 +6,8 @@ const testimonials = [
     handle: "@santoshpatil",
     role: "CEO",
     init: "SP",
+    size: "large",
+    badge: "20+ meetings / mo",
   },
   {
     text: "Typpout feels different, it's built for PMMs and GTM teams, not just sales. The ICP Finder alone saves me hours every week. I stopped using Apollo entirely.",
@@ -13,6 +15,7 @@ const testimonials = [
     handle: "@raiyaan_gtm",
     role: "GTM Lead, Carpl.AI",
     init: "RA",
+    size: "medium",
   },
   {
     text: "Instead of juggling 4-5 different tools, my team now finds ICPs, generates content, and runs outreach in one place. We booked 10 qualified meetings in the first two weeks.",
@@ -20,6 +23,8 @@ const testimonials = [
     handle: "@swapnil_mktg",
     role: "CEO, DigiMatrix Marketing",
     init: "SW",
+    size: "large",
+    badge: "10 meetings in 2 wks",
   },
   {
     text: "Speed matters. Typpout helped us move from idea to pipeline in days. The AI outreach felt personal, we closed our first 3 customers directly from campaigns.",
@@ -27,6 +32,7 @@ const testimonials = [
     handle: "@sanskarpitta",
     role: "Netmetschek Group",
     init: "SK",
+    size: "small",
   },
   {
     text: "We were spending 3 hours a day manually monitoring LinkedIn. Typpout cut that to zero and the quality of leads went up. The ICP matching is genuinely impressive.",
@@ -34,6 +40,7 @@ const testimonials = [
     handle: "@priyamehta_rev",
     role: "Head of Revenue",
     init: "PM",
+    size: "medium",
   },
   {
     text: "Our reply rate jumped from 12% to 47% within the first month. The AI replies are fast and on-brand, prospects can't even tell it's automated until they're already on the calendar.",
@@ -41,6 +48,8 @@ const testimonials = [
     handle: "@jamesokafor",
     role: "VP Sales, Growthbase",
     init: "JO",
+    size: "large",
+    badge: "47% Reply Rate",
   },
   {
     text: "I was skeptical about AI outreach tools but Typpout actually delivers. It picked up a competitor switch signal on X and booked a demo before we even knew the prospect existed.",
@@ -48,6 +57,7 @@ const testimonials = [
     handle: "@laurenpark_gtm",
     role: "Demand Gen Manager",
     init: "LP",
+    size: "medium",
   },
   {
     text: "Finally a GTM tool that doesn't feel like it was designed for a 100-person sales team. Perfect for our lean 3-person GTM team. We punch way above our weight now.",
@@ -55,6 +65,7 @@ const testimonials = [
     handle: "@marcuswebb",
     role: "Founder, Synthos",
     init: "MW",
+    size: "small",
   },
   {
     text: "The funding signal detection is a game changer. We get notified within minutes when a target account closes a round, and the outreach goes out while the news is still fresh.",
@@ -62,15 +73,16 @@ const testimonials = [
     handle: "@divyarao_sales",
     role: "Sales Director",
     init: "DR",
+    size: "medium",
   },
 ];
 
 const cardThemes = [
-  { bg: "#eef4ff", border: "rgba(199, 219, 255, 0.8)", accent: "#1a6cf6", initBg: "#c7dbff", initText: "#1a4fa0" }, // Blue
-  { bg: "#fdf2f8", border: "rgba(252, 231, 243, 0.8)", accent: "#db2777", initBg: "#fce7f3", initText: "#9d174d" }, // Pink
-  { bg: "#f3eeff", border: "rgba(221, 214, 254, 0.8)", accent: "#7c3aed", initBg: "#ddd6fe", initText: "#5b21b6" }, // Purple
-  { bg: "#ecfdf5", border: "rgba(167, 243, 208, 0.8)", accent: "#059669", initBg: "#a7f3d0", initText: "#065f46" }, // Green
-  { bg: "#fffbeb", border: "rgba(253, 230, 138, 0.8)", accent: "#d97706", initBg: "#fde68a", initText: "#92400e" }, // Amber
+  { bg: "#eef4ff", accent: "#1a6cf6", initBg: "#c7dbff", initText: "#1a4fa0", badgeBg: "#dbeafe", badgeText: "#1e40af" }, // Blue
+  { bg: "#fdf2f8", accent: "#db2777", initBg: "#fce7f3", initText: "#9d174d", badgeBg: "#fce7f3", badgeText: "#9d174d" }, // Pink
+  { bg: "#f3eeff", accent: "#7c3aed", initBg: "#ddd6fe", initText: "#5b21b6", badgeBg: "#ddd6fe", badgeText: "#5b21b6" }, // Purple
+  { bg: "#ecfdf5", accent: "#059669", initBg: "#a7f3d0", initText: "#065f46", badgeBg: "#a7f3d0", badgeText: "#065f46" }, // Green
+  { bg: "#fffbeb", accent: "#d97706", initBg: "#fde68a", initText: "#92400e", badgeBg: "#fde68a", badgeText: "#92400e" }, // Amber
 ];
 ---
 
@@ -90,34 +102,67 @@ const cardThemes = [
       {testimonials.map((t, i) => {
         const delays = ["", "delay-75", "delay-150", "delay-200", "delay-250", "delay-300", "delay-450", "delay-600"];
         const theme = cardThemes[i % cardThemes.length];
+        const isLarge = t.size === "large";
+        const isSmall = t.size === "small";
+
         return (
           <div
             class:list={[
-              "mb-5 break-inside-avoid rounded-2xl border p-5 hover:-translate-y-0.5 hover:shadow-md transition-all duration-250",
+              "mb-5 break-inside-avoid shadow-xs hover:-translate-y-1 hover:shadow-md transition-all duration-300",
+              isLarge ? "rounded-3xl p-7 sm:p-8" : isSmall ? "rounded-2xl p-4 sm:p-5" : "rounded-3xl p-6 sm:p-7",
               delays[i % delays.length]
             ]}
-            style={`background-color: ${theme.bg}; border-color: ${theme.border};`}
+            style={`background-color: ${theme.bg};`}
             data-reveal
           >
-            <!-- X/Twitter icon -->
-            <div class="mb-3 flex items-center justify-between">
-              <div class="flex items-center gap-2.5">
+            <!-- Top Row: Avatar info + Badge/Twitter -->
+            <div class="mb-4 flex items-center justify-between">
+              <div class="flex items-center gap-3">
                 <span
-                  class="grid h-8 w-8 shrink-0 place-items-center rounded-full text-[11px] font-semibold"
+                  class:list={[
+                    "grid shrink-0 place-items-center rounded-full font-bold",
+                    isLarge ? "h-10 w-10 text-xs" : isSmall ? "h-7 w-7 text-[10px]" : "h-8.5 w-8.5 text-[11px]"
+                  ]}
                   style={`background-color: ${theme.initBg}; color: ${theme.initText};`}
                 >
                   {t.init}
                 </span>
                 <div>
-                  <div class="text-[13px] font-medium text-[color:var(--color-ink)]">{t.name}</div>
-                  <div class="text-[11px] text-[color:var(--color-ink-muted)]">{t.handle}</div>
+                  <div class:list={["font-semibold text-[color:var(--color-ink-strong)]", isLarge ? "text-[14px]" : "text-[13px]"]}>
+                    {t.name}
+                  </div>
+                  <div class="text-[11px] text-[color:var(--color-ink-muted)]">{t.handle} · {t.role}</div>
                 </div>
               </div>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-[color:var(--color-ink-subtle)]" aria-hidden="true">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.738l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
+
+              <div class="flex items-center gap-2">
+                {t.badge && (
+                  <span
+                    class="hidden xs:inline-flex rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider"
+                    style={`background-color: ${theme.badgeBg}; color: ${theme.badgeText};`}
+                  >
+                    {t.badge}
+                  </span>
+                )}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-[color:var(--color-ink-subtle)] opacity-70" aria-hidden="true">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.738l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </div>
             </div>
-            <p class="text-[13px] leading-relaxed text-[color:var(--color-ink-strong)]">{t.text}</p>
+
+            <!-- Quote Text -->
+            <p
+              class:list={[
+                "leading-relaxed text-[color:var(--color-ink-strong)]",
+                isLarge
+                  ? "text-[15px] sm:text-[16px] font-medium tracking-tight"
+                  : isSmall
+                    ? "text-[12.5px] font-normal"
+                    : "text-[13.5px] font-normal"
+              ]}
+            >
+              "{t.text}"
+            </p>
           </div>
         );
       })}
