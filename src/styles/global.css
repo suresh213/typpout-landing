@@ -119,12 +119,14 @@
    Base
    ========================================================================= */
 html {
-  font-size: 110%; /* Scale all rem units, font sizes, and layout gaps by 10% (equivalent to 110% zoom level) */
+  font-size: 110%;
+  /* Scale all rem units, font sizes, and layout gaps by 10% (equivalent to 110% zoom level) */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
-  scroll-padding-top: 5.5rem; /* Scaled from 5rem to match the zoom */
+  scroll-padding-top: 5.5rem;
+  /* Scaled from 5rem to match the zoom */
 }
 
 /* Ensure the main layout grid wrapper (1280px) is also scaled up by exactly 10% (1280px * 1.1 = 1408px) */
@@ -711,15 +713,15 @@ body {
    Hero background — exact port of Dodo template hero-bg system
    ========================================================================= */
 .hero-bg {
-  --mesh-green: #eef2ff;
-  --mesh-mint: #f0fdf4;
-  --mesh-blue: #e0f2fe;
-  --mesh-blue-deep: #fae8ff;
-  --mesh-pink: #fdf2f8;
-  --mesh-peach: #fff7ed;
-  --mesh-bg: #ffffff;
-  --dot-color: #3b82f6;
-  --dot-opacity: 0.08;
+  --mesh-green: #f5f0e0;
+  --mesh-mint: #faf6eb;
+  --mesh-blue: #f0ece0;
+  --mesh-blue-deep: #ebe6d6;
+  --mesh-pink: #faf3e8;
+  --mesh-peach: #fdf5ec;
+  --mesh-bg: #faf8f3;
+  --dot-color: #8b7355;
+  --dot-opacity: 0.06;
   --dot-size: 1.4px;
   --dot-cell: 22px;
   height: clamp(680px, 92vh, 900px);
