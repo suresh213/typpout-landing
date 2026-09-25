@@ -1,9 +1,9 @@
 ---
-title: "Typpout is Joining sprouts.ai A New Chapter for AI-Powered GTM"
-seoTitle: "Typpout Acquired by sprouts.ai A New Chapter for AI-Powered GTM"
-description: "We're thrilled to announce that Typpout has been acquired by sprouts.ai. The Typpout team is joining forces starting the first week of September 2026. Here's the full story."
+title: "Typpout is joining Sprouts.ai to build the world class GTM data infrastructure."
+seoTitle: "Typpout is joining Sprouts.ai to build world class GTM data infrastructure"
+description: "Typpout is joining Sprouts.ai to build the world class GTM data infrastructure. The Typpout team joins forces from the first week of September 2026."
 pubDate: 2026-09-01
-author: "Suresh, Founder, Typpout"
+author: "Arjit Singh, Co-Founder, Typpout"
 category: "Company News"
 tags: ["acquisition", "sprouts.ai", "company news", "Typpout", "GTM"]
 readingTime: "5 min read"
@@ -57,7 +57,7 @@ We are committed to making this transition seamless. If you have questions right
 
 ## A Note from the Founders
 
-![The Typpout team](/typpout-team.png)
+![Arjit Singh, Co-Founder, Typpout](/arjit-founder.jpg)
 
 When we look back at the last two years, we are genuinely proud of what we built and even more proud of the customers who bet on us early.
 
@@ -65,11 +65,11 @@ Every founder who gave Typpout a shot when we were just getting started, every e
 
 Building Typpout has been the most intense, most rewarding, most humbling experience of our professional lives. We are not slowing down. We are accelerating.
 
-The team joins sprouts.ai in the first week of September 2026. We cannot wait to show you what we build together.
+The team joins Sprouts.ai in the first week of September 2026. We cannot wait to show you what we build together.
 
 See you on the other side,
 
-**Suresh and the Typpout Team**
+**Arjit Singh, Co-Founder, Typpout**
 
 ---
 
