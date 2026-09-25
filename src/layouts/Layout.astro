@@ -73,7 +73,7 @@ const {
     <script async defer src="https://script.bullseye.so/script/cced6f5e-bef6-4a28-8259-c67840fa1042" referrerpolicy="strict-origin-when-cross-origin" data-bullseye-pixel="cced6f5e-bef6-4a28-8259-c67840fa1042"></script>
   </head>
   <body class="min-h-screen w-full bg-[color:var(--color-background)] text-[color:var(--color-foreground)] antialiased">
-    <!-- Acquisition Announcement Banner -->
+    <!-- BANNER HIDDEN — uncomment to re-enable
     <div id="acq-banner" class="relative z-50 w-full bg-[#0f172a] text-white">
       <a
         href="/blog/typpout-acquired-by-sproutsai"
@@ -105,7 +105,6 @@ const {
       </button>
     </div>
     <script>
-      // Dismiss banner and remember via sessionStorage
       const banner = document.getElementById('acq-banner');
       const closeBtn = document.getElementById('acq-close');
       if (sessionStorage.getItem('acq-dismissed')) {
@@ -118,6 +117,7 @@ const {
         sessionStorage.setItem('acq-dismissed', '1');
       });
     </script>
+    -->
     <a
       href="#main"
       class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-md focus:bg-[color:var(--color-foreground)] focus:px-4 focus:py-2 focus:text-white focus:shadow-lg"
