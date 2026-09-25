@@ -1,9 +1,9 @@
 ---
-title: "Typpout is joining Sprouts.ai to build the world class GTM data infrastructure."
+title: "Typpout is joining Sprouts.ai to build the world class GTM data infrastructure"
 seoTitle: "Typpout is joining Sprouts.ai to build world class GTM data infrastructure"
 description: "Typpout is joining Sprouts.ai to build the world class GTM data infrastructure. The Typpout team joins forces from the first week of September 2026."
 pubDate: 2026-09-01
-author: "Arjit Singh, Co-Founder, Typpout"
+author: "Arjit Singh, Founder & CEO, Typpout"
 category: "Company News"
 tags: ["acquisition", "sprouts.ai", "company news", "Typpout", "GTM"]
 readingTime: "5 min read"
@@ -57,8 +57,6 @@ We are committed to making this transition seamless. If you have questions right
 
 ## A Note from the Founders
 
-![Arjit Singh, Co-Founder, Typpout](/arjit-founder.jpg)
-
 When we look back at the last two years, we are genuinely proud of what we built and even more proud of the customers who bet on us early.
 
 Every founder who gave Typpout a shot when we were just getting started, every enterprise team that trusted our AI to represent them in conversations with prospects, every customer who shared their feedback and pushed us to get better — this milestone belongs to all of you.
@@ -69,7 +67,7 @@ The team joins Sprouts.ai in the first week of September 2026. We cannot wait to
 
 See you on the other side,
 
-**Arjit Singh, Co-Founder, Typpout**
+**Arjit Singh, Founder & CEO, Typpout**
 
 ---
 

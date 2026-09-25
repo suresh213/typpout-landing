@@ -166,15 +166,26 @@ const accents = ["green", "blue", "pink", "yellow"] as const;
               height="48"
               loading="eager"
             />
+          ) : post.data.author.toLowerCase().includes("arjit") ? (
+            <img
+              src="/arjit-founder.jpg"
+              alt="Arjit Singh, Co-Founder of Typpout"
+              class="h-12 w-12 rounded-full object-cover border border-stone-200/80 shadow-xs"
+              width="48"
+              height="48"
+              loading="eager"
+            />
           ) : (
             <span class="grid h-12 w-12 place-items-center rounded-full bg-[color:var(--color-foreground)] text-sm font-semibold uppercase text-[color:var(--color-brand)]">
               {post.data.author[0]}
             </span>
           )}
           <div class="flex flex-col">
-            <span class="font-bold text-[16px] text-[color:var(--color-foreground)] leading-tight">Suresh</span>
+            <span class="font-bold text-[16px] text-[color:var(--color-foreground)] leading-tight">
+              {post.data.author.split(",")[0].trim()}
+            </span>
             <span class="text-[13px] text-[color:var(--color-foreground-secondary)] mt-0.5">
-              Founder, Typpout
+              {post.data.author.includes(",") ? post.data.author.split(",").slice(1).join(",").trim() : "Founder, Typpout"}
               <span class="mx-1.5 text-stone-300">•</span>
               <time datetime={pubDate.toISOString()}>{dateStr}</time>
               {updatedStr && (
