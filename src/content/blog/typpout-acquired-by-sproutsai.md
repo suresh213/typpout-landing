@@ -1,6 +1,6 @@
 ---
-title: "Typpout is Joining sprouts.ai — A New Chapter for AI-Powered GTM"
-seoTitle: "Typpout Acquired by sprouts.ai"
+title: "Typpout is Joining sprouts.ai A New Chapter for AI-Powered GTM"
+seoTitle: "Typpout Acquired by sprouts.ai A New Chapter for AI-Powered GTM"
 description: "We're thrilled to announce that Typpout has been acquired by sprouts.ai. The Typpout team is joining forces starting the first week of September 2026. Here's the full story."
 pubDate: 2026-09-01
 author: "Suresh, Founder, Typpout"
