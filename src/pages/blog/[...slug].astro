@@ -150,9 +150,24 @@ const accents = ["green", "blue", "pink", "yellow"] as const;
             </>
           )}
         </div>
-        <h1 class="mt-5 font-display text-balance text-4xl leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-          {post.data.title}
-        </h1>
+        {(() => {
+          const splitIdx = post.data.title.indexOf(" To build");
+          if (splitIdx !== -1) {
+            const main = post.data.title.slice(0, splitIdx);
+            const sub  = post.data.title.slice(splitIdx + 1);
+            return (
+              <h1 class="mt-5 font-display text-balance leading-[1.05] tracking-tight">
+                <span class="block text-4xl sm:text-5xl lg:text-6xl">{main}</span>
+                <span class="block mt-2 text-2xl sm:text-3xl lg:text-4xl font-light text-[color:var(--color-foreground-secondary)]">{sub}</span>
+              </h1>
+            );
+          }
+          return (
+            <h1 class="mt-5 font-display text-balance text-4xl leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+              {post.data.title}
+            </h1>
+          );
+        })()}
         <p class="mx-auto mt-6 max-w-2xl text-[17px] leading-relaxed text-[color:var(--color-foreground-secondary)]">
           {post.data.description}
         </p>

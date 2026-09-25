@@ -1,5 +1,5 @@
 ---
-title: "Typpout is joining Sprouts.ai to build the world class GTM data infrastructure"
+title: "Typpout is joining Sprouts.ai To build the world class GTM data infrastructure"
 seoTitle: "Typpout is joining Sprouts.ai to build world class GTM data infrastructure"
 description: "Typpout is joining Sprouts.ai to build the world class GTM data infrastructure. The Typpout team joins forces from the first week of September 2026."
 pubDate: 2026-09-01
