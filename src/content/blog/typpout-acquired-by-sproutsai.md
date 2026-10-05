@@ -15,7 +15,7 @@ We have some exciting news to share.
 
 **Typpout has been acquired by [sprouts.ai](https://sprouts.ai)**, and our team is joining forces starting the first week of September 2026.
 
-This is not an ending — it is the beginning of something much bigger.
+This is not an ending - it is the beginning of something much bigger.
 
 ---
 
@@ -31,15 +31,13 @@ The results our customers achieved validated everything we believed. Reply rates
 
 ## Why sprouts.ai
 
-![sprouts.ai logo](/sproutsai-logo.png)
-
-When we met the team at sprouts.ai, we immediately recognised kindred spirits. They had built a world-class platform around the same thesis: that the future of B2B sales is intelligent, signal-driven, and deeply automated.
+When Suresh and I met with the founders of sprouts.ai, we spent hours talking about our shared passion for founders and the unique challenges they face in scaling revenue. We immediately recognised kindred spirits. They had built a world-class platform around the same thesis: that the future of B2B sales is intelligent, signal-driven, and deeply automated.
 
 sprouts.ai has already helped hundreds of revenue teams modernise their GTM stack. Their platform brings together intent data, AI-driven workflows, and sales intelligence in ways that are genuinely differentiated.
 
-Together, we are not just combining two products. We are combining two teams obsessed with the same problem, with complementary strengths, and a shared vision for what AI-powered go-to-market should look like.
+Together, we are not just combining two products. We are combining two teams obsessed with the same problem, with complementary strengths, and a shared vision for what AI-powered go-to-market should look like. Typpout is joining forces to accelerate this vision and enable sprouts.ai to become a $100M company.
 
-The Typpout core technology — our social listening engine, our heuristic ICP matching, our grounded AI outreach, and our semantic booking agent — will be integrated into the sprouts.ai platform, making it significantly more powerful for every customer on both sides.
+The Typpout core technology - our social listening engine, our heuristic ICP matching, our grounded AI outreach, and our semantic booking agent - will be integrated into the sprouts.ai platform, making it significantly more powerful for every customer on both sides.
 
 ---
 
@@ -48,7 +46,7 @@ The Typpout core technology — our social listening engine, our heuristic ICP m
 If you are a Typpout customer, here is what you need to know:
 
 - **Your workflows will keep running** without interruption through the transition period.
-- **You will get access to sprouts.ai's expanded platform** — more data sources, more AI capabilities, and a larger team supporting you.
+- **You will get access to sprouts.ai's expanded platform** - more data sources, more AI capabilities, and a larger team supporting you.
 - **Our team will personally reach out** to every customer to walk you through what's next and how to make the most of the combined platform.
 
 We are committed to making this transition seamless. If you have questions right now, email us at [founders@typpout.com](mailto:founders@typpout.com) and we will get back to you personally.
@@ -59,7 +57,7 @@ We are committed to making this transition seamless. If you have questions right
 
 When we look back at the last two years, we are genuinely proud of what we built and even more proud of the customers who bet on us early.
 
-Every founder who gave Typpout a shot when we were just getting started, every enterprise team that trusted our AI to represent them in conversations with prospects, every customer who shared their feedback and pushed us to get better — this milestone belongs to all of you.
+Every founder who gave Typpout a shot when we were just getting started, every enterprise team that trusted our AI to represent them in conversations with prospects, every customer who shared their feedback and pushed us to get better - this milestone belongs to all of you.
 
 Building Typpout has been the most intense, most rewarding, most humbling experience of our professional lives. We are not slowing down. We are accelerating.
 
@@ -70,6 +68,9 @@ See you on the other side,
 **Arjit Singh, Founder & CEO, Typpout**
 [arjit@typpout.com](mailto:arjit@typpout.com)
 
+**Suresh, Co-founder & CTO, Typpout**
+[suresh@typpout.com](mailto:suresh@typpout.com)
+
 ---
 
-*For press inquiries or customer support during the transition, reach out directly at [arjit@typpout.com](mailto:arjit@typpout.com) — we will respond personally.*
+*For press inquiries or customer support during the transition, reach out directly at [founders@typpout.com](mailto:founders@typpout.com) - we will respond personally.*

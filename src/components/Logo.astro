@@ -13,13 +13,19 @@ const dims = {
 }[size];
 ---
 
-<a href="/" aria-label="Typpout home" class={`group inline-flex items-center ${className}`}>
-  <img
-    src="/logo-full.webp"
-    alt="Typpout Logo"
-    width={dims.width}
-    height={dims.height}
-    class={`${dims.class} object-contain`}
-    loading={loading}
-  />
-</a>
+<div class={`inline-flex flex-col items-start ${className}`}>
+  <a href="/" aria-label="Typpout home" class="group inline-flex items-center">
+    <img
+      src="/logo-full.webp"
+      alt="Typpout Logo"
+      width={dims.width}
+      height={dims.height}
+      class={`${dims.class} object-contain`}
+      loading={loading}
+    />
+  </a>
+  <a href="/blog/typpout-acquired-by-sproutsai" class="flex items-center gap-1.5 opacity-80 hover:opacity-100 transition-opacity -mt-1 ml-[38px]">
+    <span class="text-[11px] font-medium text-[color:var(--color-ink-secondary)] tracking-wide whitespace-nowrap">Acquired by</span>
+    <img src="/sproutsai-logo-new.png" alt="Sprouts.ai" class="h-4 w-auto object-contain mix-blend-multiply" />
+  </a>
+</div>
