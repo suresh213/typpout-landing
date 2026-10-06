@@ -49,7 +49,7 @@ If you are a Typpout customer, here is what you need to know:
 - **You will get access to sprouts.ai's expanded platform** - more data sources, more AI capabilities, and a larger team supporting you.
 - **Our team will personally reach out** to every customer to walk you through what's next and how to make the most of the combined platform.
 
-We are committed to making this transition seamless. If you have questions right now, email us at [founders@typpout.com](mailto:founders@typpout.com) and we will get back to you personally.
+We are committed to making this transition seamless. If you have questions right now, email us at [arjit@typpout.com](mailto:arjit@typpout.com) and we will get back to you personally.
 
 ---
 
@@ -73,4 +73,4 @@ See you on the other side,
 
 ---
 
-*For press inquiries or customer support during the transition, reach out directly at [founders@typpout.com](mailto:founders@typpout.com) - we will respond personally.*
+*For press inquiries or customer support during the transition, reach out directly at [arjit@typpout.com](mailto:arjit@typpout.com) - we will respond personally.*

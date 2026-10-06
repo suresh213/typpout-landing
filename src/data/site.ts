@@ -7,7 +7,7 @@ export const SITE = {
   shortDescription: "Go-To-Market with socials data and the ability to act on it",
   ogImage: "/logo-full.webp",
   twitter: "@typpout",
-  email: "founders@typpout.com",
+  email: "arjit@typpout.com",
   appUrl: "https://dashboard.typpout.com",
   demoUrl: "https://calendly.com/arjitsinghrajput24/15min",
   founder: {
@@ -33,7 +33,7 @@ export const FOOTER_NAV = {
   Resources: [
     { label: "Blog", href: "/blog" },
     { label: "Book a demo", href: "https://calendly.com/arjitsinghrajput24/15min" },
-    { label: "Contact us", href: "mailto:founders@typpout.com" },
+    { label: "Contact us", href: "mailto:arjit@typpout.com" },
   ],
   Compare: [
     { label: "vs Jeeva AI", href: "/blog/jeeva-ai-alternative" },

@@ -157,4 +157,4 @@ Ready to transform your GTM strategy? [Book a demo of Typpout today](/) or explo
 
 ---
 
-**What’s your biggest challenge with job posting triggers?** Drop a comment below or reach out to me directly at [suresh@typpout.com](mailto:suresh@typpout.com). Let’s discuss how AI can close the gap for your team!
+**What’s your biggest challenge with job posting triggers?** Drop a comment below or reach out to me directly at [arjit@typpout.com](mailto:arjit@typpout.com). Let’s discuss how AI can close the gap for your team!

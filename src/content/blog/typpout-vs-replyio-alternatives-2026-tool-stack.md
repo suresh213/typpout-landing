@@ -171,4 +171,4 @@ If you’re evaluating **2026 AI GTM tool stack alternatives**, Typpout isn’t 
 - [How AI is Transforming B2B Outbound Sales in 2026](link-to-ai-outbound-guide)
 - [The Ultimate Guide to AI-Powered Lead Qualification](link-to-lead-qualification-guide)
 
-*Have questions? Drop a comment below or reach out to our team at [hello@typpout.com](mailto:hello@typpout.com).*
+*Have questions? Drop a comment below or reach out to our team at [arjit@typpout.com](mailto:arjit@typpout.com).*
