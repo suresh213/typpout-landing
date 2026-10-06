@@ -66,7 +66,7 @@ The team joins Sprouts.ai in the first week of September 2026. We cannot wait to
 See you on the other side,
 
 **Arjit Singh, Founder & CEO, Typpout**
-[arjit@typpout.com](mailto:arjit@typpout.com)
+[arjit@typpout.com](mailto:arjit@typpout.com) · [LinkedIn](https://www.linkedin.com/in/arjit-singh24/)
 
 **Suresh, Co-founder & CTO, Typpout**
 [suresh@typpout.com](mailto:suresh@typpout.com)
