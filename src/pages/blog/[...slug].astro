@@ -140,8 +140,8 @@ const accents = ["green", "blue", "pink", "yellow"] as const;
   <article>
     <!-- Hero -->
     <header class="mx-auto w-full max-w-[1280px] border-x border-b border-[color:var(--color-border)] bg-[color:var(--color-surface-muted)]">
-      <div class="mx-auto w-full max-w-3xl px-5 py-16 text-center sm:px-8 lg:py-20">
-        <div class="flex items-center justify-center gap-2 text-[13px] font-medium uppercase tracking-[0.14em] text-[color:var(--color-foreground-secondary)]">
+      <div class="mx-auto w-full max-w-3xl px-4 py-12 text-center sm:px-8 sm:py-16 lg:py-20">
+        <div class="flex items-center justify-center gap-2 text-[12px] sm:text-[13px] font-medium uppercase tracking-[0.14em] text-[color:var(--color-foreground-secondary)]">
           <a href="/blog" class="hover:text-[color:var(--color-foreground)]">{post.data.category}</a>
           {post.data.readingTime && (
             <>
@@ -155,42 +155,44 @@ const accents = ["green", "blue", "pink", "yellow"] as const;
           if (splitIdx !== -1) {
             const sub = post.data.title.slice(splitIdx + 1);
             return (
-              <h1 class="mt-5 font-display text-balance leading-[1.1] tracking-tight">
+              <h1 class="mt-5 font-display text-balance leading-tight tracking-tight">
                 {/* Logo lockup: Typpout × Sprouts.ai */}
-                <span class="flex flex-nowrap items-center justify-center gap-x-3 overflow-x-auto">
-                  <img
-                    src="/typpout-logo-full.png"
-                    alt="Typpout"
-                    class="h-9 sm:h-11 lg:h-13 w-auto flex-shrink-0"
-                    loading="eager"
-                    decoding="async"
-                  />
-                  <span class="text-xl sm:text-2xl font-normal text-[color:var(--color-foreground-secondary)] whitespace-nowrap flex-shrink-0">
-                    is joining forces with
-                  </span>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3.5">
+                  <div class="flex items-center justify-center gap-2 sm:gap-3">
+                    <img
+                      src="/typpout-logo-full.png"
+                      alt="Typpout"
+                      class="h-7 sm:h-9 md:h-11 lg:h-12 w-auto object-contain shrink-0"
+                      loading="eager"
+                      decoding="async"
+                    />
+                    <span class="text-[15px] sm:text-xl md:text-2xl font-normal text-[color:var(--color-foreground-secondary)] whitespace-nowrap">
+                      is joining forces with
+                    </span>
+                  </div>
                   <img
                     src="/sproutsai-logo-new.png"
                     alt="Sprouts.ai"
-                    class="h-9 sm:h-11 lg:h-13 w-auto flex-shrink-0"
+                    class="h-7 sm:h-9 md:h-11 lg:h-12 w-auto object-contain shrink-0"
                     loading="eager"
                     decoding="async"
                   />
-                </span>
+                </div>
                 {/* Subtitle */}
-                <span class="block mt-3 text-xl sm:text-2xl lg:text-3xl font-light text-[color:var(--color-foreground-secondary)]">
+                <span class="block mt-3 sm:mt-4 text-base sm:text-2xl lg:text-3xl font-light text-[color:var(--color-foreground-secondary)] leading-snug">
                   {sub}
                 </span>
               </h1>
             );
           }
           return (
-            <h1 class="mt-5 font-display text-balance text-4xl leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 class="mt-5 font-display text-balance text-2xl sm:text-4xl lg:text-5xl leading-tight tracking-tight break-words">
               {post.data.title}
             </h1>
           );
         })()}
 
-        <p class="mx-auto mt-6 max-w-2xl text-[17px] leading-relaxed text-[color:var(--color-foreground-secondary)]">
+        <p class="mx-auto mt-5 sm:mt-6 max-w-2xl text-[15px] sm:text-[17px] leading-relaxed text-[color:var(--color-foreground-secondary)]">
           {post.data.description}
         </p>
         <div class="mt-8 flex items-center justify-center gap-3.5 text-left">
