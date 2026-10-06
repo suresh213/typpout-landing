@@ -7,9 +7,9 @@ interface Props {
 const { class: className = "", size = "md", loading = "lazy" } = Astro.props;
 
 const dims = {
-  sm: { height: 30, width: 82, class: "h-[30px] w-auto" },
-  md: { height: 38, width: 104, class: "h-[38px] w-auto" },
-  lg: { height: 46, width: 126, class: "h-[46px] w-auto" },
+  sm: { height: 28, width: 77, class: "h-[28px] w-auto" },
+  md: { height: 36, width: 99, class: "h-[32px] sm:h-[36px] w-auto" },
+  lg: { height: 44, width: 121, class: "h-[38px] sm:h-[44px] w-auto" },
 }[size];
 ---
 

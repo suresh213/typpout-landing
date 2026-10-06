@@ -6,9 +6,9 @@ const path = Astro.url.pathname;
 
 <header
   id="site-header"
-  class="sticky top-0 z-50 w-full border-b border-[color:var(--color-border)] bg-white/95 backdrop-blur-sm transition-shadow duration-200"
+  class="sticky top-0 z-50 w-full border-b border-[color:var(--color-border)] bg-white/95 backdrop-blur-md transition-all duration-200"
 >
-  <div class="mx-auto flex h-[60px] w-full max-w-[1280px] items-center justify-between px-5 sm:px-8">
+  <div class="mx-auto flex h-[60px] w-full max-w-[1280px] items-center justify-between px-4 sm:px-8">
     <Logo loading="eager" />
 
     <ul class="pointer-events-auto absolute left-1/2 hidden -translate-x-1/2 items-center gap-0.5 lg:flex">
@@ -41,34 +41,50 @@ const path = Astro.url.pathname;
 
     <button
       id="menu-toggle"
-      class="grid h-9 w-9 place-items-center rounded-md border border-[color:var(--color-border)] text-[color:var(--color-ink-strong)] lg:hidden"
+      class="flex h-9 w-9 items-center justify-center rounded-lg border border-[color:var(--color-border)] text-[color:var(--color-ink-strong)] hover:bg-[color:var(--color-surface-soft)] active:scale-95 transition-all lg:hidden"
       aria-label="Toggle menu"
       aria-expanded="false"
       aria-controls="mobile-menu"
     >
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <svg id="menu-icon-bars" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      </svg>
+      <svg id="menu-icon-close" class="hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
       </svg>
     </button>
   </div>
 
-  <div id="mobile-menu" class="hidden lg:hidden">
-    <div class="border-t border-[color:var(--color-border)] bg-white px-5 py-3 sm:px-8">
-      <ul class="flex flex-col">
-        {NAV.map((item) => (
-          <li>
-            <a
-              href={item.href}
-              class="block rounded-md px-3 py-2.5 text-[15px] font-medium text-[color:var(--color-ink-strong)] hover:bg-[color:var(--color-surface-soft)]"
-            >
-              {item.label}
-            </a>
-          </li>
-        ))}
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-[color:var(--color-border)] bg-white/98 backdrop-blur-lg shadow-xl">
+    <div class="px-4 py-3 sm:px-8">
+      <ul class="flex flex-col gap-0.5">
+        {NAV.map((item) => {
+          const active = item.href.startsWith("/") && !item.href.includes("#")
+            ? path === item.href || path.startsWith(item.href + "/")
+            : path === "/" && item.href.startsWith("/#");
+          return (
+            <li>
+              <a
+                href={item.href}
+                class:list={[
+                  "flex items-center justify-between rounded-lg px-3.5 py-2.5 text-[15px] font-medium transition-colors",
+                  active
+                    ? "text-[color:var(--color-brand)] bg-[color:var(--color-surface-soft)] font-semibold"
+                    : "text-[color:var(--color-ink-strong)] hover:bg-[color:var(--color-surface-soft)]",
+                ]}
+              >
+                <span>{item.label}</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="text-[color:var(--color-ink-muted)]">
+                  <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </li>
+          );
+        })}
       </ul>
-      <div class="mt-3 grid grid-cols-2 gap-2 border-t border-[color:var(--color-border)] pt-3">
-        <a href={SITE.demoUrl} class="btn btn-ghost w-full justify-center">Book a Demo</a>
-        <a href={SITE.appUrl} class="btn w-full justify-center bg-[color:var(--color-ink)] text-white hover:bg-[#2d2c2c]">Get started</a>
+      <div class="mt-3 grid grid-cols-2 gap-2 border-t border-[color:var(--color-border)] pt-3 pb-1">
+        <a href={SITE.demoUrl} class="btn btn-ghost w-full justify-center text-[13.5px]">Book a Demo</a>
+        <a href={SITE.appUrl} class="btn w-full justify-center bg-[color:var(--color-ink)] text-white hover:bg-[#2d2c2c] text-[13.5px] shadow-sm">Get started</a>
       </div>
     </div>
   </div>
@@ -77,16 +93,25 @@ const path = Astro.url.pathname;
 <script>
   const btn = document.getElementById("menu-toggle");
   const menu = document.getElementById("mobile-menu");
+  const iconBars = document.getElementById("menu-icon-bars");
+  const iconClose = document.getElementById("menu-icon-close");
+
+  const setMenuState = (open: boolean) => {
+    if (!menu || !btn) return;
+    menu.classList.toggle("hidden", !open);
+    btn.setAttribute("aria-expanded", String(open));
+    iconBars?.classList.toggle("hidden", open);
+    iconClose?.classList.toggle("hidden", !open);
+  };
 
   btn?.addEventListener("click", () => {
-    const open = menu?.classList.toggle("hidden") === false;
-    btn.setAttribute("aria-expanded", String(open));
+    const isClosed = menu?.classList.contains("hidden");
+    setMenuState(Boolean(isClosed));
   });
 
   menu?.addEventListener("click", (e) => {
     if ((e.target as HTMLElement).closest("a")) {
-      menu.classList.add("hidden");
-      btn?.setAttribute("aria-expanded", "false");
+      setMenuState(false);
     }
   });
 
