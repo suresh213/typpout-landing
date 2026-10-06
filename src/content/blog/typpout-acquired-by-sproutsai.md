@@ -69,7 +69,7 @@ See you on the other side,
 [arjit@typpout.com](mailto:arjit@typpout.com) · [LinkedIn](https://www.linkedin.com/in/arjit-singh24/)
 
 **Suresh, Co-founder & CTO, Typpout**
-[suresh@typpout.com](mailto:suresh@typpout.com)
+[suresh@typpout.com](mailto:suresh@typpout.com) · [LinkedIn](https://www.linkedin.com/in/suresh-a/)
 
 ---
 
