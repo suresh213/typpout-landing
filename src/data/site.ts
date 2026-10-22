@@ -8,7 +8,7 @@ export const SITE = {
   ogImage: "/logo-full.webp",
   twitter: "@typpout",
   email: "arjit@typpout.com",
-  appUrl: "https://dashboard.typpout.com",
+  appUrl: "https://pulse.sprouts.ai/auth",
   demoUrl: "https://calendly.com/arjitsinghrajput24/15min",
   founder: {
     name: "Suresh, Founder, Typpout",
