@@ -211,7 +211,7 @@ The modern buyer expects **relevance, speed, and context**. AI social listening 
 
 If your team is still relying on cold outbound or delayed nurture sequences, you’re leaving money on the table.
 
-👉 **Ready to turn social noise into sales?** [Start with Typpout’s AI GTM platform today](/) or [see how it fits your stack with our pricing](https://typpout.com/pricing).
+👉 **Ready to turn social noise into sales?** [Start with Typpout’s AI GTM platform today](/) or [see how it fits your stack with our pricing](https://www.typpout.com/pricing).
 
 > **Suresh, Founder, Typpout**
 > *AI-powered GTM for modern sales teams*

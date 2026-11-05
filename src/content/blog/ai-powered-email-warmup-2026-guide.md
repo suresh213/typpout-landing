@@ -179,7 +179,7 @@ At **Typpout**, we’ve built the first **end-to-end AI GTM platform** that does
 
 > **Result:** 3–5x higher reply rates, 50% faster sales cycles, and **zero spam folder worries.**
 
-👉 [**See how Typpout transforms GTM → /pricing**](https://typpout.com/pricing)
+👉 [**See how Typpout transforms GTM → /pricing**](https://www.typpout.com/pricing)
 
 ---
 
@@ -198,7 +198,7 @@ And with platforms like **Typpout**, you don’t just warm up your emails—you 
 
 **Ready to land in the inbox—every time?**
 
-👉 [**Start Your AI Warmup Journey → /**](https://typpout.com/)
+👉 [**Start Your AI Warmup Journey → /**](https://www.typpout.com/)
 
 ---
 

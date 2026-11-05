@@ -122,7 +122,7 @@ With **Typpout**, you can:
 - **Automate personalized replies** based on their activity
 - **Book meetings instantly** with AI-handled scheduling
 
-> 🔗 **See how Typpout transforms social signals into booked meetings → [/pricing](https://typpout.com/pricing)**
+> 🔗 **See how Typpout transforms social signals into booked meetings → [/pricing](https://www.typpout.com/pricing)**
 
 ### 3. **Create a Data Waterfall for Repeatable Growth**
 
@@ -187,8 +187,8 @@ That’s where **Typpout** comes in.
 We help founders like you **turn LinkedIn signals into booked meetings**—with zero spam, full compliance, and real ROI.
 
 > 🚀 **Ready to stop guessing and start growing?**
-> [Explore Typpout’s AI GTM Platform →](https://typpout.com/)
-> [See our pricing →](https://typpout.com/pricing)
+> [Explore Typpout’s AI GTM Platform →](https://www.typpout.com/)
+> [See our pricing →](https://www.typpout.com/pricing)
 
 ---
 

@@ -151,7 +151,7 @@ Turn interest into meetings—without manual scheduling.
 
 > 📈 **Outcome**: Teams aligned. Pipeline growing. Revenue accelerating.
 
-> 🔗 **See how it works**: [Typpout.com](/) | [Pricing](https://typpout.com/pricing)
+> 🔗 **See how it works**: [Typpout.com](/) | [Pricing](https://www.typpout.com/pricing)
 
 ---
 
@@ -166,4 +166,4 @@ By automating data unification, lead routing, messaging alignment, and feedback 
 The future of RevOps isn’t human *or* machine—it’s **human + machine**.
 
 > Ready to align your sales and marketing teams with AI?
-> [Start your free Typpout trial today →](https://typpout.com/)
+> [Start your free Typpout trial today →](https://www.typpout.com/)

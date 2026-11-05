@@ -165,7 +165,7 @@ At **Typpout**, we’ve built the **first AI-native GTM platform** that **automa
 ✅ **Fully automated workflow** (no manual busywork)
 ✅ **Seamless CRM integration** (HubSpot, Salesforce, Pipedrive)
 
-**See it in action:** [Book a demo](/) | [Pricing](https://typpout.com/pricing)
+**See it in action:** [Book a demo](/) | [Pricing](https://www.typpout.com/pricing)
 
 ---
 ## Conclusion: The Future of B2B Sales is AI-Driven

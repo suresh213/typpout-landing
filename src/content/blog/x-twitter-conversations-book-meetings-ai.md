@@ -49,7 +49,7 @@ Manual listening on X (Twitter) is impossible. The platform moves too fast.
 
 **Solution**: Use **AI-powered social listening** to monitor real-time conversations.
 
-At [Typpout](https://typpout.com/), we built a **data waterfall** that tracks:
+At [Typpout](https://www.typpout.com/), we built a **data waterfall** that tracks:
 - Keywords (e.g., “AI meetings”, “booking tools”, “demo request”)
 - Hashtags (#B2BSales, #OutboundHacks)
 - Mentions of competitors
@@ -175,7 +175,7 @@ Here’s what sets us apart:
 | **Reply Handling** | AI books meetings automatically | No more back-and-forth |
 | **CRM Sync** | Logs conversations in HubSpot/Salesforce | Full pipeline visibility |
 
-👉 **See it in action**: [Try Typpout →](https://typpout.com/)
+👉 **See it in action**: [Try Typpout →](https://www.typpout.com/)
 
 ---
 
@@ -205,4 +205,4 @@ The **AI-powered way**:
 Because in B2B sales, **speed and relevance win**.
 
 🔥 **Ready to turn X (Twitter) conversations into revenue?**
-[Book a demo with Typpout →](https://typpout.com/)
+[Book a demo with Typpout →](https://www.typpout.com/)

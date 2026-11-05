@@ -9,7 +9,7 @@ tags: ["LinkedIn article shares", "AI lead generation", "high-intent leads", "gr
 readingTime: "6 min read"
 ---
 
-![LinkedIn Article Shares to High-Intent Leads](https://typpout.com/blog-images/linkedin-article-shares-ai-leads.jpg)
+![LinkedIn Article Shares to High-Intent Leads](https://www.typpout.com/blog-images/linkedin-article-shares-ai-leads.jpg)
 
 # How Growth Marketers Use AI to Turn LinkedIn Article Shares into High-Intent Leads
 
@@ -175,7 +175,7 @@ Here’s how we do it differently:
 2. **Set Up AI Sequences** – Define triggers (shares, mentions) and outreach rules.
 3. **Watch Meetings Book** – AI handles the rest—qualifying, messaging, and booking.
 
-**🚀 Try Typpout for Free** → [/pricing](https://typpout.com/pricing)
+**🚀 Try Typpout for Free** → [/pricing](https://www.typpout.com/pricing)
 
 ---
 ## Conclusion: Stop Hoping for Leads—Start Generating Them
@@ -192,4 +192,4 @@ Here’s your **30-day action plan**:
 **The bottom line?** If you’re not using AI to turn LinkedIn shares into leads, you’re leaving **easy revenue on the table**.
 
 **Ready to automate your LinkedIn lead gen?**
-👉 [Start with Typpout’s AI GTM Platform](https://typpout.com/)
+👉 [Start with Typpout’s AI GTM Platform](https://www.typpout.com/)

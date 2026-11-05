@@ -207,6 +207,6 @@ Heads of Sales who enforce these rules won’t just avoid bans—they’ll build
 
 And if you want to run this at enterprise scale without the risk? That’s where Typpout comes in.
 
-👉 **Ready to automate safely?** [Explore Typpout’s AI GTM platform](/) or see how we [protect your LinkedIn presence](https://typpout.com/pricing).
+👉 **Ready to automate safely?** [Explore Typpout’s AI GTM platform](/) or see how we [protect your LinkedIn presence](https://www.typpout.com/pricing).
 
 Your pipeline—and your accounts—will thank you.

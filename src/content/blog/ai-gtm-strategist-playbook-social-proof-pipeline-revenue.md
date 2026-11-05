@@ -172,12 +172,12 @@ You can hand-craft one perfect email with a case study. But to turn **social pro
 
 That’s not just outbound—it’s **AI-driven go-to-market**.
 
-At [Typpout](https://typpout.com/), we built the platform to do exactly this: **listen, learn, and leverage social proof in every interaction**.
+At [Typpout](https://www.typpout.com/), we built the platform to do exactly this: **listen, learn, and leverage social proof in every interaction**.
 
 From detecting a prospect’s competitor complaints on LinkedIn to auto-sending a case study before they even reply—our AI GTM engine turns passive trust into active pipeline.
 
 > 🚀 **Ready to turn social proof into revenue?**
-> [Book a demo](https://typpout.com/) or [See our pricing](https://typpout.com/pricing) and start closing more deals—faster.
+> [Book a demo](https://www.typpout.com/) or [See our pricing](https://www.typpout.com/pricing) and start closing more deals—faster.
 
 ---
 

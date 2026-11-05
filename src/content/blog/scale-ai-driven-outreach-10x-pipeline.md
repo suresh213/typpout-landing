@@ -144,7 +144,7 @@ At Typpout, we’ve built an **AI-powered GTM platform** that **automates the en
 🔹 **Revenue Attribution** – Tracks **real pipeline impact** of each outreach sequence.
 
 **See how teams are using Typpout to scale:**
-👉 [Book a Demo](/) | 👉 [Explore Pricing](https://typpout.com/pricing)
+👉 [Book a Demo](/) | 👉 [Explore Pricing](https://www.typpout.com/pricing)
 
 ---
 
@@ -159,7 +159,7 @@ Scaling AI-driven outreach isn’t just about **automation**—it’s about **au
 
 If you’re ready to **scale AI-driven outreach without losing the human touch**, **Typpout’s AI GTM platform** can help you **automate, personalize, and optimize** your outbound sales engine.
 
-🚀 **Ready to 10x your pipeline?** [Get started with Typpout today](/) or [explore our pricing](https://typpout.com/pricing).
+🚀 **Ready to 10x your pipeline?** [Get started with Typpout today](/) or [explore our pricing](https://www.typpout.com/pricing).
 
 ---
 **What’s your

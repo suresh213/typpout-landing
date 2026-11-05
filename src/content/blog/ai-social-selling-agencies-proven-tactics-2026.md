@@ -144,7 +144,7 @@ Ready to turn AI into your top-performing sales rep?
 
 👉 [Try Typpout for free](/) — see how our AI GTM platform can book more meetings in 30 days.
 
-👉 [Explore our pricing](https://typpout.com/pricing) — choose the plan that fits your agency’s scale.
+👉 [Explore our pricing](https://www.typpout.com/pricing) — choose the plan that fits your agency’s scale.
 
 👉 [Join our waitlist](/) for early access to our **AI Intent Academy**—where we teach agencies how to master social selling in 2026.
 

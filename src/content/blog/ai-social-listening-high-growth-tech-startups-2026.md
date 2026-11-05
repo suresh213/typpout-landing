@@ -125,7 +125,7 @@ At **Typpout**, we built the first **AI-powered GTM platform** that turns social
 ✅ **AI Outreach & Reply Handling** – Personalized sequences that convert.
 ✅ **Meeting Booking Automation** – Close more deals, faster.
 
-> 🔗 **See how it works:** [Explore Typpout’s AI GTM Playbook](/) or [View Pricing](https://typpout.com/pricing)
+> 🔗 **See how it works:** [Explore Typpout’s AI GTM Playbook](/) or [View Pricing](https://www.typpout.com/pricing)
 
 ---
 
@@ -146,4 +146,4 @@ Start listening. Start acting. Start winning.
 —
 **Suresh**
 Founder, Typpout
-[Book a Demo](https://typpout.com/) | [Pricing](https://typpout.com/pricing)
+[Book a Demo](https://www.typpout.com/) | [Pricing](https://www.typpout.com/pricing)

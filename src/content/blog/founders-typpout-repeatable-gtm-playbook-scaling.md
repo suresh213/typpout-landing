@@ -184,7 +184,7 @@ With Typpout, founders don’t just **build** playbooks—they **automate, optim
 
 No more guesswork. No more silos. Just a **data-driven GTM engine** that turns signals into meetings, meetings into pipeline, and pipeline into revenue—repeatedly.
 
-> 🔗 Ready to build your repeatable GTM playbook? [Get started with Typpout today](/) or [explore pricing](https://typpout.com/pricing) to see how we help founders scale predictably.
+> 🔗 Ready to build your repeatable GTM playbook? [Get started with Typpout today](/) or [explore pricing](https://www.typpout.com/pricing) to see how we help founders scale predictably.
 
 **The future of GTM isn’t manual—it’s automated, intelligent, and repeatable.**
 

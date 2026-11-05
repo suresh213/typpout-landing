@@ -143,7 +143,7 @@ If you’re a **B2B sales leader at an enterprise company**, **Typpout is the sm
 📈 **Scalable personalization** = better ROI at scale.
 
 **Try Typpout today** and see the difference:
-👉 [Book a Demo](/) | [View Pricing](https://typpout.com/pricing)
+👉 [Book a Demo](/) | [View Pricing](https://www.typpout.com/pricing)
 
 ---
 

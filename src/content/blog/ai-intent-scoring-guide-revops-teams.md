@@ -168,7 +168,7 @@ Track these **key metrics** to prove ROI:
 ✅ **CAC reduced by 38%**
 ✅ **Deal velocity improved by 25%**
 
-🔗 **See how Typpout’s AI GTM platform can replicate this for your team → [/pricing](https://typpout.com/pricing)**
+🔗 **See how Typpout’s AI GTM platform can replicate this for your team → [/pricing](https://www.typpout.com/pricing)**
 
 ---
 ## Common Pitfalls & How to Avoid Them

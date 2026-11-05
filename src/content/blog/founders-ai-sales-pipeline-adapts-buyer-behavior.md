@@ -145,7 +145,7 @@ Imagine a pipeline that:
 - **Acts** in real time to engage, qualify, and book meetings.
 - **Optimizes** itself based on what’s working.
 
-That’s not a vision—it’s a reality with AI-driven GTM platforms like [Typpout](https://typpout.com/).
+That’s not a vision—it’s a reality with AI-driven GTM platforms like [Typpout](https://www.typpout.com/).
 
 ---
 
@@ -161,7 +161,7 @@ If your sales pipeline still relies on static sequences and manual outreach, you
 
 > *“The best sales pipelines aren’t built—they’re grown. And AI is the fertilizer.”*
 
-Ready to transform your GTM motion? [See how Typpout’s AI-powered GTM platform can help you build a pipeline that adapts in real time](https://typpout.com/pricing).
+Ready to transform your GTM motion? [See how Typpout’s AI-powered GTM platform can help you build a pipeline that adapts in real time](https://www.typpout.com/pricing).
 
 ---
 

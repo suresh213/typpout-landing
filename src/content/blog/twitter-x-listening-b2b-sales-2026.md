@@ -148,8 +148,8 @@ If you’re still manually scanning X for prospects, you’re **leaving money on
 ✅ **CRM sync** → **All data in one place**
 
 **How to Get Started:**
-1. **[Book a Demo](https://typpout.com/)** to see Typpout in action.
-2. **[Sign Up for Free](https://typpout.com/pricing)** to test X listening + outreach automation.
+1. **[Book a Demo](https://www.typpout.com/)** to see Typpout in action.
+2. **[Sign Up for Free](https://www.typpout.com/pricing)** to test X listening + outreach automation.
 
 ---
 
@@ -164,7 +164,7 @@ X (Twitter) is the **ultimate B2B sales tool** for:
 
 **The question isn’t *if* you should use X listening—it’s *how fast you can implement it*.**
 
-Ready to turn X noise into **revenue opportunities**? **[Try Typpout today](https://typpout.com/)** and see the difference.
+Ready to turn X noise into **revenue opportunities**? **[Try Typpout today](https://www.typpout.com/)** and see the difference.
 
 ---
 **What’s your biggest challenge with B2B sales in 2026? Drop a comment or tweet me [@typpout](https://x.com/typpout) — I’d love to hear your thoughts!**

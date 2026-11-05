@@ -130,7 +130,7 @@ The gap isn’t just in speed—it’s in **coverage**. One rep can’t watch 50
 
 ## Introducing Typpout: Your AI GTM Sidekick for LinkedIn Growth
 
-At [Typpout](https://typpout.com/), we built the **first AI GTM platform** that turns **social signals into revenue**—without you lifting a finger.
+At [Typpout](https://www.typpout.com/), we built the **first AI GTM platform** that turns **social signals into revenue**—without you lifting a finger.
 
 Here’s how we help VPs of Sales dominate with AI:
 
@@ -152,7 +152,7 @@ See which videos, topics, and accounts drive the most pipeline.
 📅 **Meeting Booking Inside Comments**
 Let prospects book directly from your AI reply.
 
-> 👉 [See how Typpout works](https://typpout.com/) or [view pricing](https://typpout.com/pricing)
+> 👉 [See how Typpout works](https://www.typpout.com/) or [view pricing](https://www.typpout.com/pricing)
 
 ---
 
@@ -183,4 +183,4 @@ For VPs of Sales, the question isn’t *whether* to use AI—it’s *how fast* y
 
 Ready to turn LinkedIn video comments into pipeline with AI?
 
-👉 [Start with Typpout today](https://typpout.com/)
+👉 [Start with Typpout today](https://www.typpout.com/)

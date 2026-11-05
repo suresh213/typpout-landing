@@ -175,7 +175,7 @@ At **Typpout**, we built an AI-powered GTM platform designed for SDR managers wh
 
 > 📈 **Result**: SDR teams see **3–5x higher acceptance rates**, **lower bounce rates**, and **zero bans** when using Typpout.
 
-👉 [Explore Typpout’s AI GTM platform](/) | [See Pricing](https://typpout.com/pricing)
+👉 [Explore Typpout’s AI GTM platform](/) | [See Pricing](https://www.typpout.com/pricing)
 
 ---
 

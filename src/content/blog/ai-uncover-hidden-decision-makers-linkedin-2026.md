@@ -136,7 +136,7 @@ AI will handle:
 ---
 
 ## Why Typpout is Your AI GTM Partner in 2026
-At [Typpout](https://typpout.com/), we’ve built the **first AI-powered GTM platform** that doesn’t just find leads—it uncovers the *hidden* ones.
+At [Typpout](https://www.typpout.com/), we’ve built the **first AI-powered GTM platform** that doesn’t just find leads—it uncovers the *hidden* ones.
 
 Here’s how we do it:
 ✅ **Real-Time Social Listening** – Track conversations where your ideal customers are *actually* discussing problems you solve.
@@ -145,8 +145,8 @@ Here’s how we do it:
 ✅ **Reply Handling & Meeting Booking** – AI doesn’t just send messages—it **converts replies into meetings**.
 
 **See how it works:**
-🔹 [Typpout’s AI GTM Platform](https://typpout.com/)
-🔹 [Pricing & Features](https://typpout.com/pricing)
+🔹 [Typpout’s AI GTM Platform](https://www.typpout.com/)
+🔹 [Pricing & Features](https://www.typpout.com/pricing)
 
 ---
 
@@ -163,4 +163,4 @@ Here’s your 2026 action plan:
 
 The hidden decision-makers are out there—**AI is the flashlight that finds them**.
 
-Ready to transform your LinkedIn outreach? [Start with Typpout today](https://typpout.com/).
+Ready to transform your LinkedIn outreach? [Start with Typpout today](https://www.typpout.com/).

@@ -169,7 +169,7 @@ At **Typpout**, we’ve built an AI-powered GTM platform that turns social proof
 - **AI Reply Handling**: Detect objections and auto-inject relevant proof in responses.
 - **Meeting Booking Automation**: Close more deals with AI-driven scheduling.
 
-👉 **Ready to transform your outreach?** [See how Typpout works](/) or [explore pricing](https://typpout.com/pricing).
+👉 **Ready to transform your outreach?** [See how Typpout works](/) or [explore pricing](https://www.typpout.com/pricing).
 
 ---
 

@@ -177,7 +177,7 @@ At Typpout, we’ve built an AI-powered GTM platform designed to **bridge the ga
 - **Handles replies**—qualifying and routing qualified leads to sales
 - **Books meetings** automatically using AI scheduling
 
-> 🔗 **See how it works:** [Typpout.com](/) | [Pricing](https://typpout.com/pricing)
+> 🔗 **See how it works:** [Typpout.com](/) | [Pricing](https://www.typpout.com/pricing)
 
 By unifying social intent data into your RevOps stack, Typpout helps you:
 ✅ Reduce wasted ad spend with better targeting

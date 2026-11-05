@@ -136,7 +136,7 @@ Here’s how Typpout works in your stack:
 | **Reply Handling** | AI **understands objections** and responds with counter-arguments or meeting links. | **No more manual follow-ups**—just booked meetings. |
 | **Meeting Booking** | AI books meetings via **Calendly or native calendar invites** in the first reply. | **Zero friction** for prospects. |
 
-**See it in action:** [Typpout’s AI GTM platform](/) | [Pricing](https://typpout.com/pricing)
+**See it in action:** [Typpout’s AI GTM platform](/) | [Pricing](https://www.typpout.com/pricing)
 
 ---
 

@@ -158,7 +158,7 @@ Typpout is the **first AI GTM platform** that combines:
 
 With Typpout, you go from **zero setup** to **pipeline in hours**—not weeks.
 
-👉 [Try Typpout for Free](/) | [See Pricing](https://typpout.com/pricing)
+👉 [Try Typpout for Free](/) | [See Pricing](https://www.typpout.com/pricing)
 
 ---
 

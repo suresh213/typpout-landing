@@ -146,7 +146,7 @@ While many tools offer **partial automation**, Typpout delivers a **full AI sale
 | **CRM Sync** | No manual data entry—just results |
 
 👉 Ready to **book 3x more meetings in 30 days**?
-[Start your free trial](/) or [see plans](https://typpout.com/pricing).
+[Start your free trial](/) or [see plans](https://www.typpout.com/pricing).
 
 ---
 

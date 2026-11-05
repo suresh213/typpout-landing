@@ -125,7 +125,7 @@ Typpout’s **AI GTM analytics** track:
 
 Ready to **automate LinkedIn Story follow-ups** and book more meetings?
 
-1. **Sign Up for Typpout** → [/pricing](https://typpout.com/pricing)
+1. **Sign Up for Typpout** → [/pricing](https://www.typpout.com/pricing)
 2. **Define Your ICP** → Add job titles, industries, and Story keywords.
 3. **Set Up Automation Rules** → Choose when to follow up (e.g., "Immediately" or "Within 1 hour").
 4. **Deploy AI Personalization** → Typpout auto-generates messages based on Story content.
@@ -143,11 +143,11 @@ With Typpout, you’re not just automating LinkedIn Story follow-ups—you’re 
 
 > 🚀 **Final Thought:** In 2026, the most successful sales teams won’t be the ones with the best scripts—they’ll be the ones who **listen first, engage fastest, and book meetings at scale**.
 
-**Start automating your LinkedIn Story follow-ups today:** [/pricing](https://typpout.com/pricing)
+**Start automating your LinkedIn Story follow-ups today:** [/pricing](https://www.typpout.com/pricing)
 
 ---
 
 **What’s next?**
-- [How Typpout’s AI GTM Engine Works](https://typpout.com/how-it-works)
-- [10 LinkedIn Follow-Up Templates That Actually Get Replies](https://typpout.com/blog/linkedin-follow-up-templates)
-- [The Ultimate Guide to AI-Powered Outbound Sales](https://typpout.com/guide)
+- [How Typpout’s AI GTM Engine Works](https://www.typpout.com/how-it-works)
+- [10 LinkedIn Follow-Up Templates That Actually Get Replies](https://www.typpout.com/blog/linkedin-follow-up-templates)
+- [The Ultimate Guide to AI-Powered Outbound Sales](https://www.typpout.com/guide)

@@ -166,6 +166,6 @@ Some teams use **both tools in tandem**:
 If you’re ready to **cut through the noise with AI-driven, real-time outreach**, **Typpout is the future of B2B sales automation**.
 
 🚀 **See how Typpout can transform your GTM strategy** → [Explore Typpout](/)
-💡 **Curious about pricing?** → [View Pricing](https://typpout.com/pricing)
+💡 **Curious about pricing?** → [View Pricing](https://www.typpout.com/pricing)
 
 **The tools you choose today will define your sales success in 2026 and beyond.** Choose wisely—and let’s build a better way to sell. 🚀

@@ -167,7 +167,7 @@ If your B2B team is losing 30–50% of booked meetings to no-shows, it’s time 
 5. Monitor post-meeting behavior and recover at-risk meetings.
 
 🚀 **Want it done for you?**
-At [Typpout](https://typpout.com), we’re not just another outreach tool—we’re your **AI GTM engine**.
+At [Typpout](https://www.typpout.com), we’re not just another outreach tool—we’re your **AI GTM engine**.
 
 We handle the entire SDR function:
 - **Outreach** (emails, LinkedIn, SMS)
@@ -175,7 +175,7 @@ We handle the entire SDR function:
 - **Meeting booking** (with 80% lower no-shows)
 - **Data insights** (real-time intent, pipeline health)
 
-👉 **[See how Typpout works →](https://typpout.com/)** or **[Check our pricing →](https://typpout.com/pricing)**
+👉 **[See how Typpout works →](https://www.typpout.com/)** or **[Check our pricing →](https://www.typpout.com/pricing)**
 
 ---
 
@@ -190,4 +190,4 @@ It’s not magic. It’s **data, intent, and real-time action**.
 And it starts with one decision: to stop sending the same old spam, and start listening to the signals that matter.
 
 💡 **Ready to build a GTM engine that works?**
-Let’s talk. [Book a demo](https://typpout.com) and see how Typpout can turn your outbound from ghost town to pipeline powerhouse.
+Let’s talk. [Book a demo](https://www.typpout.com) and see how Typpout can turn your outbound from ghost town to pipeline powerhouse.

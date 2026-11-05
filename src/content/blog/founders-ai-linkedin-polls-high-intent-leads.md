@@ -201,8 +201,8 @@ At **Typpout**, we built the only platform that **listens, scores, and converts*
 - 50% less time spent on follow-ups
 - Predictable pipeline growth
 
-> 👉 Try Typpout free for 14 days: [https://typpout.com/](https://typpout.com/)
-> 💡 See pricing: [https://typpout.com/pricing](https://typpout.com/pricing)
+> 👉 Try Typpout free for 14 days: [https://www.typpout.com/](https://www.typpout.com/)
+> 💡 See pricing: [https://www.typpout.com/pricing](https://www.typpout.com/pricing)
 
 ---
 
@@ -222,4 +222,4 @@ Now it’s your turn.
 🔥 **Launch your next poll today.**
 🔥 **Let AI turn responses into revenue.**
 
-And if you want the full pipeline automated, **[get started with Typpout](https://typpout.com/)**—your AI GTM co-pilot.
+And if you want the full pipeline automated, **[get started with Typpout](https://www.typpout.com/)**—your AI GTM co-pilot.

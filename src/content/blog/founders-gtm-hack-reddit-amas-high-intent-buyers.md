@@ -101,7 +101,7 @@ Use Reddit’s search with filters:
 `subreddit:saas "AMA" "I need help" after:2024-01-01`
 
 Or use tools like:
-- **[Typpout’s Reddit Monitor](https://typpout.com/)** → Real-time keyword alerts
+- **[Typpout’s Reddit Monitor](https://www.typpout.com/)** → Real-time keyword alerts
 - **[Subreddit Stats](https://subredditstats.com/)** → Find active communities
 - **[AnswerThePublic](https://answerthepublic.com/)** → Map pain points to Reddit questions
 
@@ -217,7 +217,7 @@ Reddit AMAs aren’t a hack—they’re a **GTM superpower** for founders who wa
 
 And if you want to **scale this without drowning in manual work**?
 
-👉 [**Try Typpout—your AI GTM engine for real-time buyer signals**](https://typpout.com/)
+👉 [**Try Typpout—your AI GTM engine for real-time buyer signals**](https://www.typpout.com/)
 
 Stop guessing.
 Start listening.

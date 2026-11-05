@@ -91,7 +91,7 @@ Typpout isn’t just another outreach automation tool—it’s a **complete AI-p
 ✔ **No more guessing** – Typpout **optimizes sequences** based on **actual prospect behavior**, not assumptions.
 
 **🔗 Try Typpout’s AI GTM Platform:**
-[Explore Typpout](/) | [View Pricing](https://typpout.com/pricing)
+[Explore Typpout](/) | [View Pricing](https://www.typpout.com/pricing)
 
 ---
 
@@ -152,7 +152,7 @@ Many tools claim to offer **"AI-powered sales automation"**, but most fall short
 - **Mid-market** → **Apollo/Lemlist ($50–$500/mo)**
 
 ### **Step 4: Test Before Committing**
-- **Typpout offers a free demo** → [Book a Call](https://typpout.com/demo)
+- **Typpout offers a free demo** → [Book a Call](https://www.typpout.com/demo)
 - **Most alternatives have free trials** (but limited features).
 
 ---

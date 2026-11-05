@@ -163,7 +163,7 @@ At **Typpout**, we built the first AI GTM engine that listens, scores, and acts 
 - 📊 Unify intent data into a single waterfall (website + social + jobs)
 - 🚀 Scale outreach without hiring a sales team
 
-**Ready to test it?** Book a demo at [typpout.com](/) or see our transparent pricing at [typpout.com/pricing](https://typpout.com/pricing).
+**Ready to test it?** Book a demo at [typpout.com](/) or see our transparent pricing at [typpout.com/pricing](https://www.typpout.com/pricing).
 
 > “Using Typpout’s intent-driven outreach, we booked 22 meetings in 6 weeks—with zero cold calling.” — Alex Chen, Founder of RevenueFlow
 
